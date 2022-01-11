@@ -11,30 +11,38 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Doctoral Student in Computer Science, Texas Tech University, 2023(expected) 
+* M.S. in Computer Science, Texas Tech University, 2019
+* B.S. in Architecture, Huaqiao University, 2012
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Summer 2020: Graduate Student Intern
+  * National Energy Research Scientific Computing Center (NERSC)
+  <!-- * Duties included: Tagging issues -->
+  * Supervisor: Dr. Brandon Cook
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Fall 2019 - Present: Graduate Student Research Assistant
+  * DISCL at Texas Tech University
+  <!-- * Duties included: Merging pull requests -->
+  * Supervisor: Dr. Yong Chen
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Programming Languages
+  * C/C++, Bash, Python
+* Data Analysis Libraries
+  * Numpy
+  * Pandas
+  * Scikitlearn
+  * Matplotlib
+* Databases
+  * PostgreSQL
+  * TimescaleDB
+  * InfluxDB
+* Operating systems
+  * UNIX/Linux
+  * Mac OS
 
 Publications
 ======
@@ -48,12 +56,12 @@ Talks
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
   
-Teaching
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Service and leadership
+<!-- Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+*  -->
