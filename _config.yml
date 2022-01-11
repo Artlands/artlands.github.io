@@ -84,10 +84,10 @@ author:
   avatar           : "profile.png"
   bio              : "Ph.D Candidate, major in Computer Science at Texas Tech University"
   location         : "Lubbock, TX"
-  employer         :
-  pubmed           : ""
+  employer         : "Texas Tech University"
+  pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=G7oDoOcAAAAJ&hl=en"
-  email            : 
+  email            : "lijie0416@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : ""
+  twitter          : 
   vine             :
   weibo            :
   xing             :
