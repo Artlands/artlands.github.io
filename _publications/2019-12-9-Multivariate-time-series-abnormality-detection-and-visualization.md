@@ -2,7 +2,7 @@
 title: "Mtsad: Multivariate time series abnormality detection and visualization"
 collection: 2019 IEEE International Conference on Big Data (Big Data)
 permalink: /publication/2019-12-9-Multivariate-time-series-abnormality-detection-and-visualization
-excerpt: 'Detecting outliers is one of the fundamental tasks in visual analytics and valuable in many application domains, such as suspicious network cyberattack recognition. This paper introduces an approach to analyzing and visualizing highdimensional time series, focusing on identifying multivariate observations that are significantly different from the others. We also propose a prototype, called MTSAD, to guide users when interactively exploring abnormalities in large time series. The prototype contains two views: the main window provides an overview of identified outliers overtime, the detail window investigates and explores the ranked temporal data entries based on their outlying contributions to the overall plots. The visual interface supports a full range of interactions, such as lensing, brushing and linking, ranking, and filtering. To validate the benefits and usefulness of our approach, we demonstrate MTSAD on real-world datasets of different numbers of attributes.'
+excerpt: 'This paper introduces an approach to analyzing and visualizing highdimensional time series, focusing on identifying multivariate observations that are significantly different from the others. We also propose a prototype, called MTSAD, to guide users when interactively exploring abnormalities in large time series.'
 date: 2019-12-9
 venue: '2019 IEEE International Conference on Big Data (Big Data)'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/9006559/'
@@ -10,6 +10,17 @@ citation: 'V. Pham, N. Nguyen, J. Li, J. Hass, Y. Chen and T. Dang, "MTSAD: Mult
 ---
 Detecting outliers is one of the fundamental tasks in visual analytics and valuable in many application domains, such as suspicious network cyberattack recognition. This paper introduces an approach to analyzing and visualizing highdimensional time series, focusing on identifying multivariate observations that are significantly different from the others. We also propose a prototype, called MTSAD, to guide users when interactively exploring abnormalities in large time series. The prototype contains two views: the main window provides an overview of identified outliers overtime, the detail window investigates and explores the ranked temporal data entries based on their outlying contributions to the overall plots. The visual interface supports a full range of interactions, such as lensing, brushing and linking, ranking, and filtering. To validate the benefits and usefulness of our approach, we demonstrate MTSAD on real-world datasets of different numbers of attributes.
 
-[Download paper here](https://artlands.github.io/files/MTSAD.pdf)
+[Download paper here](https://artlands.github.io/files/pham-bigdata-2019.pdf)
 
-Recommended citation: V. Pham, N. Nguyen, J. Li, J. Hass, Y. Chen and T. Dang, "MTSAD: Multivariate Time Series Abnormality Detection and Visualization," 2019 IEEE International Conference on Big Data (Big Data), 2019, pp. 3267-3276, doi: 10.1109/BigData47090.2019.9006559.
+Recommended citation: 
+
+```
+@inproceedings{pham2019mtsad,
+  title={Mtsad: Multivariate time series abnormality detection and visualization},
+  author={Pham, Vung and Nguyen, Ngan and Li, Jie and Hass, Jon and Chen, Yong and Dang, Tommy},
+  booktitle={2019 IEEE International Conference on Big Data (Big Data)},
+  pages={3267--3276},
+  year={2019},
+  organization={IEEE}
+}
+```
