@@ -6,7 +6,7 @@ excerpt: 'In this paper we propose MAC (Memory Access Coalescer), a coalescing u
 date: 2019-8-5
 venue: 'Proceedings of the 48th International Conference on Parallel Processing'
 paperurl: 'https://dl.acm.org/doi/abs/10.1145/3337821.3337867'
-citation: 'Xi Wang, Antonino Tumeo, John D. Leidel, Jie Li, and Yong Chen. 2019. MAC: Memory Access Coalescer for 3D-Stacked Memory. In Proceedings of the 48th International Conference on Parallel Processing (ICPP 2019). Association for Computing Machinery, New York, NY, USA, Article 2, 1–10. DOI:https://doi-org.lib-e2.lib.ttu.edu/10.1145/3337821.3337867'
+# citation: 'Xi Wang, Antonino Tumeo, John D. Leidel, Jie Li, and Yong Chen. 2019. MAC: Memory Access Coalescer for 3D-Stacked Memory. In Proceedings of the 48th International Conference on Parallel Processing (ICPP 2019). Association for Computing Machinery, New York, NY, USA, Article 2, 1–10. DOI:https://doi-org.lib-e2.lib.ttu.edu/10.1145/3337821.3337867'
 ---
 Emerging data-intensive applications, such as graph analytics and data mining, exhibit irregular memory access patterns. Research has shown that with these memory-bound applications, traditional cache-based processor architectures, which exploit locality and regular patterns to mitigate the memory-wall issue, are inefficient. Meantime, novel 3D-stacked memory devices, such as Hybrid Memory Cube (HMC) and High Bandwidth Memory (HBM), promise significant increases in bandwidth that appear extremely appealing for memory-bound applications. However, conventional memory interfaces designed for cache-based architectures and JEDEC DDR devices fit poorly with the 3D-stacked memory, which leads to significant under-utilization of the promised high bandwidth.
 

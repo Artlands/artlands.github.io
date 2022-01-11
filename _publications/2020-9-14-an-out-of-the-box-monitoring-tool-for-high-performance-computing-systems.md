@@ -6,7 +6,7 @@ excerpt: 'In this work, we introduce MonSTer, an “out-of-the-box” monitoring
 date: 2020-9-14
 venue: '2020 IEEE International Conference on Cluster Computing (CLUSTER)'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/9229641/'
-citation: 'J. Li et al., "MonSTer: An Out-of-the-Box Monitoring Tool for High Performance Computing Systems," 2020 IEEE International Conference on Cluster Computing (CLUSTER), 2020, pp. 119-129, doi: 10.1109/CLUSTER49012.2020.00022.'
+# citation: 'J. Li et al., "MonSTer: An Out-of-the-Box Monitoring Tool for High Performance Computing Systems," 2020 IEEE International Conference on Cluster Computing (CLUSTER), 2020, pp. 119-129, doi: 10.1109/CLUSTER49012.2020.00022.'
 ---
 Understanding the status of high-performance computing platforms and correlating applications to resource usage provide insight into the interactions among platform components. A lot of efforts have been devoted into developing monitoring solutions; however, a large-scale HPC system usually requires a combination of methods/tools to successfully monitor all metrics, which will lead to a huge effort in configuration and monitoring. Besides, monitoring tools are often left behind in the procurement of large-scale HPC systems. These challenges have motivated the development of a next-generation out-of-the-box monitoring tool that can be easily deployed without losing informative metrics.
 
@@ -17,8 +17,7 @@ In this work, we introduce MonSTer, an "out-of-the-box" monitoring tool for high
 Recommended citation: 
 
 ```
-@inproceedings{pham2019mtsad,
-  @inproceedings{li2020monster,
+@inproceedings{li2020monster,
   title={MonSTer: an out-of-the-box monitoring tool for high performance computing systems},
   author={Li, Jie and Ali, Ghazanfar and Nguyen, Ngan and Hass, Jon and Sill, Alan and Dang, Tommy and Chen, Yang},
   booktitle={2020 IEEE International Conference on Cluster Computing (CLUSTER)},
