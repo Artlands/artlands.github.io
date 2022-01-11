@@ -1,7 +1,7 @@
 ---
 title: "RadarViewer: Visualizing the dynamics of multivariate data"
 collection: Practice and Experience in Advanced Research Computing
-permalink: /publication/2020-7-26-Visualizing-the-dynamics-of-multivariate-data
+permalink: /publication/2020-7-26-radarviewer
 excerpt: 'This showcase presents a visual approach based on clustering and superimposing to construct a high-level overview of sequential event data while balancing the amount of information and the cardinality in it. We also implement an interactive prototype, called RadarViewer, that allows domain analysts to simultaneously analyze sequence clustering, extract useful distribution patterns, drill multiple levels-of-detail to accelerate the analysis. The RadarViewer is demonstrated through case studies with real-world temporal datasets of different sizes.'
 date: 2020-7-26
 venue: 'Practice and Experience in Advanced Research Computing (PEARC)'
