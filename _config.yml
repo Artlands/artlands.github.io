@@ -5,6 +5,11 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
+plugins:
+  - jekyll-remote-theme
+remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 # Site Settings
 locale                   : "en-US"
 title                    : "Jie Li"
@@ -129,6 +134,7 @@ exclude:
   - .bundle
   - .jekyll-assets-cache
   - .sass-cache
+  - assets
   - CHANGELOG
   - Capfile
   - Gemfile
@@ -265,7 +271,6 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
-  - jekyll-include-cache
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
@@ -310,6 +315,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-# Remote theme
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"

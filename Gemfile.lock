@@ -296,7 +296,6 @@ DEPENDENCIES
   github-pages
   hawkins
   jekyll-feed
-  jekyll-include-cache
   jekyll-sitemap
 
 BUNDLED WITH
