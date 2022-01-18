@@ -17,17 +17,17 @@ Education
 Work experience
 ======
 * Fall 2019 - Present: Graduate Student Research Assistant
-  * DISCL at Texas Tech University
+  * [DISCL](https://discl.cs.ttu.edu/doku.php?id=home) at Texas Tech University
   <!-- * Duties included:  -->
-  * Supervisor: Dr. Yong Chen
+  * Supervisor: [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/)
 
 * Summer 2020: Graduate Student Intern
-  * National Energy Research Scientific Computing Center (NERSC)
+  * [National Energy Research Scientific Computing Center (NERSC)](https://www.nersc.gov/)
   * Duties included: 
     * Analyzing time-series monitoring data
     * Visualizing the monitoring metrics using interactive figures
     * Applying Machine Learning algorithms on time series data to detect and identify applications
-  * Supervisor: Dr. Brandon Cook
+  * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/)
 
 Skills
 ======
