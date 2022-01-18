@@ -45,7 +45,7 @@ Skills
 * Operating systems
   * UNIX/Linux
   * Mac OS
-  * 
+  
 Publications
 ======
   <ul>{% for post in site.publications %}
