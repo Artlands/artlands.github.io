@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* Doctoral Student in Computer Science, Texas Tech University, 2023(expected) 
+* Doctoral Student in Computer Science, Texas Tech University, 2023 (expected) 
 * M.S. in Computer Science, Texas Tech University, 2019
   
 Work experience
