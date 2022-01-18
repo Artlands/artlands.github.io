@@ -27,19 +27,19 @@ This pattern decouples the application logic into single-purpose event processin
 ![Event-driven architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/eventdriven.png)
 
 
-### Microkernel Architecture ###
+### 3. Microkernel Architecture ###
 This pattern is also known as Plugin architecture. It has two main components: a **core** system and **plug-in** modules (extensions).
 
 ![Microkernel architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/microkernel.png)
 
 
-### Microservices Architecture ###
+### 4. Microservices Architecture ###
 This architecture consists of separately deployed services, where each service has single responsibility ideally. These services are independent of each other and if one service fails others will not stop running. 
 
 ![Microservices architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/microservices.png)
 
 
-### Space-Based Architecture ###
+### 5. Space-Based Architecture ###
 The basic approach is to separate the application into **processing units** (that can automatically scale up and down based on demand), where the data will be replicated and processed between those units without any persistence to the central database (though there will be local storages for the occasion of system failures).
 
 ![Space-based architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/spacebased.png)
