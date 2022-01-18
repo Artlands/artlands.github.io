@@ -54,7 +54,7 @@ Publications
   
 Posters
 ======
-* Detecting and Identifying Applications by Job Signatures in HPC Systems (Research Posters, accepted by SC21)
+* Detecting and Identifying Applications by Job Signatures in HPC Systems (Research Poster, accepted by SC21)
 
 <!-- Teaching
 ======
