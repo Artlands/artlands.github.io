@@ -15,31 +15,31 @@ The original post is [here](https://orkhanscience.medium.com/software-architectu
 ### 1. Layered architecture ###
 It is the most common architecture for monolitic applications. The application is divided into **several layers** each encapsulating specific role. 
 
-![Layered architecture pattern](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/layered.png)
+![Layered architecture pattern](layered.png)
 
 Here is another example of layered architecture, which shows the architecture of the [MonSter](https://github.com/nsfcac/MonSter) project:
 
-![The MonSter architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/monster.jpg)
+![The MonSter architecture](monster.jpg)
 
 ### 2. Event-driven architecture ###
 This pattern decouples the application logic into single-purpose event processing components that **asynchronously** receive and process events. It is known for high **scalability** and **adaptability**. 
 
-![Event-driven architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/eventdriven.png)
+![Event-driven architecture](eventdriven.png)
 
 
 ### 3. Microkernel Architecture ###
 This pattern is also known as Plugin architecture. It has two main components: a **core** system and **plug-in** modules (extensions).
 
-![Microkernel architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/microkernel.png)
+![Microkernel architecture](microkernel.png)
 
 
 ### 4. Microservices Architecture ###
 This architecture consists of separately deployed services, where each service has single responsibility ideally. These services are independent of each other and if one service fails others will not stop running. 
 
-![Microservices architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/microservices.png)
+![Microservices architecture](microservices.png)
 
 
 ### 5. Space-Based Architecture ###
 The basic approach is to separate the application into **processing units** (that can automatically scale up and down based on demand), where the data will be replicated and processed between those units without any persistence to the central database (though there will be local storages for the occasion of system failures).
 
-![Space-based architecture](https://github.com/Artlands/artlands.github.io/blob/master/images/blogs/2022-01-17/spacebased.png)
+![Space-based architecture](spacebased.png)
