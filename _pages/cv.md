@@ -24,9 +24,8 @@ Work experience
 * Summer 2020: Graduate Student Intern
   * [National Energy Research Scientific Computing Center (NERSC)](https://www.nersc.gov/)
   * Duties included: 
-    * Analyzing time-series monitoring data
-    * Visualizing the monitoring metrics using interactive figures
-    * Applying Machine Learning algorithms on time series data to detect and identify applications
+    * Analyzed the job-level monitoring data and applied Machine Learning models (Random Forests, SVC, LinearSVC, etc.) to classify the jobs using statistical features extracted from the time-series data.
+    * Explored the method of encoding the time-series monitoring data into images (named job signatures); trained a Convolutional Neural Networks to classify the job signatures.
   * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/)
 
 Skills
@@ -54,6 +53,7 @@ Publications
   
 Posters
 ======
+* HPC Application Recognition Through Image-encoded Monitoring Data (Best Poster Award at Spring 2022 NSF Cloud and Autonomic Computing Industry Advisory Board Conference)
 * Detecting and Identifying Applications by Job Signatures in HPC Systems (Research Poster, accepted by SC21)
 
 <!-- Teaching
