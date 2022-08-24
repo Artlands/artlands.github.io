@@ -21,7 +21,13 @@ Work experience
   <!-- * Duties included:  -->
   * Supervisor: [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/)
 
-* Summer 2020: Graduate Student Intern
+* Summer 2022: Graduate Student Intern
+  * [National Energy Research Scientific Computing Center (NERSC)](https://www.nersc.gov/)
+  * Duties included: 
+    * Analysis of Permutter monitoring metrics.
+  * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/), [Dr. George Michelogiannakis](https://crd.lbl.gov/departments/computer-science/cag/staff/staff-researchers-2/george-michelogiannakis-2/)
+
+* Summer 2021: Graduate Student Intern
   * [National Energy Research Scientific Computing Center (NERSC)](https://www.nersc.gov/)
   * Duties included: 
     * Analyzed the job-level monitoring data and applied Machine Learning models (Random Forests, SVC, LinearSVC, etc.) to classify the jobs using statistical features extracted from the time-series data.
