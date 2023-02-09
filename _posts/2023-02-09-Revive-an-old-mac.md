@@ -1,6 +1,6 @@
 ## How to install a 64-bit Linux OS on Mac models that require a 32-bit EFI.
 
-#### Prepare an USB Stick with 32-bit EFI and 64-bit Linux. 
+### Prepare an USB Stick with 32-bit EFI and 64-bit Linux. 
 1. Insert a usb stick and find its name on Mac. The following commands are used based on the stick name **disk2**:
    ```
    diskutil list
@@ -48,13 +48,13 @@
     sudo dd if=/path/to/lubuntu.iso of=/dev/disk2s2 bs=1M.
     ```
 
-#### Install the OS.
+### Install the OS.
 1. Insert the USB stick to the old Mac.
 2. Power on the machine and hold the `Alt` key untill two drivers show on the scree.
 3. Choose the EFI and press Enter.
 4. Wait for a couple of seconds and some texts like "Try Lubuntu..." show up, then press `e` to edit the boot options. Change `quiet splash` to `nomodest nospalsh` . This is the one I use, you may change it according to your needs. For more options: [boot options](https://wiki.ubuntuusers.de/Bootoptionen/).
 5. Press `f10` to save the changes and start installing. 
 
-#### References:
-1. ISO images can be found here: https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/
-2. Adapt the method from https://mesom.de/efi32boot/index.html and adjust to the macOS environment.
+### References:
+1. ISO images can be found here: [mattgadient.com](https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/)
+2. Adapt the method from [Live CD on an USB Stick](https://mesom.de/efi32boot/index.html) and adjust to the macOS environment.
