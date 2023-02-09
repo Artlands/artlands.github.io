@@ -5,11 +5,11 @@
    ```
    diskutil list
    ```
-2. Write zero to the disk and quite the process after abut 10 seconds by `Ctrl+c`:
+2. Write zero to the disk and quite the process after abut 10 seconds by `Ctrl+c`. Before running the following command, you may need run `diskutil unmountDisk /dev/disk2` to avoid `Resource busy` error.
    ```
    sudo dd if=/dev/zero of=/dev/disk2
    ```
-3. Create an EFI partition on the stick using `diskutil`, format is set to `msdos` and Scheme is set to `GUID Partition Map`. Then check the EFI partition identifier via `diskutil list`. Suppose its identifier is **disk2s1**. Note that the EFI partitin is not mounted by macOS by default so you have to unmount the USB stick and then manually mount it by yourself:
+3. Create an EFI partition on the stick using `diskutil`, format is set to `MS-DOS(FAT)` and Scheme is set to `GUID Partition Map`. Then check the EFI partition identifier via `diskutil list`. Suppose its identifier is **disk2s1**. Note that the EFI partitin is not mounted by macOS by default so you have to unmount the USB stick and then manually mount it by yourself:
    ```
    diskutil unmountDisk /dev/disk2
    ```
@@ -17,7 +17,7 @@
 4. Mount the EFI partition to `/tmp/sdb1`:
    ```
    mkdir /tmp/sdb1
-   sudo mount -o rw -t msdoc /dev/disk2s1 /tmp/sdb1
+   sudo mount -o rw -t msdos /dev/disk2s1 /tmp/sdb1
    ```
 
 5. Create some folders in the EFI partition:
@@ -40,7 +40,6 @@
 8. Copy the `bootia32.efi` to `/tmp/sdb1/efi/boot/` and then unmount the drive:
    ```
    sudo cp /path/to/bootia32.efi /tmp/sdb1/efi/boot/
-   sudo unmount /tmp/sdb1
    ```
 
 9.  Put the ISO image on the second partition (suppose its identifier is **disk2s2**):
