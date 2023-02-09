@@ -55,5 +55,5 @@
 5. Press `f10` to save the changes and start installing. 
 
 ### References:
-1. ISO images can be found here: [mattgadient.com](https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/)
+1. ISO images can be found here: [mattgadient.com](https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/). I tested several versions of lubuntu and found that only **lubuntu-18.04.4-desktop-amd64-mac-mattgadient.com.iso** works for my iMac6,1.
 2. Adapt the method from [Live CD on an USB Stick](https://mesom.de/efi32boot/index.html) and adjust to the macOS environment.
