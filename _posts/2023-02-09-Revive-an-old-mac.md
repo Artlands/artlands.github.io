@@ -1,4 +1,6 @@
-#### How to install 64 bits Linux OS on Mac models that require a 32-bit EFI.
+## How to install a 64-bit Linux OS on Mac models that require a 32-bit EFI.
+
+#### Prepare an USB Stick with 32-bit EFI and 64-bit Linux. 
 1. Insert a usb stick and find its name on Mac. The following commands are used based on the stick name **disk2**:
    ```
    diskutil list
@@ -35,15 +37,23 @@
    wget https://github.com/jfwells/linux-asus-t100ta/raw/master/boot/bootia32.efi
    ```
 
-8. Copy the `bootia32.efi` to `/tmp/sdb1/efi/boot/`:
+8. Copy the `bootia32.efi` to `/tmp/sdb1/efi/boot/` and then unmount the drive:
    ```
    sudo cp /path/to/bootia32.efi /tmp/sdb1/efi/boot/
+   sudo unmount /tmp/sdb1
    ```
 
 9.  Put the ISO image on the second partition (suppose its identifier is **disk2s2**):
     ```
     sudo dd if=/path/to/lubuntu.iso of=/dev/disk2s2 bs=1M.
     ```
+
+#### Install the OS.
+1. Insert the USB stick to the old Mac.
+2. Power on the machine and hold the `Alt` key untill two drivers show on the scree.
+3. Choose the EFI and press Enter.
+4. Wait for a couple of seconds and some texts like "Try Lubuntu..." show up, then press `e` to edit the boot options. Change `quiet splash` to `nomodest nospalsh` (this is the one I choose, you may change it according to your needs). 
+5. Press `f10` to quit and start installing. 
 
 #### References:
 1. ISO images can be found here: https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/
