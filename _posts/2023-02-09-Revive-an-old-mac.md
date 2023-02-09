@@ -9,7 +9,7 @@
    ```
    sudo dd if=/dev/zero of=/dev/disk2
    ```
-3. Create an EFI partition on the stick using `diskutil`, format is set to `msdos` and Scheme is set to `GUID Partition Map`. Then check the EFI partition identifier via `diskutil list`. Suppose its identifier is **disk2s1**. Note that the EFI partitin is not mounted by MacOS by default so you have to unmount the USB stick and then manually mount it by yourself:
+3. Create an EFI partition on the stick using `diskutil`, format is set to `msdos` and Scheme is set to `GUID Partition Map`. Then check the EFI partition identifier via `diskutil list`. Suppose its identifier is **disk2s1**. Note that the EFI partitin is not mounted by macOS by default so you have to unmount the USB stick and then manually mount it by yourself:
    ```
    diskutil unmountDisk /dev/disk2
    ```
@@ -52,9 +52,9 @@
 1. Insert the USB stick to the old Mac.
 2. Power on the machine and hold the `Alt` key untill two drivers show on the scree.
 3. Choose the EFI and press Enter.
-4. Wait for a couple of seconds and some texts like "Try Lubuntu..." show up, then press `e` to edit the boot options. Change `quiet splash` to `nomodest nospalsh` (this is the one I choose, you may change it according to your needs). 
-5. Press `f10` to quit and start installing. 
+4. Wait for a couple of seconds and some texts like "Try Lubuntu..." show up, then press `e` to edit the boot options. Change `quiet splash` to `nomodest nospalsh` . This is the one I use, you may change it according to your needs. For more options: [boot options](https://wiki.ubuntuusers.de/Bootoptionen/).
+5. Press `f10` to save the changes and start installing. 
 
 #### References:
 1. ISO images can be found here: https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/
-2. Adapt the method from https://mesom.de/efi32boot/index.html and adjust to the MacOS environment.
+2. Adapt the method from https://mesom.de/efi32boot/index.html and adjust to the macOS environment.
