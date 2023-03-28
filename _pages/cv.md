@@ -11,27 +11,36 @@ redirect_from:
 
 Education
 ======
-* Doctoral Student in Computer Science, Texas Tech University, 2023 (expected) 
+* Doctoral Student in Computer Science, Texas Tech University, 2024 (expected) 
 * M.S. in Computer Science, Texas Tech University, 2019
+* Bachelor of Architecture, Huaqiao University, 2012
   
 Work experience
 ======
 * Fall 2019 - Present: Graduate Student Research Assistant
   * [DISCL](https://discl.cs.ttu.edu/doku.php?id=home) at Texas Tech University
-  <!-- * Duties included:  -->
+  * Duties included:
+    * Conduct research in the areas of High-Performance Computing, Computer Architecture, and Parallel and Distributed Computing. This includes designing and implementing experiments, analyzing and interpreting data, and writing research papers for publication in academic conferences and journals.
+    * Attend conferences, workshops, and seminars to stay up-to-date with the latest research developments and technologies. This includes presenting research papers and posters, participating in panel discussions, and networking with other researchers in the field.
+    * Participate in the development and maintenance of research software and tools. This involves writing and testing code, documenting software features and functionality, and contributing to open-source software projects. Main software and tools include [MonSter](https://github.com/nsfcac/MonSter), [MetricsBuilder](https://github.com/nsfcac/MetricsBuilder), [Rev-xBGAS](https://github.com/Artlands/rev-xbgas), etc.
+    * Mentor graduate and undergraduate students on their independent studies. This involves providing research topics, guidance on research projects, assisting with data collection and analysis, and helping students to develop their technical writing and presentation skills.
+    * Administer two high-end servers (Hugo and Alita) hosted in the High-Performance Computing Center at Texas Tech University. This includes configuring and maintaining software, troubleshooting issues, and ensuring the availability and reliability of the servers.
   * Supervisor: [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/)
 
 * Summer 2022: Graduate Student Intern
   * [National Energy Research Scientific Computing Center (NERSC)](https://www.nersc.gov/)
   * Duties included: 
-    * Analysis of Permutter monitoring metrics.
-  * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/), [Dr. George Michelogiannakis](https://crd.lbl.gov/departments/computer-science/cag/staff/staff-researchers-2/george-michelogiannakis-2/)
+    * Simplified the code structure and create a more efficient and streamlined codebase by refactoring and combining the data collection codes used to access the system monitoring data collected from NERSC's Perlmutter.
+    * Analyzed the system monitoring data on a large scale to evaluate resource utilization by examining metrics such as CPU and GPU utilization, host DRAM utilization, and GPU HBM2 utilization. Identified trends and patterns in the data to gain insights into system performance.
+    * Summarized the analysis and write a system resource analysis paper for ISC 2023 (Accepted and will be presented in Hamburg, Germany, May 21-25).
+  * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/), [Dr. George Michelogiannakis](https://crd.lbl.gov/divisions/amcr/computer-science-amcr/cag/staff/staff-researchers/george-michelogiannakis/)
 
 * Summer 2021: Graduate Student Intern
   * [National Energy Research Scientific Computing Center (NERSC)](https://www.nersc.gov/)
   * Duties included: 
-    * Analyzed the job-level monitoring data and applied Machine Learning models (Random Forests, SVC, LinearSVC, etc.) to classify the jobs using statistical features extracted from the time-series data.
-    * Explored the method of encoding the time-series monitoring data into images (named job signatures); trained a Convolutional Neural Networks to classify the job signatures.
+    * Integrated data from multiple sources to analyze system-wide architectural efficiency and workload patterns.
+    * Conducted statistical analysis of job-level monitoring data and applied various machine learning models (e.g., Random Forests, Support Vector Classification, LinearSVC) to classify jobs based on extracted time-series features.
+    * Developed a novel approach to encoding time-series monitoring data as images and trained a Convolutional Neural Network (CNN) to classify job signatures with high accuracy.
   * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/)
 
 Skills
