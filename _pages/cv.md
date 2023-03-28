@@ -64,6 +64,7 @@ Publications
   
 Posters
 ======
+* A Holistic View of Memory Utilization on Perlmutter (Research Poster, accepted by SC22)
 * HPC Application Recognition Through Image-encoded Monitoring Data (Best Poster Award at Spring 2022 NSF Cloud and Autonomic Computing Industry Advisory Board Conference)
 * Detecting and Identifying Applications by Job Signatures in HPC Systems (Research Poster, accepted by SC21)
 
