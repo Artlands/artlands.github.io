@@ -46,19 +46,15 @@ Work experience
 Skills
 ======
 * Programming Languages
-  * C/C++, Bash, Python
+  * C/C++, Assembly, Python, JavaScript
 * Data Analysis Libraries
-  * Numpy
-  * Pandas
-  * Scikitlearn
-  * Matplotlib
+  * Numpy, Pandas, Scikitlearn, Matplotlib
 * Databases
-  * PostgreSQL
-  * TimescaleDB
-  * InfluxDB
+  * PostgreSQL/TimescaleDB, InfluxDB, MongoDB
 * Operating systems
   * UNIX/Linux
-  * Mac OS
+* Tools
+  * Git, The Structural Simulation Toolkit (SST)
   
 Publications
 ======
@@ -79,8 +75,10 @@ Posters
   
 Paper Review
 ======
-- 2021 IEEE International Conference on Big Data
-- 2020 IEEE International Conference on Big Data
+- ICDCS 2022 42nd IEEE International Conference on Distributed Computing Systems
+- CCGrid22 IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing
+- BigData 2021 IEEE International Conference on Big Data
+- BigData 2020 IEEE International Conference on Big Data
 
 Talks
 ======
