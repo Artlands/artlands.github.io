@@ -32,7 +32,7 @@ Work experience
   * Duties included: 
     * Simplified the code structure and create a more efficient and streamlined codebase by refactoring and combining the data collection codes used to access the system monitoring data collected from NERSC's Perlmutter.
     * Analyzed the system monitoring data on a large scale to evaluate resource utilization by examining metrics such as CPU and GPU utilization, host DRAM utilization, and GPU HBM2 utilization. Identified trends and patterns in the data to gain insights into system performance.
-    * Summarized the analysis and write a system resource analysis paper for ISC 2023 (Accepted and will be presented in Hamburg, Germany, May 21-25).
+    * Summarized the analysis and write a system resource analysis paper for ISC 2023 (Accepted and will be presented in Hamburg, Germany, May 21-25, 2023).
   * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/), [Dr. George Michelogiannakis](https://crd.lbl.gov/divisions/amcr/computer-science-amcr/cag/staff/staff-researchers/george-michelogiannakis/)
 
 * Summer 2021: Graduate Student Intern
