@@ -43,7 +43,7 @@ Work experience
     * Developed a novel approach to encoding time-series monitoring data as images and trained a Convolutional Neural Network (CNN) to classify job signatures with high accuracy.
   * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/)
 
-* Aug.2018 - Aug.2019 
+* Aug.2018 - Aug.2019 Graduate Student Programmer
   * [Teaching, Learning and Professional Development Center](https://www.depts.ttu.edu/tlpdc/)
   * Duties included:
     * Managed the maintenance and regular updates of the TLPDC Websites, ensuring that all content was current, accurate, and accessible to internal and external stakeholders.
