@@ -1,6 +1,5 @@
 ---
-title: "The GapbetweenVisualizationResearchandVisualization
-SoftwareinHigh-PerformanceComputingCenter"
+title: "The Gap between Visualization Research and Visualization Software in High-Performance Computing Center"
 collection: VisGap2021-The Gap between Visualization Research and Visualization Software
 permalink: /publication/2021-visgap
 excerpt: 'In this paper, we discuss the gap between visual monitoring research and practical applicability. We will start with the general requirements for managing high-performance computing centers and then share the experiences working with academic and industrial experts in this domain.'
