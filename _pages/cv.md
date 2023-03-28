@@ -50,6 +50,7 @@ Work experience
     * Developed and implemented comprehensive backup strategies to safeguard critical data assets, reducing the risk of data loss and ensuring business continuity in the event of system failures or other disruptions.
     * Maintained a deep understanding of emerging technologies and best practices related to web development, software applications, and data management, leveraging this knowledge to continuously improve processes and approaches to project management and delivery.
   * Supervisor: [Micah Logan](https://www.wku.edu/citl/staff/micah_logan)
+  
 Skills
 ======
 * Programming Languages
