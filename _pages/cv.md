@@ -43,6 +43,13 @@ Work experience
     * Developed a novel approach to encoding time-series monitoring data as images and trained a Convolutional Neural Network (CNN) to classify job signatures with high accuracy.
   * Supervisor: [Dr. Brandon Cook](https://www.nersc.gov/about/nersc-staff/application-performance/brandon-cook/)
 
+* Aug.2018 - Aug.2019 
+  * [Teaching, Learning and Professional Development Center](https://www.depts.ttu.edu/tlpdc/)
+  * Duties included:
+    * Managed the maintenance and regular updates of the TLPDC Websites, ensuring that all content was current, accurate, and accessible to internal and external stakeholders.
+    * Developed and implemented comprehensive backup strategies to safeguard critical data assets, reducing the risk of data loss and ensuring business continuity in the event of system failures or other disruptions.
+    * Maintained a deep understanding of emerging technologies and best practices related to web development, software applications, and data management, leveraging this knowledge to continuously improve processes and approaches to project management and delivery.
+  * Supervisor: [Micah Logan](https://www.wku.edu/citl/staff/micah_logan)
 Skills
 ======
 * Programming Languages
