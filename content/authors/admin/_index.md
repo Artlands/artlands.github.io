@@ -80,5 +80,5 @@ email: ''
 highlight_name: true
 ---
 
-Jie Li is a Ph.D. candidate in Computer Science at Texas Tech University, where he is a member of the [Data-Intensive Scalable Computing Laboratory (DISCL)](https://discl.cs.ttu.edu/doku.php?id=home) under the guidance of [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/). Jie's research interests lie in the areas of High-Performance Computing, Advanced Computer Architecture, and Parallel and Distributed Computing.
+Jie Li is a Ph.D. candidate in Computer Science at Texas Tech University, where he is a member of the [Data-Intensive Scalable Computing Laboratory (DISCL)](https://discl.cs.ttu.edu/doku.php?id=home) under the guidance of [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/). Jie's research interests lie in the areas of **High-Performance Computing**, **Advanced Computer Architecture**, and **Parallel and Distributed Computing**. Jie completed his Master of Science degree in Computer Science from Texas Tech University in 2019. Prior to that, he earned a bachelor’s degree in architecture.
 {style="text-align: justify;"}

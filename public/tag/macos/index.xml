@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacOS | Jie Li</title>
+    <link>https://artlands.github.io/tag/macos/</link>
+      <atom:link href="https://artlands.github.io/tag/macos/index.xml" rel="self" type="application/rss+xml" />
+    <description>MacOS</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 09 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://artlands.github.io/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
+      <title>MacOS</title>
+      <link>https://artlands.github.io/tag/macos/</link>
+    </image>
+    
+    <item>
+      <title>Revive An Old Mac</title>
+      <link>https://artlands.github.io/post/revive-an-old-mac/</link>
+      <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://artlands.github.io/post/revive-an-old-mac/</guid>
+      <description>&lt;h3 id=&#34;prepare-an-usb-stick-with-32-bit-efi-and-64-bit-linux&#34;&gt;Prepare an USB Stick with 32-bit EFI and 64-bit Linux.&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Insert a usb stick and find its name on Mac. The following commands are used based on the stick name &lt;strong&gt;disk2&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diskutil list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write zero to the disk and quit the process after abut 10 seconds by &lt;code&gt;Ctrl+c&lt;/code&gt;. Before running the following command, you may need to run &lt;code&gt;diskutil unmountDisk /dev/disk2&lt;/code&gt; to avoid &lt;code&gt;Resource busy&lt;/code&gt; error.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dd if=/dev/zero of=/dev/disk2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create an EFI partition on the stick using &lt;code&gt;diskutil&lt;/code&gt;, format is set to &lt;code&gt;MS-DOS(FAT)&lt;/code&gt; and Scheme is set to &lt;code&gt;GUID Partition Map&lt;/code&gt;. Then check the EFI partition identifier via &lt;code&gt;diskutil list&lt;/code&gt;. Suppose its identifier is &lt;strong&gt;disk2s1&lt;/strong&gt;. Note that the EFI partitin is not mounted by macOS by default so you have to manually mount it by yourself:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir /tmp/sdb1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount -o rw -t msdos /dev/disk2s1 /tmp/sdb1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create some folders in the EFI partition:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /tmp/sdb1/boot/grub/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /tmp/sdb1/efi/boot/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create &lt;code&gt;grub.cfg&lt;/code&gt; file in &lt;code&gt;/tmp/sdb1/boot/grub/&lt;/code&gt; and write the following lines:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;search --file --set=root /boot/grub/loopback.cfg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;configfile /boot/grub/loopback.cfg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Download a &lt;code&gt;bootia32.efi&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://github.com/jfwells/linux-asus-t100ta/raw/master/boot/bootia32.efi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Copy the &lt;code&gt;bootia32.efi&lt;/code&gt; to &lt;code&gt;/tmp/sdb1/efi/boot/&lt;/code&gt; and then unmount the drive:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cp /path/to/bootia32.efi /tmp/sdb1/efi/boot/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Put the ISO image on the second partition (suppose its identifier is &lt;strong&gt;disk2s2&lt;/strong&gt;). You may need to run &lt;code&gt;diskutil unmountDisk /dev/disk2&lt;/code&gt; to avoid &lt;code&gt;Resource busy&lt;/code&gt; error:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dd if=/path/to/lubuntu.iso of=/dev/disk2s2 bs=1M.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;install-the-os&#34;&gt;Install the OS.&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Insert the USB stick to the old Mac.&lt;/li&gt;
+&lt;li&gt;Power on the machine and hold the &lt;code&gt;Alt&lt;/code&gt; key until two drivers show on the screen.&lt;/li&gt;
+&lt;li&gt;Choose the EFI and press Enter.&lt;/li&gt;
+&lt;li&gt;Wait for a couple of seconds and some texts like &amp;ldquo;Try Lubuntu&amp;hellip;&amp;rdquo; show up, then press &lt;code&gt;e&lt;/code&gt; to edit the boot options. Change &lt;code&gt;quiet splash&lt;/code&gt; to &lt;code&gt;nomodest splash&lt;/code&gt; . This is the one I use, you may change it according to your needs. For more options: &lt;a href=&#34;https://wiki.ubuntuusers.de/Bootoptionen/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;boot options&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;f10&lt;/code&gt; to save the changes and start installing.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;references&#34;&gt;References:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ISO images can be found here: &lt;a href=&#34;https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mattgadient.com&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Adapt the method from &lt;a href=&#34;https://mesom.de/efi32boot/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Live CD on an USB Stick&lt;/a&gt; and adjust to the macOS environment.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
