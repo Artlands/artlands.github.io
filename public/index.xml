@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jie Li</title>
-    <link>https://artlands.github.io/</link>
-      <atom:link href="https://artlands.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://lijie.me/</link>
+      <atom:link href="https://lijie.me/index.xml" rel="self" type="application/rss+xml" />
     <description>Jie Li</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://artlands.github.io/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
+      <url>https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
       <title>Jie Li</title>
-      <link>https://artlands.github.io/</link>
+      <link>https://lijie.me/</link>
     </image>
     
     <item>
       <title>Revive An Old Mac</title>
-      <link>https://artlands.github.io/post/revive-an-old-mac/</link>
+      <link>https://lijie.me/post/revive-an-old-mac/</link>
       <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/post/revive-an-old-mac/</guid>
+      <guid>https://lijie.me/post/revive-an-old-mac/</guid>
       <description>&lt;h3 id=&#34;prepare-an-usb-stick-with-32-bit-efi-and-64-bit-linux&#34;&gt;Prepare an USB Stick with 32-bit EFI and 64-bit Linux.&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -73,9 +73,9 @@
     
     <item>
       <title>JobViewer: Graph-based Visualization for Monitoring High-Performance Computing System</title>
-      <link>https://artlands.github.io/publication/job-viewer-2022/</link>
+      <link>https://lijie.me/publication/job-viewer-2022/</link>
       <pubDate>Tue, 06 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/job-viewer-2022/</guid>
+      <guid>https://lijie.me/publication/job-viewer-2022/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -100,9 +100,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>Advanced Visualization and Data Analysis of HPC Cluster and User Application Behavior</title>
-      <link>https://artlands.github.io/talk/advanced-visualization-and-data-analysis-of-hpc-cluster-and-user-application-behavior/</link>
+      <link>https://lijie.me/talk/advanced-visualization-and-data-analysis-of-hpc-cluster-and-user-application-behavior/</link>
       <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/talk/advanced-visualization-and-data-analysis-of-hpc-cluster-and-user-application-behavior/</guid>
+      <guid>https://lijie.me/talk/advanced-visualization-and-data-analysis-of-hpc-cluster-and-user-application-behavior/</guid>
       <description>
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;https://www.youtube.com/embed/2uLIAkddJAs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
@@ -129,9 +129,9 @@ Further event details, including [page elements](https://wowchemy.com/docs/writi
     
     <item>
       <title>The Gap between Visualization Research and Visualization Software in High-Performance Computing Center</title>
-      <link>https://artlands.github.io/publication/gap-2021/</link>
+      <link>https://lijie.me/publication/gap-2021/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/gap-2021/</guid>
+      <guid>https://lijie.me/publication/gap-2021/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -156,9 +156,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>HAM: Hotspot-Aware Manager for Improving Communications with 3D-Stacked Memory</title>
-      <link>https://artlands.github.io/publication/ham-2021/</link>
+      <link>https://lijie.me/publication/ham-2021/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/ham-2021/</guid>
+      <guid>https://lijie.me/publication/ham-2021/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -183,9 +183,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>MonSTer: an out-of-the-box monitoring tool for high performance computing systems</title>
-      <link>https://artlands.github.io/publication/monster-2020/</link>
+      <link>https://lijie.me/publication/monster-2020/</link>
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/monster-2020/</guid>
+      <guid>https://lijie.me/publication/monster-2020/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -210,9 +210,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>MonSTer: An Out-of-the-Box Monitoring Tool for High Performance Computing Systems</title>
-      <link>https://artlands.github.io/talk/monster-an-out-of-the-box-monitoring-tool-for-high-performance-computing-systems/</link>
+      <link>https://lijie.me/talk/monster-an-out-of-the-box-monitoring-tool-for-high-performance-computing-systems/</link>
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/talk/monster-an-out-of-the-box-monitoring-tool-for-high-performance-computing-systems/</guid>
+      <guid>https://lijie.me/talk/monster-an-out-of-the-box-monitoring-tool-for-high-performance-computing-systems/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -234,9 +234,9 @@ Further event details, including [page elements](https://wowchemy.com/docs/writi
     
     <item>
       <title>RadarViewer: Visualizing the dynamics of multivariate data</title>
-      <link>https://artlands.github.io/publication/radar-viewer-2020/</link>
+      <link>https://lijie.me/publication/radar-viewer-2020/</link>
       <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/radar-viewer-2020/</guid>
+      <guid>https://lijie.me/publication/radar-viewer-2020/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -261,9 +261,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>Mtsad: Multivariate time series abnormality detection and visualization</title>
-      <link>https://artlands.github.io/publication/mtsad-2019/</link>
+      <link>https://lijie.me/publication/mtsad-2019/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/mtsad-2019/</guid>
+      <guid>https://lijie.me/publication/mtsad-2019/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -288,9 +288,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>PIMS: A Lightweight Processing-In-Memory Accelerator for Stencil Computations</title>
-      <link>https://artlands.github.io/talk/pims-a-lightweight-processing-in-memory-accelerator-for-stencil-computations/</link>
+      <link>https://lijie.me/talk/pims-a-lightweight-processing-in-memory-accelerator-for-stencil-computations/</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/talk/pims-a-lightweight-processing-in-memory-accelerator-for-stencil-computations/</guid>
+      <guid>https://lijie.me/talk/pims-a-lightweight-processing-in-memory-accelerator-for-stencil-computations/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -312,9 +312,9 @@ Further event details, including [page elements](https://wowchemy.com/docs/writi
     
     <item>
       <title>PIMS: a lightweight processing-in-memory accelerator for stencil computations</title>
-      <link>https://artlands.github.io/publication/pims-2019/</link>
+      <link>https://lijie.me/publication/pims-2019/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/pims-2019/</guid>
+      <guid>https://lijie.me/publication/pims-2019/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -339,9 +339,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>MAC: Memory access coalescer for 3D-stacked memory</title>
-      <link>https://artlands.github.io/publication/mac-2019/</link>
+      <link>https://lijie.me/publication/mac-2019/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/mac-2019/</guid>
+      <guid>https://lijie.me/publication/mac-2019/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -366,9 +366,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>Slides</title>
-      <link>https://artlands.github.io/slides/example/</link>
+      <link>https://lijie.me/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/slides/example/</guid>
+      <guid>https://lijie.me/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://wowchemy.com/docs/content/slides/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -491,9 +491,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Example Project</title>
-      <link>https://artlands.github.io/project/example/</link>
+      <link>https://lijie.me/project/example/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/project/example/</guid>
+      <guid>https://lijie.me/project/example/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
@@ -504,17 +504,17 @@ $$&lt;/p&gt;
     
     <item>
       <title>External Project</title>
-      <link>https://artlands.github.io/project/external-project/</link>
+      <link>https://lijie.me/project/external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/project/external-project/</guid>
+      <guid>https://lijie.me/project/external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://artlands.github.io/admin/config.yml</link>
+      <link>https://lijie.me/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/admin/config.yml</guid>
+      <guid>https://lijie.me/admin/config.yml</guid>
       <description></description>
     </item>
     

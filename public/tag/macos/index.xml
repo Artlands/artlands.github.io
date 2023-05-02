@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MacOS | Jie Li</title>
-    <link>https://artlands.github.io/tag/macos/</link>
-      <atom:link href="https://artlands.github.io/tag/macos/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://lijie.me/tag/macos/</link>
+      <atom:link href="https://lijie.me/tag/macos/index.xml" rel="self" type="application/rss+xml" />
     <description>MacOS</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 09 Feb 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://artlands.github.io/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
+      <url>https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
       <title>MacOS</title>
-      <link>https://artlands.github.io/tag/macos/</link>
+      <link>https://lijie.me/tag/macos/</link>
     </image>
     
     <item>
       <title>Revive An Old Mac</title>
-      <link>https://artlands.github.io/post/revive-an-old-mac/</link>
+      <link>https://lijie.me/post/revive-an-old-mac/</link>
       <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/post/revive-an-old-mac/</guid>
+      <guid>https://lijie.me/post/revive-an-old-mac/</guid>
       <description>&lt;h3 id=&#34;prepare-an-usb-stick-with-32-bit-efi-and-64-bit-linux&#34;&gt;Prepare an USB Stick with 32-bit EFI and 64-bit Linux.&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;

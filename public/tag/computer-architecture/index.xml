@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Computer Architecture | Jie Li</title>
-    <link>https://artlands.github.io/tag/computer-architecture/</link>
-      <atom:link href="https://artlands.github.io/tag/computer-architecture/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://lijie.me/tag/computer-architecture/</link>
+      <atom:link href="https://lijie.me/tag/computer-architecture/index.xml" rel="self" type="application/rss+xml" />
     <description>Computer Architecture</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://artlands.github.io/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
+      <url>https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
       <title>Computer Architecture</title>
-      <link>https://artlands.github.io/tag/computer-architecture/</link>
+      <link>https://lijie.me/tag/computer-architecture/</link>
     </image>
     
     <item>
       <title>PIMS: A Lightweight Processing-In-Memory Accelerator for Stencil Computations</title>
-      <link>https://artlands.github.io/talk/pims-a-lightweight-processing-in-memory-accelerator-for-stencil-computations/</link>
+      <link>https://lijie.me/talk/pims-a-lightweight-processing-in-memory-accelerator-for-stencil-computations/</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/talk/pims-a-lightweight-processing-in-memory-accelerator-for-stencil-computations/</guid>
+      <guid>https://lijie.me/talk/pims-a-lightweight-processing-in-memory-accelerator-for-stencil-computations/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -38,9 +38,9 @@ Further event details, including [page elements](https://wowchemy.com/docs/writi
     
     <item>
       <title>PIMS: a lightweight processing-in-memory accelerator for stencil computations</title>
-      <link>https://artlands.github.io/publication/pims-2019/</link>
+      <link>https://lijie.me/publication/pims-2019/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/pims-2019/</guid>
+      <guid>https://lijie.me/publication/pims-2019/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -65,9 +65,9 @@ Supplementary notes can be added here, including [code, math, and images](https:
     
     <item>
       <title>MAC: Memory access coalescer for 3D-stacked memory</title>
-      <link>https://artlands.github.io/publication/mac-2019/</link>
+      <link>https://lijie.me/publication/mac-2019/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/mac-2019/</guid>
+      <guid>https://lijie.me/publication/mac-2019/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;

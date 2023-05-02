@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graph | Jie Li</title>
-    <link>https://artlands.github.io/tag/graph/</link>
-      <atom:link href="https://artlands.github.io/tag/graph/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://lijie.me/tag/graph/</link>
+      <atom:link href="https://lijie.me/tag/graph/index.xml" rel="self" type="application/rss+xml" />
     <description>Graph</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 06 Dec 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://artlands.github.io/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
+      <url>https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
       <title>Graph</title>
-      <link>https://artlands.github.io/tag/graph/</link>
+      <link>https://lijie.me/tag/graph/</link>
     </image>
     
     <item>
       <title>JobViewer: Graph-based Visualization for Monitoring High-Performance Computing System</title>
-      <link>https://artlands.github.io/publication/job-viewer-2022/</link>
+      <link>https://lijie.me/publication/job-viewer-2022/</link>
       <pubDate>Tue, 06 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://artlands.github.io/publication/job-viewer-2022/</guid>
+      <guid>https://lijie.me/publication/job-viewer-2022/</guid>
       <description>&lt;!-- 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;

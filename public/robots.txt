@@ -1,3 +1,3 @@
 User-agent: *
 
-Sitemap: https://artlands.github.io/sitemap.xml
+Sitemap: https://lijie.me/sitemap.xml
