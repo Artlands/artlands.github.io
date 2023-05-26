@@ -62,7 +62,7 @@ We need to modify the following files:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;22-includeopcoderiscvh&#34;&gt;2.2 &lt;code&gt;include/opcode/riscv.h&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;In this file, we add the following declarations:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;extern const char * const riscv_xbgas_names_numeric[NGPR];
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;riscv_xbgas_names_numeric&lt;/code&gt; is the data structure that stores the names of the new register files; we will define it in the next step. &lt;code&gt;NGPR&lt;/code&gt; is MARCO of the number of registers in the register file. For the &lt;code&gt;xBGAS&lt;/code&gt; extension, we have 32 registers in the register file.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;riscv_xbgas_names_numeric&lt;/code&gt; is the data structure that stores the names of the new register files; we will define it in the next step. &lt;code&gt;NGPR&lt;/code&gt; is the MARCO of the number of registers in the register file. For the &lt;code&gt;xBGAS&lt;/code&gt; extension, we have 32 registers in the register file.&lt;/p&gt;
 &lt;h3 id=&#34;23-opcodesriscv-opcc&#34;&gt;2.3 &lt;code&gt;opcodes/riscv-opc.c&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;At the beginning of this file, similar to other register names, we define the registers for xBGAS:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;const char *const riscv_xbgas_names_numeric[NGPR] =
@@ -81,8 +81,8 @@ We need to modify the following files:&lt;/p&gt;
 &lt;h3 id=&#34;24-opcodesriscv-disc&#34;&gt;2.4 &lt;code&gt;opcodes/riscv-dis.c&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;We made the following changes in this file:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Add &lt;code&gt;static const char * const *riscv_xbgas_names;&lt;/code&gt; to hold the register names usded by the disassembler.&lt;/li&gt;
-&lt;li&gt;Add &lt;code&gt;static const char * const *riscv_xbgas_names;&lt;/code&gt; in the &lt;code&gt;set_default_riscv_dis_options&lt;/code&gt; function and the &lt;code&gt;parse_riscv_dis_option_without_args&lt;/code&gt; function (after &lt;code&gt;riscv_fpr_names = ...&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;static const char * const *riscv_xbgas_names;&lt;/code&gt; to hold the register names used by the disassembler.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;static const char * const *riscv_xbgas_names;&lt;/code&gt; in the functions &lt;code&gt;set_default_riscv_dis_options&lt;/code&gt; and &lt;code&gt;parse_riscv_dis_option_without_args&lt;/code&gt; function (after &lt;code&gt;riscv_fpr_names = ...&lt;/code&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the &lt;code&gt;print_insn_args&lt;/code&gt; function, we add the following lines to &lt;code&gt;switch (*oparg)&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  case &amp;#39;H&amp;#39;: /* EXT1: xBGAS extended register */
@@ -122,7 +122,7 @@ We need to modify the following files:&lt;/p&gt;
 &lt;li&gt;Add &lt;code&gt;case &#39;J&#39;: /* EXT2, xBGAS extended register. */&lt;/code&gt; before &lt;code&gt;case &#39;t&#39;: USE_BITS (OP_MASK_RS2, OP_SH_RS2); break;&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The &lt;code&gt;G&lt;/code&gt;, &lt;code&gt;H&lt;/code&gt; and &lt;code&gt;J&lt;/code&gt; are the same as the ones in the &lt;code&gt;opcodes/riscv-dis.c&lt;/code&gt; file; they should be unique and not used by other cases.&lt;/p&gt;
-&lt;p&gt;In the &lt;code&gt;md_begin&lt;/code&gt; function, wee add the following lines after other &lt;code&gt;hash_reg_names&lt;/code&gt; functions:&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;md_begin&lt;/code&gt; function, we add the following lines after other &lt;code&gt;hash_reg_names&lt;/code&gt; functions:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  hash_reg_names (RCLASS_XBGAS, riscv_xbgas_names_numeric, NGPR);
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the &lt;code&gt;riscv_ip&lt;/code&gt; function, we add the following lines to &lt;code&gt;switch (*oparg)&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  case &amp;#39;G&amp;#39;: /* EXTD xBGAS destination register */
@@ -151,7 +151,7 @@ We need to modify the following files:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      continue;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    break;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the &lt;code&gt;tc_riscv_regname_to_dw2regnum&lt;/code&gt; function, wee add the following lines:&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the &lt;code&gt;tc_riscv_regname_to_dw2regnum&lt;/code&gt; function, we add the following lines:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  if ((reg = reg_lookup_internal (regname, RCLASS_XBGAS)) &amp;gt;= 0)
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    return reg + 128;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;3-risc-v-gnu-compiler-toolchain&#34;&gt;3. RISC-V GNU Compiler Toolchain&lt;/h2&gt;

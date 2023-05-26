@@ -894,7 +894,7 @@ We need to modify the following files:</p>
 </span></span></code></pre></div><h3 id="22-includeopcoderiscvh">2.2 <code>include/opcode/riscv.h</code></h3>
 <p>In this file, we add the following declarations:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">extern const char * const riscv_xbgas_names_numeric[NGPR];
-</span></span></code></pre></div><p><code>riscv_xbgas_names_numeric</code> is the data structure that stores the names of the new register files; we will define it in the next step. <code>NGPR</code> is MARCO of the number of registers in the register file. For the <code>xBGAS</code> extension, we have 32 registers in the register file.</p>
+</span></span></code></pre></div><p><code>riscv_xbgas_names_numeric</code> is the data structure that stores the names of the new register files; we will define it in the next step. <code>NGPR</code> is the MARCO of the number of registers in the register file. For the <code>xBGAS</code> extension, we have 32 registers in the register file.</p>
 <h3 id="23-opcodesriscv-opcc">2.3 <code>opcodes/riscv-opc.c</code></h3>
 <p>At the beginning of this file, similar to other register names, we define the registers for xBGAS:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">const char *const riscv_xbgas_names_numeric[NGPR] =
@@ -913,8 +913,8 @@ We need to modify the following files:</p>
 <h3 id="24-opcodesriscv-disc">2.4 <code>opcodes/riscv-dis.c</code></h3>
 <p>We made the following changes in this file:</p>
 <ul>
-<li>Add <code>static const char * const *riscv_xbgas_names;</code> to hold the register names usded by the disassembler.</li>
-<li>Add <code>static const char * const *riscv_xbgas_names;</code> in the <code>set_default_riscv_dis_options</code> function and the <code>parse_riscv_dis_option_without_args</code> function (after <code>riscv_fpr_names = ...</code>).</li>
+<li>Add <code>static const char * const *riscv_xbgas_names;</code> to hold the register names used by the disassembler.</li>
+<li>Add <code>static const char * const *riscv_xbgas_names;</code> in the functions <code>set_default_riscv_dis_options</code> and <code>parse_riscv_dis_option_without_args</code> function (after <code>riscv_fpr_names = ...</code>).</li>
 </ul>
 <p>In the <code>print_insn_args</code> function, we add the following lines to <code>switch (*oparg)</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  case &#39;H&#39;: /* EXT1: xBGAS extended register */
@@ -954,7 +954,7 @@ We need to modify the following files:</p>
 <li>Add <code>case 'J': /* EXT2, xBGAS extended register. */</code> before <code>case 't': USE_BITS (OP_MASK_RS2, OP_SH_RS2); break;</code>.</li>
 </ul>
 <p>The <code>G</code>, <code>H</code> and <code>J</code> are the same as the ones in the <code>opcodes/riscv-dis.c</code> file; they should be unique and not used by other cases.</p>
-<p>In the <code>md_begin</code> function, wee add the following lines after other <code>hash_reg_names</code> functions:</p>
+<p>In the <code>md_begin</code> function, we add the following lines after other <code>hash_reg_names</code> functions:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  hash_reg_names (RCLASS_XBGAS, riscv_xbgas_names_numeric, NGPR);
 </span></span></code></pre></div><p>In the <code>riscv_ip</code> function, we add the following lines to <code>switch (*oparg)</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  case &#39;G&#39;: /* EXTD xBGAS destination register */
@@ -983,7 +983,7 @@ We need to modify the following files:</p>
 </span></span><span class="line"><span class="cl">      continue;
 </span></span><span class="line"><span class="cl">    }
 </span></span><span class="line"><span class="cl">    break;
-</span></span></code></pre></div><p>In the <code>tc_riscv_regname_to_dw2regnum</code> function, wee add the following lines:</p>
+</span></span></code></pre></div><p>In the <code>tc_riscv_regname_to_dw2regnum</code> function, we add the following lines:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  if ((reg = reg_lookup_internal (regname, RCLASS_XBGAS)) &gt;= 0)
 </span></span><span class="line"><span class="cl">    return reg + 128;
 </span></span></code></pre></div><h2 id="3-risc-v-gnu-compiler-toolchain">3. RISC-V GNU Compiler Toolchain</h2>

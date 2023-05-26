@@ -71,7 +71,7 @@ In this file, we add the following declarations:
 ```
 extern const char * const riscv_xbgas_names_numeric[NGPR];
 ```
-`riscv_xbgas_names_numeric` is the data structure that stores the names of the new register files; we will define it in the next step. `NGPR` is MARCO of the number of registers in the register file. For the `xBGAS` extension, we have 32 registers in the register file.
+`riscv_xbgas_names_numeric` is the data structure that stores the names of the new register files; we will define it in the next step. `NGPR` is the MARCO of the number of registers in the register file. For the `xBGAS` extension, we have 32 registers in the register file.
 
 ### 2.3 `opcodes/riscv-opc.c`
 At the beginning of this file, similar to other register names, we define the registers for xBGAS:
@@ -95,8 +95,8 @@ For the meaning of the fields in the `riscv_opcode` structure, you may refer to 
 
 ### 2.4 `opcodes/riscv-dis.c`
 We made the following changes in this file:
-- Add `static const char * const *riscv_xbgas_names;` to hold the register names usded by the disassembler.
-- Add `static const char * const *riscv_xbgas_names;` in the `set_default_riscv_dis_options` function and the `parse_riscv_dis_option_without_args` function (after `riscv_fpr_names = ...`).
+- Add `static const char * const *riscv_xbgas_names;` to hold the register names used by the disassembler.
+- Add `static const char * const *riscv_xbgas_names;` in the functions `set_default_riscv_dis_options` and `parse_riscv_dis_option_without_args` function (after `riscv_fpr_names = ...`).
 
 In the `print_insn_args` function, we add the following lines to `switch (*oparg)`:
 ```
@@ -143,7 +143,7 @@ In the `validate_riscv_insn` function, we add the following lines to `switch (*o
 
 The `G`, `H` and `J` are the same as the ones in the `opcodes/riscv-dis.c` file; they should be unique and not used by other cases. 
 
-In the `md_begin` function, wee add the following lines after other `hash_reg_names` functions:
+In the `md_begin` function, we add the following lines after other `hash_reg_names` functions:
 ```
   hash_reg_names (RCLASS_XBGAS, riscv_xbgas_names_numeric, NGPR);
 ```
@@ -177,7 +177,7 @@ In the `riscv_ip` function, we add the following lines to `switch (*oparg)`:
     break;
 ```
 
-In the `tc_riscv_regname_to_dw2regnum` function, wee add the following lines:
+In the `tc_riscv_regname_to_dw2regnum` function, we add the following lines:
 ```
   if ((reg = reg_lookup_internal (regname, RCLASS_XBGAS)) >= 0)
     return reg + 128;
