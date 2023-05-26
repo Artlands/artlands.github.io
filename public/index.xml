@@ -435,7 +435,7 @@ Supplementary notes can be added here, including [code, math, and images](https:
 &lt;p&gt;Easy and self-explanatory. Lots of related videos on Youtube.&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;re going to access each node using wireless LAN and use Ethernet port for communication among nodes. Thus the switch does not have to be connected to internet.&lt;/p&gt;
 &lt;p&gt;The connection is shown below:&lt;/p&gt;
-&lt;img src=&#39;images/connection.png&#39; width=&#39;50%&#39; height=&#39;50%&#39;&gt;
+&lt;img src=&#39;images/connection.png&#39; width=&#39;100%&#39; height=&#39;100%&#39;&gt;
 &lt;h2 id=&#34;os-installation&#34;&gt;OS installation&lt;/h2&gt;
 &lt;p&gt;We use CentOS in our cluster. To be noticed, the distribution for armv7hl platform is called &amp;ldquo;CentOS Userland Linux&amp;rdquo; and not &amp;ldquo;CentOS Linux&amp;rdquo;.&lt;/p&gt;
 &lt;ol&gt;

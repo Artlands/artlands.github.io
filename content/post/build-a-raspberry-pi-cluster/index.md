@@ -31,7 +31,7 @@ We're going to access each node using wireless LAN and use Ethernet port for com
 
 The connection is shown below:
 
-<img src='images/connection.png' width='50%' height='50%'>
+<img src='images/connection.png' width='100%' height='100%'>
 
 ## OS installation
 We use CentOS in our cluster. To be noticed, the distribution for armv7hl platform is called "CentOS Userland Linux" and not "CentOS Linux". 
