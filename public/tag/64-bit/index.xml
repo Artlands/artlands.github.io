@@ -17,7 +17,9 @@
       <link>https://lijie.me/post/revive-an-old-mac/</link>
       <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
       <guid>https://lijie.me/post/revive-an-old-mac/</guid>
-      <description>&lt;h3 id=&#34;prepare-an-usb-stick-with-32-bit-efi-and-64-bit-linux&#34;&gt;Prepare an USB Stick with 32-bit EFI and 64-bit Linux.&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
+&lt;p&gt;This project started with a old MAC I found on the street, which was thrown away by someone. It is a 2006 model with 32-bit EFI and 64-bit CPU. The problem is that the latest macOS version it can run is 10.7.5, which is too old to run most of the software I need. So I decided to install a Linux OS on it. However, the 32-bit EFI makes it impossible to install a 64-bit Linux OS. After some research, I found a way to install a 64-bit Linux OS on a 32-bit EFI Mac. The following is the procedure.&lt;/p&gt;
+&lt;h3 id=&#34;prepare-an-usb-stick-with-32-bit-efi-and-64-bit-linux&#34;&gt;Prepare an USB Stick with 32-bit EFI and 64-bit Linux.&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Insert a usb stick and find its name on Mac. The following commands are used based on the stick name &lt;strong&gt;disk2&lt;/strong&gt;:&lt;/p&gt;

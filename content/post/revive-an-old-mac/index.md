@@ -8,11 +8,13 @@ tags: [MacOS, 32-bit, 64-bit, EFI]
 categories: []
 projects: []
 date: '2023-02-09T00:00:00Z'
-lastMod: '2023-02-09T00:00:00Z'
+lastMod: '2023-05-25T22:20:00Z'
 image:
   caption: ''
   focal_point: ''
 ---
+### Background
+This project started with a old MAC I found on the street, which was thrown away by someone. It is a 2006 model with 32-bit EFI and 64-bit CPU. The problem is that the latest macOS version it can run is 10.7.5, which is too old to run most of the software I need. So I decided to install a Linux OS on it. However, the 32-bit EFI makes it impossible to install a 64-bit Linux OS. After some research, I found a way to install a 64-bit Linux OS on a 32-bit EFI Mac. The following is the procedure.
 ### Prepare an USB Stick with 32-bit EFI and 64-bit Linux. 
 1. Insert a usb stick and find its name on Mac. The following commands are used based on the stick name **disk2**:
    ```
