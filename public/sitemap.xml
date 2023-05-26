@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://lijie.me/tag/gnu-toolchain/</loc>
+    <lastmod>2023-05-25T22:06:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://lijie.me/post/</loc>
+    <lastmod>2023-05-25T22:06:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://lijie.me/tag/risc-v/</loc>
+    <lastmod>2023-05-25T22:06:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://lijie.me/post/adding-custom-instructions-to-riscv-gnu-toolchain/</loc>
+    <lastmod>2023-05-25T22:06:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://lijie.me/tags/</loc>
+    <lastmod>2023-05-25T22:06:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://lijie.me/tag/xbgas/</loc>
+    <lastmod>2023-05-25T22:06:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://lijie.me/tag/32-bit/</loc>
     <lastmod>2023-02-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -18,15 +42,7 @@
     <lastmod>2023-02-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://lijie.me/post/</loc>
-    <lastmod>2023-02-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://lijie.me/post/revive-an-old-mac/</loc>
-    <lastmod>2023-02-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://lijie.me/tags/</loc>
     <lastmod>2023-02-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>

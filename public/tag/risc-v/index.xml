@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RISC-V | Jie Li</title>
+    <link>https://lijie.me/tag/risc-v/</link>
+      <atom:link href="https://lijie.me/tag/risc-v/index.xml" rel="self" type="application/rss+xml" />
+    <description>RISC-V</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 25 May 2023 17:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
+      <title>RISC-V</title>
+      <link>https://lijie.me/tag/risc-v/</link>
+    </image>
+    
+    <item>
+      <title>RISC-V GNU toolchain with custom instructions</title>
+      <link>https://lijie.me/post/adding-custom-instructions-to-riscv-gnu-toolchain/</link>
+      <pubDate>Thu, 25 May 2023 17:00:00 +0000</pubDate>
+      <guid>https://lijie.me/post/adding-custom-instructions-to-riscv-gnu-toolchain/</guid>
+      <description>&lt;p&gt;There are several online tutorials available on how to add custom instructions to the RISC-V GNU toolchain. Two notable examples are Hadi&amp;rsquo;s tutorial &lt;a href=&#34;https://hsandid.github.io/posts/risc-v-custom-instruction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; and Vivek&amp;rsquo;s tutorial &lt;a href=&#34;https://medium.com/@viveksgt/adding-custom-instructions-compilation-support-to-riscv-toolchain-78ce1b6efcf4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;. However, these tutorials do not cover situations that involve adding new register files to the architecture. Although such cases may be rare, they are still possible, as demonstrated by the &lt;a href=&#34;https://github.com/tactcomplabs/xbgas-archspec&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xBGAS&lt;/a&gt; project here. This post provides a summary of the steps I followed to add custom instructions and register files to the RISC-V GNU toolchain in order to support the xBGAS architecture. The source code will be provided at the end of this post.&lt;/p&gt;
+&lt;h2 id=&#34;1-the-risc-v-opcodes-tool&#34;&gt;1. The RISC-V Opcodes Tool.&lt;/h2&gt;
+&lt;p&gt;Before we modify the RISC-V GNU toolchain, we need to generate the MATCH and MASK hexadecimal values which will be used later. The RISC-V Opcodes Tool is a Python script that can generate the MATCH and MASK values for custom instructions. It can be found &lt;a href=&#34;https://github.com/riscv/riscv-opcodes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.
+We clone the repository:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/riscv/riscv-opcodes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the &lt;code&gt;unratified&lt;/code&gt; folder, we create a new file &lt;code&gt;rv64_xbgas&lt;/code&gt; and add the following lines:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;eld    rd rs1 imm12 14..12=3 6..2=0x1D 1..0=3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;eaddie rd rs1 imm12 14..12=7 6..2=0x1E 1..0=3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the encoding syntax, you may refer to the &lt;code&gt;README&lt;/code&gt; of the &lt;code&gt;riscv-opcodes&lt;/code&gt; repository. After we add the instructions, we simply run &lt;code&gt;make&lt;/code&gt; and the MATCH and MASK values can be found in the generated &lt;code&gt;encoding.out.h&lt;/code&gt; file. For the &lt;code&gt;xBGAS&lt;/code&gt; RISC-V extension, the MATCH and MASK values are like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#define MATCH_EADDIE 0x707b
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#define MASK_EADDIE 0x707f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#define MATCH_ELD 0x3077
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#define MASK_ELD 0x707f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DECLARE_INSN(eld, MATCH_ELD, MASK_ELD)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DECLARE_INSN(eaddie, MATCH_EADDIE, MASK_EADDIE)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-the-risc-v-gnugcc-binutils&#34;&gt;2. The RISC-V GNU/GCC Binutils.&lt;/h2&gt;
+&lt;p&gt;Modifying the GCC compiler itself is complex and not necessary in most cases. We only need to modify the binutils, which is a collection of binary utility tools developed by the GNU project. The binutils can be found &lt;a href=&#34;https://sourceware.org/git/binutils-gdb.git&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.
+We need to modify the following files:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;include/opcodes/riscv-opc.h&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;include/opcode/riscv.h&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;opcodes/riscv-opc.c&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;opcodes/riscv-dis.c&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gas/config/tc-riscv.c&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;21-includeopcodesriscv-opch&#34;&gt;2.1 &lt;code&gt;include/opcodes/riscv-opc.h&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;In this file, we add &lt;code&gt;#define&lt;/code&gt; and &lt;code&gt;DECLARE_INSN&lt;/code&gt; elements we generated in the previous step and put them in the appropriate blocks. &lt;code&gt;#define&lt;/code&gt; should be put before &lt;code&gt;#endif /* RISCV_ENCODING_H */&lt;/code&gt; and &lt;code&gt;DECLARE_INSN&lt;/code&gt; should be put after &lt;code&gt;#ifdef DECLARE_INSN&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Adding the &lt;code&gt;#define&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/* xBGAS instructions */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#define MATCH_EADDI 0x607b
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#define MASK_EADDI 0x707f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#define MATCH_EADDIE 0x707b
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#define MASK_EADDIE 0x707f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Adding the &lt;code&gt;DECLARE_INSN&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/* xBGAS instructions. */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DECLARE_INSN(eaddi, MATCH_EADDI, MASK_EADDI)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DECLARE_INSN(eaddie, MATCH_EADDIE, MASK_EADDIE)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;22-includeopcoderiscvh&#34;&gt;2.2 &lt;code&gt;include/opcode/riscv.h&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;In this file, we add the following declarations:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;extern const char * const riscv_xbgas_names_numeric[NGPR];
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;riscv_xbgas_names_numeric&lt;/code&gt; is the data structure that stores the names of the new register files; we will define it in the next step. &lt;code&gt;NGPR&lt;/code&gt; is MARCO of the number of registers in the register file. For the &lt;code&gt;xBGAS&lt;/code&gt; extension, we have 32 registers in the register file.&lt;/p&gt;
+&lt;h3 id=&#34;23-opcodesriscv-opcc&#34;&gt;2.3 &lt;code&gt;opcodes/riscv-opc.c&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;At the beginning of this file, similar to other register names, we define the registers for xBGAS:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;const char *const riscv_xbgas_names_numeric[NGPR] =
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;e0&amp;#34;,   &amp;#34;e1&amp;#34;,   &amp;#34;e2&amp;#34;,   &amp;#34;e3&amp;#34;,   &amp;#34;e4&amp;#34;,   &amp;#34;e5&amp;#34;,   &amp;#34;e6&amp;#34;,   &amp;#34;e7&amp;#34;,   &amp;#34;e8&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;e9&amp;#34;,   &amp;#34;e10&amp;#34;,  &amp;#34;e11&amp;#34;,  &amp;#34;e12&amp;#34;,  &amp;#34;e13&amp;#34;,  &amp;#34;e14&amp;#34;,  &amp;#34;e15&amp;#34;,  &amp;#34;e16&amp;#34;,  &amp;#34;e17&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;e18&amp;#34;,  &amp;#34;e19&amp;#34;,  &amp;#34;e20&amp;#34;,  &amp;#34;e21&amp;#34;,  &amp;#34;e22&amp;#34;,  &amp;#34;e23&amp;#34;,  &amp;#34;e24&amp;#34;,  &amp;#34;e25&amp;#34;,  &amp;#34;e26&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;e27&amp;#34;,  &amp;#34;e28&amp;#34;,  &amp;#34;e29&amp;#34;,  &amp;#34;e30&amp;#34;,  &amp;#34;e31&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The opcode or instruction definitions are in the &lt;code&gt;riscv_opcodes&lt;/code&gt; array: &lt;code&gt;const struct riscv_opcode riscv_opcodes[]&lt;/code&gt;. We add the following lines to the end of the array and before &lt;code&gt;{0, 0, INSN_CLASS_NONE, 0, 0, 0, 0, 0}&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/* xBGAS instructions */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{&amp;#34;eld&amp;#34;,       64, INSN_CLASS_I, &amp;#34;d,o(s)&amp;#34;,  MATCH_ELD,  MASK_ELD,  match_opcode, 0 },
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{&amp;#34;eaddie&amp;#34;,    64, INSN_CLASS_I, &amp;#34;G,s,o&amp;#34;,   MATCH_EADDIE,MASK_EADDIE,match_opcode, 0 },
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the meaning of the fields in the &lt;code&gt;riscv_opcode&lt;/code&gt; structure, you may refer to the structure definition in the &lt;code&gt;include/opcode/riscv.h&lt;/code&gt; file.&lt;/p&gt;
+&lt;h3 id=&#34;24-opcodesriscv-disc&#34;&gt;2.4 &lt;code&gt;opcodes/riscv-dis.c&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;We made the following changes in this file:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;static const char * const *riscv_xbgas_names;&lt;/code&gt; to hold the register names usded by the disassembler.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;static const char * const *riscv_xbgas_names;&lt;/code&gt; in the &lt;code&gt;set_default_riscv_dis_options&lt;/code&gt; function and the &lt;code&gt;parse_riscv_dis_option_without_args&lt;/code&gt; function (after &lt;code&gt;riscv_fpr_names = ...&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the &lt;code&gt;print_insn_args&lt;/code&gt; function, we add the following lines to &lt;code&gt;switch (*oparg)&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  case &amp;#39;H&amp;#39;: /* EXT1: xBGAS extended register */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    print (info-&amp;gt;stream, dis_style_register, &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;           riscv_xbgas_names[rs1]);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    break;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  case &amp;#39;J&amp;#39;: /* EXT2, xBGAS extended register */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    print (info-&amp;gt;stream, dis_style_register, &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;           riscv_xbgas_names[EXTRACT_OPERAND (RS2, l)]);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    break;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  case &amp;#39;G&amp;#39;: /* EXTD/EXT3, xBGAS extended register */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    print (info-&amp;gt;stream, dis_style_register, &amp;#34;%s&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;           riscv_xbgas_names[rd]);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    break;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;H&lt;/code&gt;, &lt;code&gt;J&lt;/code&gt; and &lt;code&gt;G&lt;/code&gt; will also be used in the next step.&lt;/p&gt;
+&lt;h3 id=&#34;25-gasconfigtc-riscvc&#34;&gt;2.5 &lt;code&gt;gas/config/tc-riscv.c&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;In this file, we made the following changes.&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;reg_class&lt;/code&gt; enumeration, we add the &lt;code&gt;RCLASS_XBGAS&lt;/code&gt; before &lt;code&gt;RCLASS_MAX&lt;/code&gt;. The &lt;code&gt;reg_class&lt;/code&gt; should be like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;enum reg_class
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RCLASS_GPR,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RCLASS_FPR,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RCLASS_VECR,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RCLASS_VECM,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RCLASS_XBGAS,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RCLASS_MAX,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  RCLASS_CSR
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that &lt;code&gt;RCLASS_XBGAS&lt;/code&gt; should be before &lt;code&gt;RCLASS_MAX&lt;/code&gt;, otherwise, the assembler will not recognize the new register class.&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;validate_riscv_insn&lt;/code&gt; function, we add the following lines to &lt;code&gt;switch (*oparg)&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;case &#39;G&#39;: /* EXTD/EXT3, xBGAS extended register. */&lt;/code&gt; before &lt;code&gt;case &#39;d&#39;: USE_BITS (OP_MASK_RD, OP_SH_RD); break;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;case &#39;H&#39;: /* EXT1, xBGAS extended register. */&lt;/code&gt; before &lt;code&gt;case &#39;s&#39;: USE_BITS (OP_MASK_RS1, OP_SH_RS1); break;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;case &#39;J&#39;: /* EXT2, xBGAS extended register. */&lt;/code&gt; before &lt;code&gt;case &#39;t&#39;: USE_BITS (OP_MASK_RS2, OP_SH_RS2); break;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;G&lt;/code&gt;, &lt;code&gt;H&lt;/code&gt; and &lt;code&gt;J&lt;/code&gt; are the same as the ones in the &lt;code&gt;opcodes/riscv-dis.c&lt;/code&gt; file; they should be unique and not used by other cases.&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;md_begin&lt;/code&gt; function, wee add the following lines after other &lt;code&gt;hash_reg_names&lt;/code&gt; functions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  hash_reg_names (RCLASS_XBGAS, riscv_xbgas_names_numeric, NGPR);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the &lt;code&gt;riscv_ip&lt;/code&gt; function, we add the following lines to &lt;code&gt;switch (*oparg)&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  case &amp;#39;G&amp;#39;: /* EXTD xBGAS destination register */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  case &amp;#39;H&amp;#39;: /* EXT1 xBGAS register */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  case &amp;#39;J&amp;#39;: /* EXT2 xBGAS register */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    if( reg_lookup (&amp;amp;asarg, RCLASS_XBGAS, &amp;amp;regno))
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      char c = *oparg;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      if (*asarg == &amp;#39; &amp;#39;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        ++asarg;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      /* Now that we have assembled one operand, we use the args
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         string to figure out where it goes in the instruction.  */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      switch (c)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        case &amp;#39;G&amp;#39;:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          INSERT_OPERAND (RD, *ip, regno);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          break;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        case &amp;#39;H&amp;#39;:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          INSERT_OPERAND (RS1, *ip, regno);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          break;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        case &amp;#39;J&amp;#39;:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          INSERT_OPERAND (RS2, *ip, regno);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          break;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      continue;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    break;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the &lt;code&gt;tc_riscv_regname_to_dw2regnum&lt;/code&gt; function, wee add the following lines:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  if ((reg = reg_lookup_internal (regname, RCLASS_XBGAS)) &amp;gt;= 0)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    return reg + 128;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;3-risc-v-gnu-compiler-toolchain&#34;&gt;3. RISC-V GNU Compiler Toolchain&lt;/h2&gt;
+&lt;p&gt;The original RISC-V GNU Compiler Toolchain can be found at the &lt;a href=&#34;https://github.com/riscv-collab/riscv-gnu-toolchain&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt;. However, as we modified the &lt;code&gt;binutils&lt;/code&gt;, we need to redirect the binutils submodule to our modified version. We can do this by forking the repo and modifying the &lt;code&gt;.gitmodules&lt;/code&gt; file in the RISC-V GNU Compiler Toolchain repo. The &lt;code&gt;.gitmodules&lt;/code&gt; file should be like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-v&#34; data-lang=&#34;v&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;submodule&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;binutils&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nv&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;binutils&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nv&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//github.com/Artlands/binutils-xbgas.git
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nv&#34;&gt;branch&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;xbgas&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, we run &lt;code&gt;git submodule sync&lt;/code&gt; to update the submodule. Then we can build the RISC-V GNU Compiler Toolchain as usual.&lt;/p&gt;
+&lt;p&gt;For the xBGAS supported RISC-V GNU Compiler Toolchain, please refer to the &lt;a href=&#34;https://github.com/Artlands/riscv-gnu-toolchain-xbgas/tree/xbgas&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt;. The &lt;code&gt;binutils&lt;/code&gt; submodule is redirected to our modified version which can be found at the &lt;a href=&#34;https://github.com/Artlands/binutils-xbgas/tree/xbgas&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
