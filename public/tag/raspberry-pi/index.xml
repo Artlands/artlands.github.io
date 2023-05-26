@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi | Jie Li</title>
+    <link>https://lijie.me/tag/raspberry-pi/</link>
+      <atom:link href="https://lijie.me/tag/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <description>Raspberry Pi</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jul 2020 22:20:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png</url>
+      <title>Raspberry Pi</title>
+      <link>https://lijie.me/tag/raspberry-pi/</link>
+    </image>
+    
+    <item>
+      <title>Build a Raspberry Pi Cluster</title>
+      <link>https://lijie.me/post/build-a-raspberry-pi-cluster/</link>
+      <pubDate>Wed, 22 Jul 2020 22:20:00 +0000</pubDate>
+      <guid>https://lijie.me/post/build-a-raspberry-pi-cluster/</guid>
+      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Building a cluster with Raspberry Pi is a good way to learn about cluster computing and distributed systems. It is also a good way to learn about Linux and networking. In this post, I will show you how to build a cluster with Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;The hardware we need is listed below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Four &lt;a href=&#34;https://smile.amazon.com/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o03_s01?ie=UTF8&amp;amp;psc=1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Raspberry Pi 4 B boards&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Four 64GB MicroSD cards, one for each board&lt;/li&gt;
+&lt;li&gt;Cables: four Ethernet cables, four MicroUSB cables, one Micro HDMI cable&lt;/li&gt;
+&lt;li&gt;One &lt;a href=&#34;https://www.ravpower.com/products/rp-uc07-40w-8a-4-port-desktop-charger&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;40W 8A 4-port USB Charging Station&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;One 5-port switch&lt;/li&gt;
+&lt;li&gt;One &lt;a href=&#34;https://www.amazon.com/Connectors-Stackable-Raspberry-Enclosure-Heatsinks/dp/B07MQXRGZR/ref=sr_1_10?crid=239FMUN4XL2AJ&amp;amp;keywords=Raspberry&amp;#43;Pi&amp;#43;4&amp;#43;Cluster&amp;#43;Case&amp;amp;qid=1685068998&amp;amp;s=electronics&amp;amp;sprefix=raspberry&amp;#43;pi&amp;#43;4&amp;#43;cluster&amp;#43;case%2Celectronics%2C85&amp;amp;sr=1-10&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cluster rack&lt;/a&gt; that has coolers installed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cluster-assemble&#34;&gt;Cluster assemble&lt;/h2&gt;
+&lt;p&gt;Easy and self-explanatory. Lots of related videos on Youtube.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to access each node using wireless LAN and use Ethernet port for communication among nodes. Thus the switch does not have to be connected to internet.&lt;/p&gt;
+&lt;p&gt;The connection is shown below:&lt;/p&gt;
+&lt;img src=&#39;images/connection.png&#39; width=&#39;50%&#39; height=&#39;50%&#39;&gt;
+&lt;h2 id=&#34;os-installation&#34;&gt;OS installation&lt;/h2&gt;
+&lt;p&gt;We use CentOS in our cluster. To be noticed, the distribution for armv7hl platform is called &amp;ldquo;CentOS Userland Linux&amp;rdquo; and not &amp;ldquo;CentOS Linux&amp;rdquo;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For Raspberry Pi 4, we have a limited choice on what version of CentOS we can use. We choose &lt;a href=&#34;http://mirror.math.princeton.edu/pub/centos-altarch/7/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2009-sda.raw.xz&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4&lt;/a&gt; for our cluster.&lt;/li&gt;
+&lt;li&gt;Download the zip file and unzip it to iso image. Image all microSD cards with CentOS7 using &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Raspberry Pi Imager&lt;/a&gt;. The default root passward is &lt;strong&gt;centos&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;expand-capacity&#34;&gt;Expand capacity&lt;/h2&gt;
+&lt;p&gt;There is a &lt;code&gt;/root/README&lt;/code&gt; file that describes how to expand the root partition to capacity of the MicroSD. On each node, follow the instructions to expand the root filesystem using: &lt;code&gt;rootfs-expand&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;== CentOS 7 userland ==
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;If you want to automatically resize your / partition, just type the following (as root user):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rootfs-expand
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;network-configuration&#34;&gt;Network configuration&lt;/h2&gt;
+&lt;h4 id=&#34;wifi&#34;&gt;Wifi&lt;/h4&gt;
+&lt;p&gt;On each node, configure Wifi network with &lt;strong&gt;Network Manager Text User Interface&lt;/strong&gt;(&lt;code&gt;nmtui&lt;/code&gt;) tool.&lt;/p&gt;
+&lt;h4 id=&#34;ethernet&#34;&gt;Ethernet&lt;/h4&gt;
+&lt;p&gt;There is no &lt;code&gt;eth0&lt;/code&gt; ifcfg files by default. We create a file named  &lt;code&gt;/etc/sysconfig/network-scripts/ifcfg-eth0&lt;/code&gt; as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DEVICE=eth0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;BOOTPROTO=none
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ONBOOT=yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PREFIX=24
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# IPADDR are 10.0.0.1, 10.0.0.2, 10.0.0.3, 10.0.0.4 for master, node1, node2, node3, respectively. 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPADDR=10.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Restart network service: &lt;code&gt;systemctl restart network&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;brand-new-keyhttpsmagpiraspberrypiorgarticlesbuild-a-raspberry-pi-cluster-computer&#34;&gt;&lt;a href=&#34;https://magpi.raspberrypi.org/articles/build-a-raspberry-pi-cluster-computer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Brand new key&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For the cluster to work, each worker node needs to be able to talk to the master node without needing a password to login. To do this, we use SSH keys. Run the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t rsa
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This creates a unique digital &amp;ldquo;identity&amp;rdquo; (and key pairs) for the computer. You&amp;rsquo;ll be asked a few questions; just press RETURN for each one and do not create a passphrase when asked. Next, tell the master(10.0.0.1 in our setup) about the keys by running the following on every other node:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-copy-id 10.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, do the same on the master node and copy its key to every other node in the cluster.&lt;/p&gt;
+&lt;h2 id=&#34;setup-nfs-serverhttpswwwitzgeekcomhow-toslinuxcentos-how-toshow-to-setup-nfs-server-on-centos-7-rhel-7-fedora-22html&#34;&gt;&lt;a href=&#34;https://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-setup-nfs-server-on-centos-7-rhel-7-fedora-22.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Setup NFS server&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;NFS stands for Network File System, helps you to share files and folders between Linux/Unix systems, developed by SUN Microsystems in 1990. NFS enables you to mount a remote share locally.&lt;/p&gt;
+&lt;h4 id=&#34;install-nfs-server&#34;&gt;Install NFS server&lt;/h4&gt;
+&lt;p&gt;Install the below package for NFS server using the &lt;code&gt;yum&lt;/code&gt; command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yum install -y nfs-utils
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once the packages are installed, enable and start NFS services.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start nfs-server rpcbind
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl enable nfs-server rpcbind
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;create-nfs-share&#34;&gt;Create NFS share&lt;/h4&gt;
+&lt;p&gt;Create a directory to share with the NFS client. We will create a new directory named &lt;code&gt;nfs&lt;/code&gt; in the &lt;code&gt;/&lt;/code&gt; partition.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir /nfs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Allow NFS client to read and write to the created directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod 777 /nfs/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We have to modify &lt;code&gt;/etc/exports&lt;/code&gt; file to make an entry of directory &lt;code&gt;/nfs&lt;/code&gt; that you want to share.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vi /etc/exports
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create a NFS share:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/nfs 10.0.0.2/4(rw,sync,no_root_squash,no_subtree_check)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;10.0.0.2/4&lt;/code&gt; defines the range of client IP addresses.&lt;/p&gt;
+&lt;p&gt;Export the shared directories using the following command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;exportfs -r
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;configure-firewall&#34;&gt;Configure firewall&lt;/h4&gt;
+&lt;p&gt;We need to configure the firewall on the NFS server to allow NFS client to access the NFS share. Run the following commands on the NFS server(master, 10.0.0.1)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --permanent --add-service mountd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --permanent --add-service rpc-bind
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --permanent --add-service nfs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;install-nfs-client&#34;&gt;Install NFS client&lt;/h4&gt;
+&lt;p&gt;We need to install NFS packages on NFS client(10.0.0.2, 10.0.0.3, 10.0.0.4) to mount a remote NFS share. Install NFS packages using below command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yum install -y nfs-utils
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Check the NFS shares available on the NFS server by running the following command on the NFS client.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;showmount -e 10.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;mount-nfs-share&#34;&gt;Mount NFS share&lt;/h4&gt;
+&lt;p&gt;Create a directory on NFS client to mount the NFS share &lt;code&gt;/nfs&lt;/code&gt; which we have created in the NFS server.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir /nfs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Use blow command to mount a NFS share &lt;code&gt;/nfs&lt;/code&gt; from NFS server &lt;code&gt;10.0.0.1&lt;/code&gt; in &lt;code&gt;/nfs&lt;/code&gt; on NFS client.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount 10.0.0.1:/nfs /nfs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can use the &lt;code&gt;df -hT&lt;/code&gt; command to check the mounted NFS share.&lt;/p&gt;
+&lt;p&gt;Create a file on the mounted directory to verify the read and write access on NFS share.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch /nfs/test
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If other nodes can see the test file, you have working NFS setup.&lt;/p&gt;
+&lt;h4 id=&#34;automount-nfs-shares&#34;&gt;Automount NFS shares.&lt;/h4&gt;
+&lt;p&gt;To mount the shares automatically on every reboot, you would need to modify &lt;code&gt;/etc/fstab&lt;/code&gt; file of your NFS clients.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vi /etc/fstab
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add an entry at the end of the file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;10.0.0.1:/nfs /nfs nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Save and close the file.&lt;/p&gt;
+&lt;p&gt;Reboot the client machine and check whether the share is automatically mounted or not.&lt;/p&gt;
+&lt;p&gt;If you want to unmount that shared directory from your NFS client, you can unmount that particular directory using &lt;code&gt;umount &lt;/code&gt; command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;umount /nfs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;the-raspberry-pi-cluster&#34;&gt;The Raspberry Pi Cluster&lt;/h2&gt;
+&lt;img src=&#39;images/cluster1.jpg&#39; width=&#39;50%&#39; height=&#39;50%&#39;&gt;
+&lt;img src=&#39;images/cluster3.png&#39; width=&#39;50%&#39; height=&#39;50%&#39;&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

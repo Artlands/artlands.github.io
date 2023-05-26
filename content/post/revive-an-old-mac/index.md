@@ -8,7 +8,7 @@ tags: [MacOS, 32-bit, 64-bit, EFI]
 categories: []
 projects: []
 date: '2023-02-09T00:00:00Z'
-lastMod: '2023-05-25T22:20:00Z'
+lastMod: '2023-02-09T22:20:00Z'
 image:
   caption: ''
   focal_point: ''

@@ -279,12 +279,12 @@
 
   
 
-<meta name="description" content="Background This project started with a old MAC I found on the street, which was thrown away by someone. It is a 2006 model with 32-bit EFI and 64-bit CPU. The problem is that the latest macOS version it can run is 10." />
+<meta name="description" content="Background Building a cluster with Raspberry Pi is a good way to learn about cluster computing and distributed systems. It is also a good way to learn about Linux and networking." />
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://lijie.me/post/revive-an-old-mac/" />
-<link rel="canonical" href="https://lijie.me/post/revive-an-old-mac/" />
+<link rel="alternate" hreflang="en-us" href="https://lijie.me/post/build-a-raspberry-pi-cluster/" />
+<link rel="canonical" href="https://lijie.me/post/build-a-raspberry-pi-cluster/" />
 
 
 
@@ -317,18 +317,18 @@
 <meta property="twitter:card" content="summary" />
 <meta property="twitter:image" content="https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Jie Li" />
-<meta property="og:url" content="https://lijie.me/post/revive-an-old-mac/" />
-<meta property="og:title" content="Revive An Old Mac | Jie Li" />
-<meta property="og:description" content="Background This project started with a old MAC I found on the street, which was thrown away by someone. It is a 2006 model with 32-bit EFI and 64-bit CPU. The problem is that the latest macOS version it can run is 10." /><meta property="og:image" content="https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:url" content="https://lijie.me/post/build-a-raspberry-pi-cluster/" />
+<meta property="og:title" content="Build a Raspberry Pi Cluster | Jie Li" />
+<meta property="og:description" content="Background Building a cluster with Raspberry Pi is a good way to learn about cluster computing and distributed systems. It is also a good way to learn about Linux and networking." /><meta property="og:image" content="https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
       property="article:published_time"
-      content="2023-02-09T00:00:00&#43;00:00"
+      content="2020-07-22T22:20:00&#43;00:00"
     />
   
   
-    <meta property="article:modified_time" content="2023-02-09T22:20:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-07-22T22:20:00&#43;00:00">
   
 
 
@@ -354,12 +354,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://lijie.me/post/revive-an-old-mac/"
+    "@id": "https://lijie.me/post/build-a-raspberry-pi-cluster/"
   },
-  "headline": "Revive An Old Mac",
+  "headline": "Build a Raspberry Pi Cluster",
   
-  "datePublished": "2023-02-09T00:00:00Z",
-  "dateModified": "2023-02-09T22:20:00Z",
+  "datePublished": "2020-07-22T22:20:00Z",
+  "dateModified": "2020-07-22T22:20:00Z",
   
   "author": {
     "@type": "Person",
@@ -374,7 +374,7 @@
       "url": "https://lijie.me/media/icon_hu3afd8c885b2087cf2323e0ad3dd02247_6732_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Background This project started with a old MAC I found on the street, which was thrown away by someone. It is a 2006 model with 32-bit EFI and 64-bit CPU. The problem is that the latest macOS version it can run is 10."
+  "description": "Background Building a cluster with Raspberry Pi is a good way to learn about cluster computing and distributed systems. It is also a good way to learn about Linux and networking."
 }
 </script>
 
@@ -396,7 +396,7 @@
 
 
   
-  <title>Revive An Old Mac | Jie Li</title>
+  <title>Build a Raspberry Pi Cluster | Jie Li</title>
 
   
   
@@ -416,7 +416,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="23015f3c89d93448ade8c1e88e6d4a1d" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="788cb70cf122333c45ac5081f8038e48" >
 
   
   
@@ -779,10 +779,10 @@
   
   
 <div class="article-container pt-3">
-  <h1>Revive An Old Mac</h1>
+  <h1>Build a Raspberry Pi Cluster</h1>
 
   
-  <p class="page-subtitle">How to install a 64-bit Linux OS on Mac models that require a 32-bit EFI.</p>
+  <p class="page-subtitle">How to build a cluster with Raspberry Pi.</p>
   
 
   
@@ -809,10 +809,8 @@
     
     
       
-          Last updated on
-      
     
-    Feb 9, 2023
+    Jul 22, 2020
   </span>
   
 
@@ -821,7 +819,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    5 min read
   </span>
   
 
@@ -849,59 +847,104 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h3 id="background">Background</h3>
-<p>This project started with a old MAC I found on the street, which was thrown away by someone. It is a 2006 model with 32-bit EFI and 64-bit CPU. The problem is that the latest macOS version it can run is 10.7.5, which is too old to run most of the software I need. So I decided to install a Linux OS on it. However, the 32-bit EFI makes it impossible to install a 64-bit Linux OS. After some research, I found a way to install a 64-bit Linux OS on a 32-bit EFI Mac. The following is the procedure.</p>
-<h3 id="prepare-an-usb-stick-with-32-bit-efi-and-64-bit-linux">Prepare an USB Stick with 32-bit EFI and 64-bit Linux.</h3>
+      <h2 id="background">Background</h2>
+<p>Building a cluster with Raspberry Pi is a good way to learn about cluster computing and distributed systems. It is also a good way to learn about Linux and networking. In this post, I will show you how to build a cluster with Raspberry Pi.</p>
+<p>The hardware we need is listed below:</p>
+<ul>
+<li>Four <a href="https://smile.amazon.com/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o03_s01?ie=UTF8&amp;psc=1" target="_blank" rel="noopener">Raspberry Pi 4 B boards</a></li>
+<li>Four 64GB MicroSD cards, one for each board</li>
+<li>Cables: four Ethernet cables, four MicroUSB cables, one Micro HDMI cable</li>
+<li>One <a href="https://www.ravpower.com/products/rp-uc07-40w-8a-4-port-desktop-charger" target="_blank" rel="noopener">40W 8A 4-port USB Charging Station</a></li>
+<li>One 5-port switch</li>
+<li>One <a href="https://www.amazon.com/Connectors-Stackable-Raspberry-Enclosure-Heatsinks/dp/B07MQXRGZR/ref=sr_1_10?crid=239FMUN4XL2AJ&amp;keywords=Raspberry&#43;Pi&#43;4&#43;Cluster&#43;Case&amp;qid=1685068998&amp;s=electronics&amp;sprefix=raspberry&#43;pi&#43;4&#43;cluster&#43;case%2Celectronics%2C85&amp;sr=1-10" target="_blank" rel="noopener">cluster rack</a> that has coolers installed</li>
+</ul>
+<h2 id="cluster-assemble">Cluster assemble</h2>
+<p>Easy and self-explanatory. Lots of related videos on Youtube.</p>
+<p>We&rsquo;re going to access each node using wireless LAN and use Ethernet port for communication among nodes. Thus the switch does not have to be connected to internet.</p>
+<p>The connection is shown below:</p>
+<img src='images/connection.png' width='50%' height='50%'>
+<h2 id="os-installation">OS installation</h2>
+<p>We use CentOS in our cluster. To be noticed, the distribution for armv7hl platform is called &ldquo;CentOS Userland Linux&rdquo; and not &ldquo;CentOS Linux&rdquo;.</p>
 <ol>
-<li>
-<p>Insert a usb stick and find its name on Mac. The following commands are used based on the stick name <strong>disk2</strong>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">diskutil list
-</span></span></code></pre></div></li>
-<li>
-<p>Write zero to the disk and quit the process after abut 10 seconds by <code>Ctrl+c</code>. Before running the following command, you may need to run <code>diskutil unmountDisk /dev/disk2</code> to avoid <code>Resource busy</code> error.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo dd if=/dev/zero of=/dev/disk2
-</span></span></code></pre></div></li>
-<li>
-<p>Create an EFI partition on the stick using <code>diskutil</code>, format is set to <code>MS-DOS(FAT)</code> and Scheme is set to <code>GUID Partition Map</code>. Then check the EFI partition identifier via <code>diskutil list</code>. Suppose its identifier is <strong>disk2s1</strong>. Note that the EFI partitin is not mounted by macOS by default so you have to manually mount it by yourself:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir /tmp/sdb1
-</span></span><span class="line"><span class="cl">sudo mount -o rw -t msdos /dev/disk2s1 /tmp/sdb1
-</span></span></code></pre></div></li>
-<li>
-<p>Create some folders in the EFI partition:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo mkdir -p /tmp/sdb1/boot/grub/
-</span></span><span class="line"><span class="cl">sudo mkdir -p /tmp/sdb1/efi/boot/
-</span></span></code></pre></div></li>
-<li>
-<p>Create <code>grub.cfg</code> file in <code>/tmp/sdb1/boot/grub/</code> and write the following lines:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">search --file --set=root /boot/grub/loopback.cfg
-</span></span><span class="line"><span class="cl">configfile /boot/grub/loopback.cfg
-</span></span></code></pre></div></li>
-<li>
-<p>Download a <code>bootia32.efi</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://github.com/jfwells/linux-asus-t100ta/raw/master/boot/bootia32.efi
-</span></span></code></pre></div></li>
-<li>
-<p>Copy the <code>bootia32.efi</code> to <code>/tmp/sdb1/efi/boot/</code> and then unmount the drive:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo cp /path/to/bootia32.efi /tmp/sdb1/efi/boot/
-</span></span></code></pre></div></li>
-<li>
-<p>Put the ISO image on the second partition (suppose its identifier is <strong>disk2s2</strong>). You may need to run <code>diskutil unmountDisk /dev/disk2</code> to avoid <code>Resource busy</code> error:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo dd if=/path/to/lubuntu.iso of=/dev/disk2s2 bs=1M.
-</span></span></code></pre></div></li>
+<li>For Raspberry Pi 4, we have a limited choice on what version of CentOS we can use. We choose <a href="http://mirror.math.princeton.edu/pub/centos-altarch/7/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2009-sda.raw.xz" target="_blank" rel="noopener">CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4</a> for our cluster.</li>
+<li>Download the zip file and unzip it to iso image. Image all microSD cards with CentOS7 using <a href="https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/" target="_blank" rel="noopener">Raspberry Pi Imager</a>. The default root passward is <strong>centos</strong>.</li>
 </ol>
-<h3 id="install-the-os">Install the OS.</h3>
-<ol>
-<li>Insert the USB stick to the old Mac.</li>
-<li>Power on the machine and hold the <code>Alt</code> key until two drivers show on the screen.</li>
-<li>Choose the EFI and press Enter.</li>
-<li>Wait for a couple of seconds and some texts like &ldquo;Try Lubuntu&hellip;&rdquo; show up, then press <code>e</code> to edit the boot options. Change <code>quiet splash</code> to <code>nomodest splash</code> . This is the one I use, you may change it according to your needs. For more options: <a href="https://wiki.ubuntuusers.de/Bootoptionen/" target="_blank" rel="noopener">boot options</a>.</li>
-<li>Press <code>f10</code> to save the changes and start installing.</li>
-</ol>
-<h3 id="references">References:</h3>
-<ol>
-<li>ISO images can be found here: <a href="https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/" target="_blank" rel="noopener">mattgadient.com</a>.</li>
-<li>Adapt the method from <a href="https://mesom.de/efi32boot/index.html" target="_blank" rel="noopener">Live CD on an USB Stick</a> and adjust to the macOS environment.</li>
-</ol>
+<h2 id="expand-capacity">Expand capacity</h2>
+<p>There is a <code>/root/README</code> file that describes how to expand the root partition to capacity of the MicroSD. On each node, follow the instructions to expand the root filesystem using: <code>rootfs-expand</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">== CentOS 7 userland ==
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">If you want to automatically resize your / partition, just type the following (as root user):
+</span></span><span class="line"><span class="cl">rootfs-expand
+</span></span></code></pre></div><h2 id="network-configuration">Network configuration</h2>
+<h4 id="wifi">Wifi</h4>
+<p>On each node, configure Wifi network with <strong>Network Manager Text User Interface</strong>(<code>nmtui</code>) tool.</p>
+<h4 id="ethernet">Ethernet</h4>
+<p>There is no <code>eth0</code> ifcfg files by default. We create a file named  <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DEVICE=eth0
+</span></span><span class="line"><span class="cl">BOOTPROTO=none
+</span></span><span class="line"><span class="cl">ONBOOT=yes
+</span></span><span class="line"><span class="cl">PREFIX=24
+</span></span><span class="line"><span class="cl"># IPADDR are 10.0.0.1, 10.0.0.2, 10.0.0.3, 10.0.0.4 for master, node1, node2, node3, respectively. 
+</span></span><span class="line"><span class="cl">IPADDR=10.0.0.1
+</span></span></code></pre></div><p>Restart network service: <code>systemctl restart network</code></p>
+<h2 id="brand-new-keyhttpsmagpiraspberrypiorgarticlesbuild-a-raspberry-pi-cluster-computer"><a href="https://magpi.raspberrypi.org/articles/build-a-raspberry-pi-cluster-computer" target="_blank" rel="noopener">Brand new key</a></h2>
+<p>For the cluster to work, each worker node needs to be able to talk to the master node without needing a password to login. To do this, we use SSH keys. Run the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ssh-keygen -t rsa
+</span></span></code></pre></div><p>This creates a unique digital &ldquo;identity&rdquo; (and key pairs) for the computer. You&rsquo;ll be asked a few questions; just press RETURN for each one and do not create a passphrase when asked. Next, tell the master(10.0.0.1 in our setup) about the keys by running the following on every other node:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ssh-copy-id 10.0.0.1
+</span></span></code></pre></div><p>Finally, do the same on the master node and copy its key to every other node in the cluster.</p>
+<h2 id="setup-nfs-serverhttpswwwitzgeekcomhow-toslinuxcentos-how-toshow-to-setup-nfs-server-on-centos-7-rhel-7-fedora-22html"><a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-setup-nfs-server-on-centos-7-rhel-7-fedora-22.html" target="_blank" rel="noopener">Setup NFS server</a></h2>
+<p>NFS stands for Network File System, helps you to share files and folders between Linux/Unix systems, developed by SUN Microsystems in 1990. NFS enables you to mount a remote share locally.</p>
+<h4 id="install-nfs-server">Install NFS server</h4>
+<p>Install the below package for NFS server using the <code>yum</code> command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum install -y nfs-utils
+</span></span></code></pre></div><p>Once the packages are installed, enable and start NFS services.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl start nfs-server rpcbind
+</span></span><span class="line"><span class="cl">systemctl enable nfs-server rpcbind
+</span></span></code></pre></div><h4 id="create-nfs-share">Create NFS share</h4>
+<p>Create a directory to share with the NFS client. We will create a new directory named <code>nfs</code> in the <code>/</code> partition.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir /nfs
+</span></span></code></pre></div><p>Allow NFS client to read and write to the created directory.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">chmod 777 /nfs/
+</span></span></code></pre></div><p>We have to modify <code>/etc/exports</code> file to make an entry of directory <code>/nfs</code> that you want to share.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vi /etc/exports
+</span></span></code></pre></div><p>Create a NFS share:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/nfs 10.0.0.2/4(rw,sync,no_root_squash,no_subtree_check)
+</span></span></code></pre></div><p><code>10.0.0.2/4</code> defines the range of client IP addresses.</p>
+<p>Export the shared directories using the following command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">exportfs -r
+</span></span></code></pre></div><h4 id="configure-firewall">Configure firewall</h4>
+<p>We need to configure the firewall on the NFS server to allow NFS client to access the NFS share. Run the following commands on the NFS server(master, 10.0.0.1)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">firewall-cmd --permanent --add-service mountd
+</span></span><span class="line"><span class="cl">firewall-cmd --permanent --add-service rpc-bind
+</span></span><span class="line"><span class="cl">firewall-cmd --permanent --add-service nfs
+</span></span><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></div><h4 id="install-nfs-client">Install NFS client</h4>
+<p>We need to install NFS packages on NFS client(10.0.0.2, 10.0.0.3, 10.0.0.4) to mount a remote NFS share. Install NFS packages using below command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum install -y nfs-utils
+</span></span></code></pre></div><p>Check the NFS shares available on the NFS server by running the following command on the NFS client.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">showmount -e 10.0.0.1
+</span></span></code></pre></div><h4 id="mount-nfs-share">Mount NFS share</h4>
+<p>Create a directory on NFS client to mount the NFS share <code>/nfs</code> which we have created in the NFS server.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir /nfs
+</span></span></code></pre></div><p>Use blow command to mount a NFS share <code>/nfs</code> from NFS server <code>10.0.0.1</code> in <code>/nfs</code> on NFS client.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mount 10.0.0.1:/nfs /nfs
+</span></span></code></pre></div><p>You can use the <code>df -hT</code> command to check the mounted NFS share.</p>
+<p>Create a file on the mounted directory to verify the read and write access on NFS share.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">touch /nfs/test
+</span></span></code></pre></div><p>If other nodes can see the test file, you have working NFS setup.</p>
+<h4 id="automount-nfs-shares">Automount NFS shares.</h4>
+<p>To mount the shares automatically on every reboot, you would need to modify <code>/etc/fstab</code> file of your NFS clients.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vi /etc/fstab
+</span></span></code></pre></div><p>Add an entry at the end of the file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">10.0.0.1:/nfs /nfs nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0
+</span></span></code></pre></div><p>Save and close the file.</p>
+<p>Reboot the client machine and check whether the share is automatically mounted or not.</p>
+<p>If you want to unmount that shared directory from your NFS client, you can unmount that particular directory using <code>umount </code> command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">umount /nfs
+</span></span></code></pre></div><h2 id="the-raspberry-pi-cluster">The Raspberry Pi Cluster</h2>
+<img src='images/cluster1.jpg' width='50%' height='50%'>
+<img src='images/cluster3.png' width='50%' height='50%'>
 
     </div>
 
@@ -913,13 +956,9 @@
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tag/macos/">MacOS</a>
+  <a class="badge badge-light" href="/tag/raspberry-pi/">Raspberry Pi</a>
   
-  <a class="badge badge-light" href="/tag/32-bit/">32-bit</a>
-  
-  <a class="badge badge-light" href="/tag/64-bit/">64-bit</a>
-  
-  <a class="badge badge-light" href="/tag/efi/">EFI</a>
+  <a class="badge badge-light" href="/tag/cluster/">Cluster</a>
   
 </div>
 
@@ -940,7 +979,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flijie.me%2Fpost%2Frevive-an-old-mac%2F&amp;text=Revive&#43;An&#43;Old&#43;Mac" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flijie.me%2Fpost%2Fbuild-a-raspberry-pi-cluster%2F&amp;text=Build&#43;a&#43;Raspberry&#43;Pi&#43;Cluster" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -957,7 +996,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Flijie.me%2Fpost%2Frevive-an-old-mac%2F&amp;t=Revive&#43;An&#43;Old&#43;Mac" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Flijie.me%2Fpost%2Fbuild-a-raspberry-pi-cluster%2F&amp;t=Build&#43;a&#43;Raspberry&#43;Pi&#43;Cluster" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -976,7 +1015,7 @@
         
       
       <li>
-        <a href="mailto:?subject=Revive%20An%20Old%20Mac&amp;body=https%3A%2F%2Flijie.me%2Fpost%2Frevive-an-old-mac%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=Build%20a%20Raspberry%20Pi%20Cluster&amp;body=https%3A%2F%2Flijie.me%2Fpost%2Fbuild-a-raspberry-pi-cluster%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -993,7 +1032,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Flijie.me%2Fpost%2Frevive-an-old-mac%2F&amp;title=Revive&#43;An&#43;Old&#43;Mac" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Flijie.me%2Fpost%2Fbuild-a-raspberry-pi-cluster%2F&amp;title=Build&#43;a&#43;Raspberry&#43;Pi&#43;Cluster" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1010,7 +1049,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=Revive&#43;An&#43;Old&#43;Mac%20https%3A%2F%2Flijie.me%2Fpost%2Frevive-an-old-mac%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=Build&#43;a&#43;Raspberry&#43;Pi&#43;Cluster%20https%3A%2F%2Flijie.me%2Fpost%2Fbuild-a-raspberry-pi-cluster%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1027,7 +1066,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Flijie.me%2Fpost%2Frevive-an-old-mac%2F&amp;title=Revive&#43;An&#43;Old&#43;Mac" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Flijie.me%2Fpost%2Fbuild-a-raspberry-pi-cluster%2F&amp;title=Build&#43;a&#43;Raspberry&#43;Pi&#43;Cluster" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
