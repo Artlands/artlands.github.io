@@ -76,7 +76,7 @@ sections:
           description:  |2-
             Responsibilities include:
             * Integrated data from multiple sources to analyze system-wide architectural efficiency and workload patterns.
-            * AConducted statistical analysis of job-level monitoring data and applied various machine learning models (e.g., Random Forests, Support Vector Classification, LinearSVC) to classify jobs based on extracted time-series features.
+            * Conducted statistical analysis of job-level monitoring data and applied various machine learning models (e.g., Random Forests, Support Vector Classification, LinearSVC) to classify jobs based on extracted time-series features.
             * Developed a novel approach to encoding time-series monitoring data as images and trained a Convolutional Neural Network (CNN) to classify job signatures with high accuracy.
         - title: Graduate Student Programmer
           company: Teaching, Learning and Professional Development Center (TLPDC)
