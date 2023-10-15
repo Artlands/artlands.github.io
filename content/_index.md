@@ -41,7 +41,7 @@ sections:
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
         - title: Research Assistant
-          company: Data-Intensive Scalable Computing Laboratory (DISCL)
+          company: Data-Intensive Scalable Computing Laboratory (DISCL), TTU
           company_url: 'https://discl.cs.ttu.edu/'
           company_logo: DISCL
           location: Lubbock, TX
@@ -49,37 +49,26 @@ sections:
           date_end: ''
           description: |2-
               Responsibilities include:
-              * Conduct research in the areas of High-Performance Computing, Computer Architecture, and Parallel and Distributed Computing.
-              * Attend conferences, workshops, and seminars to stay up-to-date with the latest research developments and technologies
-              * Participate in the development and maintenance of research software and tools.
-              * Mentor graduate and undergraduate students on their independent studies.
-              * Administer two high-end servers (Hugo and Alita) hosted in the High-Performance Computing Center at Texas Tech University.
+              * Research and Publication: Conducted innovative research in High-Performance Computing, Computer Architecture, and Parallel and Distributed Computing. Authored and published research papers in reputable academic conferences and journals.
+              * Professional Development and Networking: Actively engaged in the academic community by attending conferences, workshops, and seminars. Presented research papers and posters at these events.
+              * Professional Development and Networking: Actively engaged in the academic community by attending conferences, workshops, and seminars. Presented research papers and posters at these events.
+              * Professional Development and Networking: Actively engaged in the academic community by attending conferences, workshops, and seminars. Presented research papers and posters at these events.
+              * Professional Development and Networking: Actively engaged in the academic community by attending conferences, workshops, and seminars. Presented research papers and posters at these events.
         - title: Graduate Student Intern
-          company: NERSC + LBL-Computer Architecture Group
+          company: Lawrence Berkeley National Laboratory (LBNL)
           company_url: 'https://www.lbl.gov/'
           company_logo: LBL
-          location: Berkeley, CA (remote)
-          date_start: '2022-06-01'
-          date_end: '2022-08-31'
-          description:  |2-
-            Responsibilities include:
-            * Simplified the code structure and create a more efficient and streamlined codebase by refactoring and combining the data collection codes used to access the system monitoring data collected from NERSC’s Perlmutter.
-            * Analyzed the system monitoring data on a large scale to evaluate resource utilization by examining metrics such as CPU and GPU utilization, host DRAM utilization, and GPU HBM2 utilization. Identified trends and patterns in the data to gain insights into system performance.
-            * Summarized the analysis and published a system resource analysis paper in ISC 2023.
-        - title: Graduate Student Intern
-          company: National Energy Research Scientific Computing Center (NERSC)
-          company_url: 'https://www.nersc.gov/'
-          company_logo: LBL
-          location: Berkeley, CA (remote)
+          location: Berkeley, CA (Summer)
           date_start: '2021-06-01'
-          date_end: '2021-08-31'
+          date_end: '2023-08-31'
           description:  |2-
             Responsibilities include:
-            * Integrated data from multiple sources to analyze system-wide architectural efficiency and workload patterns.
-            * Conducted statistical analysis of job-level monitoring data and applied various machine learning models (e.g., Random Forests, Support Vector Classification, LinearSVC) to classify jobs based on extracted time-series features.
-            * Developed a novel approach to encoding time-series monitoring data as images and trained a Convolutional Neural Network (CNN) to classify job signatures with high accuracy.
+            * Data Integration and Analysis: Integrated HPC monitoring data from diverse sources (LDMS, DCGM, Slurm, VictoriaMetrics) for comprehensive analysis of system-wide architectural efficiency, including CPU, GPU, DRAM, and HBM2 resource utilization. Identified critical trends and patterns within the data to drive insights into system performance, with a focus on NERSC's Cori and Perlmutter.
+            * Machine Learning Expertise: Conducted in-depth statistical analysis of job-level monitoring data. Applied a variety of machine learning models, including SVC, LinearSVC, Decision Tree, and Random Forests, to analyze jobs based on time-series features.
+            * Machine Learning Expertise: Conducted in-depth statistical analysis of job-level monitoring data. Applied a variety of machine learning models, including SVC, LinearSVC, Decision Tree, and Random Forests, to analyze jobs based on time-series features.
+            * Simulation and System Design: Designed and implemented a discrete event simulator to study resource management and job scheduling in HPC systems, with a specific focus on systems with disaggregated memory resources.
         - title: Graduate Student Programmer
-          company: Teaching, Learning and Professional Development Center (TLPDC)
+          company: Teaching, Learning and Professional Development Center (TLPDC), TTU
           company_url: 'https://www.depts.ttu.edu/tlpdc/'
           company_logo: TLPDC
           location: Lubbock, TX
@@ -87,9 +76,8 @@ sections:
           date_end: '2019-08-31'
           description:  |2-
             Responsibilities include:
-            * Managed the maintenance and regular updates of the TLPDC Websites, ensuring that all content was current, accurate, and accessible to internal and external stakeholders.
-            * Developed and implemented comprehensive backup strategies to safeguard critical data assets, reducing the risk of data loss and ensuring business continuity in the event of system failures or other disruptions.
-            * Maintained a deep understanding of emerging technologies and best practices related to web development, software applications, and data management, leveraging this knowledge to continuously improve processes and approaches to project management and delivery.
+            * Simulation and System Design: Designed and implemented a discrete event simulator to study resource management and job scheduling in HPC systems, with a specific focus on systems with disaggregated memory resources.
+            * Simulation and System Design: Designed and implemented a discrete event simulator to study resource management and job scheduling in HPC systems, with a specific focus on systems with disaggregated memory resources.
     design:
       columns: '1'
   # - block: portfolio
