@@ -22,7 +22,7 @@ organizations:
     url: https://discl.cs.ttu.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include High-Performance Computing, Advanced Computer Architecture, and Parallel and Distributed Computing.
+bio: ''
 
 # Interests to show in About widget
 interests:
@@ -74,11 +74,11 @@ social:
     link: uploads/CV_Jie_2023.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ''
+email: 'jie[dot]li[at]ttu[dot]edu'
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-Jie Li is a Ph.D. candidate in Computer Science at Texas Tech University, where he is a member of the [Data-Intensive Scalable Computing Laboratory (DISCL)](https://discl.cs.ttu.edu/doku.php?id=home) under the guidance of [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/). Jie's research interests lie in the areas of **High-Performance Computing**, **Advanced Computer Architecture**, and **Parallel and Distributed Computing**. Jie completed his Master of Science degree in Computer Science from Texas Tech University in 2019. Prior to that, he earned a bachelor’s degree in architecture.
+Jie Li is a Ph.D. candidate in Computer Science at Texas Tech University, where he is a member of the [Data-Intensive Scalable Computing Laboratory (DISCL)](https://discl.cs.ttu.edu/doku.php?id=home) under the guidance of [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/). Jie's research interests lie in the field of High-Performance Computing (HPC), including HPC systems monitoring, automation, and management, operational data analytics, job scheduling, and system architecture. He also has a keen interest in parallel and distributed computing and computer architecture. Jie completed his Master of Science degree in Computer Science from Texas Tech University in 2019. Prior to that, he earned a bachelor’s degree in architecture.
 {style="text-align: justify;"}
