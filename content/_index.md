@@ -29,6 +29,7 @@ sections:
   #         icon: camera-retro
   #         icon_pack: fas
   - block: experience
+    id: experience
     content:
       title: Experience
       # Date format for experience
@@ -117,21 +118,21 @@ sections:
     design:
       columns: '2'
       view: compact
-  - block: collection
-    id: publications
-    content:
-      title: Publications
-      # text: |-
-      #   {{% callout note %}}
-      #   Quickly discover relevant content by [filtering publications](./publication/).
-      #   {{% /callout %}}
-      filters:
-        folders:
-          - publication
-        exclude_featured: false
-    design:
-      columns: '2'
-      view: citation
+  # - block: collection
+  #   id: publications
+  #   content:
+  #     title: Publications
+  #     # text: |-
+  #     #   {{% callout note %}}
+  #     #   Quickly discover relevant content by [filtering publications](./publication/).
+  #     #   {{% /callout %}}
+  #     filters:
+  #       folders:
+  #         - publication
+  #       exclude_featured: false
+  #   design:
+  #     columns: '2'
+  #     view: citation
   - block: collection
     id: posts
     content:
