@@ -19,12 +19,12 @@ author_notes: []
 date: '2021-06-01'
 
 # Date to publish webpage (NOT necessarily Bibtex publication's date).
-publishDate: '2023-10-16T19:56:57.972739Z'
+publishDate: '2023-10-16T20:08:16.961830Z'
 
 # Publication type.
 # A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- article-journal
+- 
 
 # Publication name and optional abbreviated publication name.
 publication: '*IEEE Transactions on Computers*'

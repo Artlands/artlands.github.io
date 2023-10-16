@@ -21,12 +21,12 @@ author_notes: []
 date: '2021-01-01'
 
 # Date to publish webpage (NOT necessarily Bibtex publication's date).
-publishDate: '2023-10-16T19:56:57.984094Z'
+publishDate: '2023-10-16T20:08:16.973904Z'
 
 # Publication type.
 # A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- book
+- 
 
 # Publication name and optional abbreviated publication name.
 publication: '*The Eurographics Association*'

@@ -17,12 +17,12 @@ author_notes: []
 date: '2023-07-01'
 
 # Date to publish webpage (NOT necessarily Bibtex publication's date).
-publishDate: '2023-10-16T19:56:58.046581Z'
+publishDate: '2023-10-16T20:08:17.036697Z'
 
 # Publication type.
 # A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- paper-conference
+- 
 
 # Publication name and optional abbreviated publication name.
 publication: '*2023 IEEE 16th International Conference on Cloud Computing (CLOUD)*'
