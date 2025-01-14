@@ -9,6 +9,10 @@ export default {
         sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
         mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
       },
+      colors:{
+        'link-color': '#CC0000',
+        'link-color-dark': '#FF0000',
+      }
     },
   },
   plugins: [require("@tailwindcss/typography")],

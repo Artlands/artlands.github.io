@@ -23,37 +23,85 @@ const projects: CollectionEntry<"projects">[] = (
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <h1 class="font-semibold text-black dark:text-white">
-        About Jie Li
-      </h1>
       <div class="space-y-16">
         <section>
+          <h1 class="font-semibold text-black dark:text-white">
+            About
+          </h1>
           <article class="space-y-4">
-            <span>
-              <p>
-                Jie Li is a Postdoctoral Researcher in Computer Science at Texas Tech University, where he is a member of the <Link href="https://discl.cs.ttu.edu/doku.php?id=home"> DISCL</Link> under the guidance of <Link href="https://www.myweb.ttu.edu/yonchen/">Dr. Yong Chen</Link>. Jie's research interests lie in the field of High-Performance Computing (HPC), including HPC systems monitoring, automation, and management, operational data analytics, job scheduling, and system architecture. He also has a keen interest in parallel and distributed computing and computer architecture. Jie completed his Master of Science degree in Computer Science from Texas Tech University in 2019. Prior to that, he earned a bachelor’s degree in architecture.
-              </p>
-            </span>
+            <p>
+              Jie Li is a Postdoctoral Researcher in Computer Science at Texas Tech University, where he is a member of the <Link href="https://discl.cs.ttu.edu/doku.php?id=home">Data-Intensive Scalable Computing Laboratory (DISCL)</Link> under the guidance of <Link href="https://www.myweb.ttu.edu/yonchen/">Dr. Yong Chen</Link>. Jie completed his Master of Science degree in Computer Science from Texas Tech University in 2019. Prior to that, he earned a bachelor’s degree in architecture.
+            </p>
           </article>
         </section>
 
-        <section class="animate space-y-2 border-2 border-red-800 text-red-800 dark:border-red-400 border-dashed p-2 dark:text-red-400">
-          📢 I am actively seeking tenure-track Assistant Professor positions in Computer Science. If you are aware of any open positions or would like to connect, please feel free to reach out to me.
+        <section>
+          <h1 class="font-semibold text-black dark:text-white">
+            Research Summary
+          </h1>
+          <article class="space-y-4">
+            <p>
+              My research journey in Computer Science has been deeply rooted in the realm of High-Performance Computing (HPC) with a multifaceted approach. My commitment lies in exploring innovative solutions for advancing HPC system management, operational data analytics, job scheduling, and system architecture. Leveraging a blend of academic expertise and practical experience, I have actively engaged in pioneering research endeavors that contribute to the advancement of HPC systems and their performance optimization.
+            </p>
+          </article>
         </section>
 
+        <!-- <section class="animate space-y-2 border-2 border-red-800 text-red-800 dark:border-red-400 border-dashed p-2 dark:text-red-400">
+          📢 I am actively seeking tenure-track Assistant Professor positions in Computer Science. If you are aware of any open positions or would like to connect, please feel free to reach out to me.
+        </section> -->
+
         <section class="animate space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="font-semibold text-black dark:text-white">News</h2>
+            <button 
+              id="toggleNews" 
+              class="underline underline-offset-[3px] decoration-black/30 dark:decoration-white/30 hover:decoration-black/50 focus-visible:decoration-black/50 dark:hover:decoration-white/50 dark:focus-visible:decoration-white/50 text-current hover:text-red-600 focus-visible:text-black dark:hover:text-red-400 dark:focus-visible:text-white transition-colors duration-300 ease-in-out"
+            >
+              See all news
+            </button>
+          </div>
+          <ul 
+            id="newsList" 
+            class="not-prose list-disc pl-5 flex flex-col gap-4 overflow-y-auto max-h-[200px] transition-all duration-500 scroll_bar"
+          >
+            <li>[09/2024]: <Link href="https://ieeexplore.ieee.org/abstract/document/10740887">Job Scheduling in High-Performance Computing Systems with Disaggregated Memory Resources</Link> appears at CLUSTER'24.</li>
+            <li>[06/2024]: Jie continues his work at DISCL as a Postdoctoral Researcher after earning his Ph.D.</li>
+            <li>[01/2024]: <Link href="https://ieeexplore.ieee.org/document/10556078">Towards Cycle-accurate Simulation of xBGAS</Link> appears at ICNC'24.</li>
+            <li>[07/2023]: <Link href="https://ieeexplore.ieee.org/document/10254988">Workload Failure Prediction for Data Centers</Link> appears at CLOUD'23.</li>
+            <li>[05/2023]: <Link href="https://dl.acm.org/doi/10.1007/978-3-031-32041-5_16">Analyzing Resource Utilization in an HPC System: A Case Study of NERSC Perlmutter</Link> appears at ISC'23.</li>
+            <li>[03/2021]: <Link href="https://ieeexplore.ieee.org/document/9381710">HAM: Hotspot-Aware Manager for Improving Communications With 3D-Stacked Memory</Link> appears at IEEE Transactions on Computers.</li>
+            <li>[09/2020]: <Link href="https://ieeexplore.ieee.org/document/9229641">MonSTer: An Out-of-the-Box Monitoring Tool for High Performance Computing Systems</Link> appears at CLUSTER'20.</li>
+            <li>[09/2019]: <Link href="https://dl.acm.org/doi/10.1145/3357526.3357550">PIMS: A Lightweight Processing-in-Memory Accelerator for Stencil Computation</Link> appears at MEMSYS'19.</li>
+          </ul>
+        
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const toggleButton = document.getElementById('toggleNews');
+              const newsList = document.getElementById('newsList');
+              let expanded = false;
+        
+              toggleButton.addEventListener('click', () => {
+                expanded = !expanded;
+                newsList.style.maxHeight = expanded ? '800px' : '200px';
+                newsList.style.overflowY = expanded ? 'visible' : 'auto';
+                toggleButton.textContent = expanded ? 'Show less' : 'See all news';
+              });
+            });
+          </script>
+        </section>
+
+        <!-- <section class="animate space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
               News
             </h2>
             <Link href="/news"> See all news </Link>
           </div>
-          <ul class="not-prose flex flex-col gap-4 overflow-y-auto max-h-[300px] scroll_bar">
-            <li>[07/2024]: Our paper, “Job Scheduling in High-Performance Computing Systems with Disaggregated Memory Resources,” has been <span class="text-red-800 dark:text-red-400">accepted to <Link href="https://clustercomp.org/2024/">CLUSTER'24</Link></span>. Our co-author George will present the paper in Kobe, Japan on September 26th.</li>
+          <ul class="not-prose list-disc pl-5 flex flex-col gap-4 overflow-y-auto max-h-[300px] scroll_bar">
+            <li>[07/2024]: <Link href="https://ieeexplore.ieee.org/abstract/document/10740887">Job Scheduling in High-Performance Computing Systems with Disaggregated Memory Resources</Link>appears at CLUSTER'24</li>
             <li>[06/2024]: Jie continues his work at DISCL as a Postdoctoral Researcher after earning his Ph.D.</li>
-            <li>[05/2024]: Jie has successfully defended his dissertation: “Optimizing High-Performance Computing Systems: Insights from System Monitoring, Workload Management, and Scheduling Strategies.”</li>
           </ul>
-        </section>
+        </section> -->
 
         <!-- <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
@@ -93,14 +141,10 @@ const projects: CollectionEntry<"projects">[] = (
 
         <section class="animate space-y-4">
           <h2 class="font-semibold text-black dark:text-white">
-            Let's Connect
+            Contact
           </h2>
-          <!-- <article>
-            <p>
-              If you want to get in touch with me about something, reach out on social media or send me an email.
-            </p>
-          </article> -->
           <ul class="not-prose flex flex-wrap gap-2">
+            <li><span class="font-semibold">Email:</span> jie.li[at]ttu[dot]edu /</li>
             {
               SOCIALS.map((SOCIAL) => (
                 <li class="flex gap-x-2 text-nowrap">
