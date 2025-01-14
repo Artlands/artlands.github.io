@@ -1,4 +1,6 @@
 ---
+import Link from '../components/Link.astro'
+// import { SITE, HOME } from "@consts";
 import PageLayout from '../layouts/BaseLayout.astro'
 import Section from '../components/Section.astro'
 import Card from '../components/Card.astro'
@@ -10,6 +12,8 @@ import SkillLayout from '../components/SkillLayout.astro'
 import { Image } from 'astro:assets'
 import profile from '../assets/jie.jpeg'
 
+// import { getCollection } from "astro:content";
+
 // import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['C', 'C++', 'Python', 'SQL', 'English', 'Chinese']
@@ -19,6 +23,12 @@ const ml_libraries = ['Numpy', 'Pandas', 'Scikitlearn', 'Tensorflow', 'Matplotli
 // const MAX_POSTS = 10
 // const allPosts = await getAllPosts()
 // const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+
+// const publications: CollectionEntry<"publications">[] = (
+//   await getCollection("publications")
+// )
+//   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+//   .slice(0, SITE.NUM_PUBLICATIONS_ON_HOMEPAGE);
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -71,11 +81,57 @@ const ml_libraries = ['Numpy', 'Pandas', 'Scikitlearn', 'Tensorflow', 'Matplotli
 			</div>
 		</section>
 
-		<Section title='About'>
+		<!-- <Section title='About'>
 			<p class='text-muted-foreground'>
 				Jie Li is a Postdoctoral Researcher in Computer Science at Texas Tech University, where he is a member of the <a href="https://discl.cs.ttu.edu/doku.php?id=home"> Data-Intensive Scalable Computing Laboratory (DISCL)</a> under the guidance of <a href="https://www.myweb.ttu.edu/yonchen/">Dr. Yong Chen</a>. Jie's research interests lie in the field of High-Performance Computing (HPC), including HPC systems monitoring, automation, and management, operational data analytics, job scheduling, and system architecture. He also has a keen interest in parallel and distributed computing and computer architecture. Jie completed his Master of Science degree in Computer Science from Texas Tech University in 2019. Prior to that, he earned a bachelor’s degree in architecture.
 			</p>
-		</Section>
+		</Section> -->
+
+		<section>
+			<article class="space-y-4">
+				<span class="animate">
+					<p>
+						Jie Li is a Postdoctoral Researcher in Computer Science at Texas Tech University, where he is a member of the <Link href="https://discl.cs.ttu.edu/doku.php?id=home"> Data-Intensive Scalable Computing Laboratory (DISCL)</Link> under the guidance of <Link href="https://www.myweb.ttu.edu/yonchen/">Dr. Yong Chen</Link>. Jie's research interests lie in the field of High-Performance Computing (HPC), including HPC systems monitoring, automation, and management, operational data analytics, job scheduling, and system architecture. He also has a keen interest in parallel and distributed computing and computer architecture. Jie completed his Master of Science degree in Computer Science from Texas Tech University in 2019. Prior to that, he earned a bachelor’s degree in architecture.
+					</p>
+				</span>
+			</article>
+		</section>
+
+		<section class="animate space-y-2 border-2 border-red-800 text-red-800 dark:border-red-400 border-dashed p-2 dark:text-red-400">
+			📢📢 I am actively seeking tenure-track Assistant Professor positions in Computer Science. If you are aware of any open positions or would like to connect, please feel free to reach out to me.
+		</section>
+
+		<section class="animate space-y-4">
+			<div class="flex flex-wrap items-center justify-between gap-y-2">
+				<h2 class="font-semibold text-black dark:text-white">
+					News
+				</h2>
+			</div>
+			<ul class="not-prose flex flex-col gap-4 overflow-y-auto max-h-[150px] scroll_bar">
+				<li>[07/2024]: Our paper, “Job Scheduling in High-Performance Computing Systems with Disaggregated Memory Resources,” has been <span class="text-red-600">accepted to <Link href="https://clustercomp.org/2024/">CLUSTER'24</Link></span>. Our co-author George will present the paper in Kobe, Japan on September 26th.</li>
+				<li>[06/2024]: Jie continues his work at DISCL as a Postdoctoral Researcher after earning his Ph.D.</li>
+				<li>[05/2024]: Jie has successfully defended his dissertation: “Optimizing High-Performance Computing Systems: Insights from System Monitoring, Workload Management, and Scheduling Strategies.”</li>
+			</ul>
+		</section>
+
+		<!-- <section class="animate space-y-6">
+			<div class="flex flex-wrap items-center justify-between gap-y-2">
+				<h2 class="font-semibold text-black dark:text-white">
+					Recent research
+				</h2>
+				<Link href="/publications"> See all research </Link>
+			</div>
+			<ul class="not-prose flex flex-col gap-4">
+				{
+					publications.map((publication) => (
+						<li>
+							<PublicationCard entry={publication} />
+						</li>
+					))
+				}
+			</ul>
+		</section> -->
+
 
 		<!-- {
 			allPostsByDate.length > 0 && (
@@ -91,7 +147,7 @@ const ml_libraries = ['Numpy', 'Pandas', 'Scikitlearn', 'Tensorflow', 'Matplotli
 			)
 		} -->
 
-		<Section title='Education'>
+		<!-- <Section title='Education'>
 			<Card
 				heading='Doctor of Philosophy (Ph.D.)'
 				subheading='Computer Science, Texas Tech University'
@@ -116,9 +172,9 @@ const ml_libraries = ['Numpy', 'Pandas', 'Scikitlearn', 'Tensorflow', 'Matplotli
 					<li>Thesis: PIMS: A Lightweight Processing-in-Memory Accelerator for Stencil Computations</li>
 				</ul>
 			</Card>
-		</Section>
+		</Section> -->
 
-		<Section title='Experience'>
+		<!-- <Section title='Experience'>
 			<Card
 				heading='Research Assistant'
 				subheading='Data-Intensive Scalable Computing Laboratory (DISCL), TTU'
@@ -149,7 +205,7 @@ const ml_libraries = ['Numpy', 'Pandas', 'Scikitlearn', 'Tensorflow', 'Matplotli
 				<li>Simulation and System Design: Designed and implemented a discrete event simulator to study resource management and job scheduling in HPC systems, with a specific focus on systems with disaggregated memory resources.</li>
 			</ul>
 			</Card>
-		</Section>
+		</Section> -->
 
 		<!-- <Section title='Projects'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
@@ -195,10 +251,10 @@ const ml_libraries = ['Numpy', 'Pandas', 'Scikitlearn', 'Tensorflow', 'Matplotli
 			/>
 		</Section> -->
 
-		<Section title='Skills'>
+		<!-- <Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />
 			<SkillLayout title='Databases' skills={databases} />
 			<SkillLayout title='ML Libraries' skills={ml_libraries} />
-		</Section>
+		</Section> -->
 	</div>
 </PageLayout>
