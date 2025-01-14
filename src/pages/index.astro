@@ -10,15 +10,15 @@ import SkillLayout from '../components/SkillLayout.astro'
 import { Image } from 'astro:assets'
 import profile from '../assets/jie.jpeg'
 
-import { getAllPosts, sortMDByDate } from '@/utils'
+// import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['C', 'C++', 'Python', 'SQL', 'English', 'Chinese']
 const databases = ['MongoDB', 'MySQL', 'TimescaleDB(PostgreSQL)', 'InfluxDB']
 const ml_libraries = ['Numpy', 'Pandas', 'Scikitlearn', 'Tensorflow', 'Matplotlib']
 
-const MAX_POSTS = 10
-const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+// const MAX_POSTS = 10
+// const allPosts = await getAllPosts()
+// const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
