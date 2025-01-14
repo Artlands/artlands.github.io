@@ -1,24 +1,17 @@
-export type SiteConfig = {
-	author: string
-	title: string
-	description: string
-	lang: string
-	ogLocale: string
-	date: {
-		locale: string | string[] | undefined
-		options: Intl.DateTimeFormatOptions
-	}
-}
+export type Site = {
+  TITLE: string;
+  DESCRIPTION: string;
+  EMAIL: string;
+  NUM_POSTS_ON_HOMEPAGE: number;
+  NUM_PROJECTS_ON_HOMEPAGE: number;
+};
 
-export type PaginationLink = {
-	url: string
-	text?: string
-	srLabel?: string
-}
+export type Metadata = {
+  TITLE: string;
+  DESCRIPTION: string;
+};
 
-export type SiteMeta = {
-	title: string
-	description?: string
-	ogImage?: string | undefined
-	articleDate?: string | undefined
-}
+export type Socials = {
+  NAME: string;
+  HREF: string;
+}[];
