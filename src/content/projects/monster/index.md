@@ -1,5 +1,5 @@
 ---
-title: "Astro Sphere"
+title: "Integrated Data Collection and Visualization Framework for HPC"
 description: "Portfolio and blog build with astro."
 date: "03/18/2024"
 demoURL: "https://astro-sphere-demo.vercel.app"
