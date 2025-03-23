@@ -82,9 +82,12 @@ const projects: CollectionEntry<"projects">[] = (
         </section>
 
         <section class="animate space-y-2">
-          <h2 class="text-xl font-semibold text-black dark:text-white">
-            Selected Publications
-          </h2>
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="text-xl font-semibold text-black dark:text-white">
+              Selected Publications
+            </h2>
+            <Link href="/publications"> See all publications </Link>
+          </div>
           <ul class="list-disc pl-5 space-y-2">
             {selectedPubs.map(paper => (
               <li>
@@ -97,50 +100,6 @@ const projects: CollectionEntry<"projects">[] = (
             ))}
           </ul>
         </section>
-
-        <!-- <section class="animate space-y-1">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">News</h2>
-            <button 
-              id="toggleNews" 
-              class="underline underline-offset-[3px] decoration-black/30 dark:decoration-white/30 hover:decoration-black/50 focus-visible:decoration-black/50 dark:hover:decoration-white/50 dark:focus-visible:decoration-white/50 text-current hover:text-red-600 focus-visible:text-black dark:hover:text-red-400 dark:focus-visible:text-white transition-colors duration-300 ease-in-out"
-            >
-              See all
-            </button>
-          </div>
-          <ul 
-            id="newsList" 
-            class="not-prose list-disc pl-5 flex flex-col gap-4 overflow-y-auto max-h-[200px] transition-all duration-500 scroll_bar"
-          >
-            <li>[09/2024]: <Link href="https://ieeexplore.ieee.org/abstract/document/10740887">Job Scheduling in High-Performance Computing Systems with Disaggregated Memory Resources</Link> appears at CLUSTER'24.</li>
-            <li>[06/2024]: Jie continues his work at DISCL as a Postdoctoral Researcher after earning his Ph.D.</li>
-            <li>[01/2024]: <Link href="https://ieeexplore.ieee.org/document/10556078">Towards Cycle-accurate Simulation of xBGAS</Link> appears at ICNC'24.</li>
-            <li>[07/2023]: <Link href="https://ieeexplore.ieee.org/document/10254988">Workload Failure Prediction for Data Centers</Link> appears at CLOUD'23.</li>
-            <li>[05/2023]: <Link href="https://dl.acm.org/doi/10.1007/978-3-031-32041-5_16">Analyzing Resource Utilization in an HPC System: A Case Study of NERSC Perlmutter</Link> appears at ISC'23.</li>
-            <li>[03/2021]: <Link href="https://ieeexplore.ieee.org/document/9381710">HAM: Hotspot-Aware Manager for Improving Communications With 3D-Stacked Memory</Link> appears at IEEE Transactions on Computers.</li>
-            <li>[09/2020]: <Link href="https://ieeexplore.ieee.org/document/9229641">MonSTer: An Out-of-the-Box Monitoring Tool for High Performance Computing Systems</Link> appears at CLUSTER'20.</li>
-            <li>[09/2019]: <Link href="https://dl.acm.org/doi/10.1145/3357526.3357550">PIMS: A Lightweight Processing-in-Memory Accelerator for Stencil Computation</Link> appears at MEMSYS'19.</li>
-          </ul>
-        
-          <script>
-            document.addEventListener('DOMContentLoaded', () => {
-              const toggleButton = document.getElementById('toggleNews');
-              const newsList = document.getElementById('newsList');
-              let expanded = false;
-        
-              toggleButton?.addEventListener('click', () => {
-                expanded = !expanded;
-                if (newsList) {
-                  newsList.style.maxHeight = expanded ? '800px' : '200px';
-                  newsList.style.overflowY = expanded ? 'visible' : 'auto';
-                }
-                if (toggleButton) {
-                  toggleButton.textContent = expanded ? 'Show less' : 'See all';
-                }
-              });
-            });
-          </script>
-        </section> -->
 
         <!-- <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
@@ -162,7 +121,7 @@ const projects: CollectionEntry<"projects">[] = (
 
         <!-- <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
+            <h2 class="text-xl font-semibold text-black dark:text-white">
               Recent projects
             </h2>
             <Link href="/projects"> See all projects </Link>
