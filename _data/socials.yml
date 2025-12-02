@@ -10,9 +10,9 @@
 # blogger_url: # your blogger URL
 # bluesky_url: # your bluesky URL
 # cv_pdf: /assets/pdf/CV_JieLi.pdf # path to your CV PDF file
-dblp_url: https://dblp.org/pid/17/2703-57.html # your DBLP profile url
 # discord_id: # your discord id (18-digit unique numerical identifier)
 email: jie.li@ttu.edu # your email address
+dblp_url: https://dblp.org/pid/17/2703-57.html # your DBLP profile url
 # facebook_id: # your facebook id
 # flickr_id: # your flickr id
 # github_username: # your GitHub user name
@@ -36,8 +36,8 @@ orcid_id: 0000-0002-5311-3012 # your ORCID ID
 # quora_username: # your Quora username
 # research_gate_profile: # your profile on ResearchGate
 rss_icon: false # comment this line to hide the RSS icon
+scopus_id: 57210605934 # your profile on Scopus
 scholar_userid: G7oDoOcAAAAJ # your Google Scholar ID
-# scopus_id: # your profile on Scopus
 # semanticscholar_id: # your Semantic Scholar ID
 # spotify_id: # your spotify id
 # stackoverflow_id: # your stackoverflow id
