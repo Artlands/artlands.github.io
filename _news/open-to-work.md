@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-`📢 I am actively seeking tenure-track Assistant Professor positions in Computer Science. If you are aware of any open positions or would like to connect, please feel free to reach out to me.`
+`📢 I am also seeking tenure-track Assistant Professor positions in Computer Science. If you are aware of any open positions or would like to connect, please feel free to reach out to me.`
