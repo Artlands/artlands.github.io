@@ -14,7 +14,7 @@
     var el = document.getElementById("typed-subtitle");
     if (!el) return;
 
-    var phrases = ["Post-doctoral Researcher @ Texas Tech University", "High-Performance Computing", "Systems Security", "AI Infrastructure"];
+    var phrases = ["Research Assistant Professor @ Texas Tech University", "High-Performance Computing", "Computer Architecture", "Distributed Systems", "Systems Security", "AI Infrastructure"];
 
     if (prefersReducedMotion) {
       el.textContent = phrases[0];
@@ -152,7 +152,7 @@
     },
     whoami: function () {
       return [
-        "jie.li — Post-doctoral Researcher, Texas Tech University",
+        "jie.li — Research Assistant Professor, Texas Tech University",
         "Technical lead, DISCL & NSF CAC IUCRC.",
         "Builds supercomputers (REPACSS, $12.25M), monitors them (MonSTer),",
         "schedules them (Disaggregation-Aware Scheduler), and keeps them secure.",

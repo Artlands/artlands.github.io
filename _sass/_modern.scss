@@ -268,14 +268,17 @@ html:not(.js) .reveal {
     padding: 14px 16px;
     overflow-y: auto;
     flex: 1;
+    color: #e6edf3;
 
+    // explicit color: the theme's global `div/span/pre` color rules would
+    // otherwise leak in (black text on the dark terminal in light mode)
     pre {
       margin: 0;
       white-space: pre-wrap;
       word-break: break-word;
       background: transparent;
       border: 0;
-      color: inherit;
+      color: #e6edf3;
       font-size: inherit;
     }
 
@@ -306,7 +309,7 @@ html:not(.js) .reveal {
       background: transparent;
       border: 0;
       outline: none;
-      color: #c9d1d9;
+      color: #e6edf3;
       font-family: inherit;
       font-size: inherit;
       caret-color: #7ee787;

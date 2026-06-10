@@ -28,7 +28,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am currently a Post-doctoral Researcher in the Department of Computer Science at Texas Tech University, where I also serve as the technical lead for the [Data-Intensive Scalable Computing Laboratory (DISCL)](https://discl.cs.ttu.edu/) and the [NSF Cloud and Autonomic Computing Center (CAC IUCRC)](https://nsfcac.org/).
+I am currently a Assistant Research Professor in the Department of Computer Science at Texas Tech University, where I also serve as the technical lead for the [Data-Intensive Scalable Computing Laboratory (DISCL)](https://discl.cs.ttu.edu/) and the [NSF Cloud and Autonomic Computing Center (CAC IUCRC)](https://nsfcac.org/).
 
 I earned my Ph.D. in Computer Science from Texas Tech University in May 2024, advising under [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/). My research lies at the intersection of `High-Performance Computing (HPC)`, `Systems Security`, and `AI Infrastructure`. I am passionate about addressing critical inefficiencies and security vulnerabilities in modern computing environments through AI-driven system monitoring, proactive cyber-defense, and hardware-software co-design.
 

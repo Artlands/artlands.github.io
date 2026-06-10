@@ -8,7 +8,7 @@ middle_name:
 last_name: Li
 contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Jie Li — Post-doctoral Researcher in Computer Science at Texas Tech University, working on High-Performance Computing, Systems Security, and AI Infrastructure.
+  Jie Li — Research Assistant Professor in Computer Science at Texas Tech University, working on High-Performance Computing, Systems Security, and AI Infrastructure.
 footer_text: >
 keywords: High Performance Computing, Distributed Systems, Computer Architecture, AI infrastructure # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)

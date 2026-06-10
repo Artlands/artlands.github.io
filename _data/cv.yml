@@ -36,6 +36,13 @@
 - title: Research & Professional Experience
   type: time_table
   contents:
+    - title: Research Assistant Professor
+      institution: Texas Tech University
+      year: 2026 - now
+      description:
+        - Lead research in HPC, focusing on distributed architectures, operational integrity (security), energy-aware resource management, data management, and AI applications.
+        - Technical lead of the Data-Intensive Scalable Computing Laboratory (DISCL) and the NSF Cloud and Autonomic Computing Center (CAC IUCRC).
+        - Supervise graduate and undergraduate researchers in systems design, experimentation, and publication.
     - title: Post-doctoral Researcher
       institution: Texas Tech University
       year: 2024 - now
