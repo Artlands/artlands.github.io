@@ -16,6 +16,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-projects",
+          title: "Projects",
+          description: "Research efforts and open-source software I build and maintain.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-repositories",
+          title: "Repositories",
+          description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/repositories/";
+          },
         },{id: "nav-cv",
           title: "CV",
           description: "",
@@ -23,15 +37,96 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-am-actively-seeking-tenure-track-assistant-professor-positions-in-computer-science-if-you-are-aware-of-any-open-positions-or-would-like-to-connect-please-feel-free-to-reach-out-to-me",
+        },{id: "news-i-am-actively-seeking-tenure-track-assistant-professor-positions-in-computer-science-if-you-are-aware-of-any-open-positions-or-would-like-to-connect-please-feel-free-to-reach-out-to-me",
           title: '📢 I am actively seeking tenure-track Assistant Professor positions in Computer Science. If...',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "projects-disaggregation-aware-scheduler",
+          title: 'Disaggregation-Aware Scheduler',
+          description: "A simulation framework for job scheduling in HPC systems with disaggregated memory, developed with LBNL.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/disaggregation-scheduler/";
+            },},{id: "projects-energy-efficient-ai-infrastructure",
+          title: 'Energy-Efficient AI Infrastructure',
+          description: "Benchmarking and tuning the power consumption of LLM inference and GPU clusters.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/energy-efficient-ai/";
+            },},{id: "projects-secure-amp-autonomous-hpc",
+          title: 'Secure &amp;amp; Autonomous HPC',
+          description: "AI-driven monitoring, anomaly detection, and layered cyber-defense for open-science infrastructure.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/hpc-security/";
+            },},{id: "projects-monster",
+          title: 'MonSTer',
+          description: "An out-of-the-box monitoring framework for HPC systems, adopted by Dell&#39;s Omnia project.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/monster/";
+            },},{id: "projects-repacss",
+          title: 'REPACSS',
+          description: "Co-designed and built a $12.25M NSF-funded supercomputing facility powered by renewable energy, from rack layout to system software.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/repacss/";
+            },},{id: "projects-xbgas-simulation-toolchain",
+          title: 'xBGAS Simulation Toolchain',
+          description: "Cycle-accurate simulator and runtime for the xBGAS global address space extension to RISC-V.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/xbgas/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/CV_JieLi.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6A%69%65.%6C%69@%74%74%75.%65%64%75", "_blank");
+        },
+      },{
+        id: 'social-dblp',
+        title: 'DBLP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://dblp.org/pid/17/2703-57.html", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/Artlands", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0002-5311-3012", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-scopus',
+        title: 'Scopus',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.scopus.com/authid/detail.uri?authorId=57210605934", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=G7oDoOcAAAAJ", "_blank");
+        },
+      },{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
