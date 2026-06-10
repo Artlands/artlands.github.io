@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Jie
 middle_name:
 last_name: Li
-contact_note: > 
+contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Jie Li — Post-doctoral Researcher in Computer Science at Texas Tech University, working on High-Performance Computing, Systems Security, and AI Infrastructure.
 footer_text: >

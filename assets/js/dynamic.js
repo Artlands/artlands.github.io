@@ -105,7 +105,10 @@
     ].join("\n");
     try {
       console.log("%c" + art, "color:#4cc9f0; font-family:monospace;");
-      console.log("%cHey, fellow terminal dweller. Try the Konami code (↑↑↓↓←→←→BA) or type “hpc” anywhere on the page — there is a login node hiding here.", "color:#8b949e; font-size:12px;");
+      console.log(
+        "%cHey, fellow terminal dweller. Try the Konami code (↑↑↓↓←→←→BA) or type “hpc” anywhere on the page — there is a login node hiding here.",
+        "color:#8b949e; font-size:12px;"
+      );
     } catch (e) {
       /* no console, no party */
     }
@@ -191,7 +194,13 @@
     },
     cat: function (arg) {
       if (arg === "secrets.txt") {
-        return ["# secrets.txt", "1. The cluster is never fully utilized on Fridays.", "2. 90% of HPC debugging is reading logs nobody else wants to read.", "3. This website's easter egg took longer than expected. Worth it.", "4. sudo will not help you here."].join("\n");
+        return [
+          "# secrets.txt",
+          "1. The cluster is never fully utilized on Fridays.",
+          "2. 90% of HPC debugging is reading logs nobody else wants to read.",
+          "3. This website's easter egg took longer than expected. Worth it.",
+          "4. sudo will not help you here.",
+        ].join("\n");
       }
       if (arg === "cv.pdf") return "cat: cv.pdf: binary file — try the CV page in the navbar instead";
       if (!arg) return "usage: cat <file>";
