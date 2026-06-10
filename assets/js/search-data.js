@@ -23,8 +23,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "news-i-am-actively-seeking-tenure-track-assistant-professor-positions-in-computer-science-if-you-are-aware-of-any-open-positions-or-would-like-to-connect-please-feel-free-to-reach-out-to-me",
-          title: '📢 I am actively seeking tenure-track Assistant Professor positions in Computer Science. If...',
+        },{id: "news-i-am-also-seeking-tenure-track-assistant-professor-positions-in-computer-science-if-you-are-aware-of-any-open-positions-or-would-like-to-connect-please-feel-free-to-reach-out-to-me",
+          title: '📢 I am also seeking tenure-track Assistant Professor positions in Computer Science. If...',
           description: "",
           section: "News",},{id: "projects-disaggregation-aware-scheduler",
           title: 'Disaggregation-Aware Scheduler',
