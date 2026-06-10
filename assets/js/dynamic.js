@@ -14,7 +14,14 @@
     var el = document.getElementById("typed-subtitle");
     if (!el) return;
 
-    var phrases = ["Research Assistant Professor @ Texas Tech University", "High-Performance Computing", "Computer Architecture", "Distributed Systems", "Systems Security", "AI Infrastructure"];
+    var phrases = [
+      "Research Assistant Professor @ Texas Tech University",
+      "High-Performance Computing",
+      "Computer Architecture",
+      "Distributed Systems",
+      "Systems Security",
+      "AI Infrastructure",
+    ];
 
     if (prefersReducedMotion) {
       el.textContent = phrases[0];
