@@ -1,0 +1,319 @@
+/*******************************************************************************
+ * Modern UI layer — typography refinements, micro-animations, glass accents,
+ * scroll reveals, typing cursor, and the hidden terminal easter egg.
+ ******************************************************************************/
+
+// ---------------------------------------------------------------------------
+// Accent gradient + motion tokens
+// ---------------------------------------------------------------------------
+
+:root {
+  --accent-gradient: linear-gradient(120deg, var(--global-theme-color), #8e7cf3 55%, #4cc9f0);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Hero / about page
+// ---------------------------------------------------------------------------
+
+.post-header .post-title {
+  letter-spacing: -0.02em;
+
+  .font-weight-bold {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.post-header .desc {
+  font-family: "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace;
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  min-height: 1.5em;
+}
+
+// blinking caret for the typing effect
+.typed-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--global-theme-color);
+  animation: blink-caret 1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+// screen-reader-only fallback for the typed subtitle
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// profile picture: soft glow ring on hover
+.profile img {
+  transition: transform 0.5s var(--ease-out-soft), box-shadow 0.5s var(--ease-out-soft);
+
+  &:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 18px 40px -16px color-mix(in srgb, var(--global-theme-color) 55%, transparent);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Navbar: frosted glass
+// ---------------------------------------------------------------------------
+
+.navbar {
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  background-color: color-mix(in srgb, var(--global-bg-color) 78%, transparent) !important;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar .nav-item .nav-link {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.35rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent-gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-out-soft);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Cards (projects, repositories): lift + glow
+// ---------------------------------------------------------------------------
+
+.card.hoverable {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-out-soft), box-shadow 0.35s var(--ease-out-soft), border-color 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--global-theme-color) 45%, var(--global-divider-color));
+    box-shadow: 0 20px 45px -18px color-mix(in srgb, var(--global-theme-color) 35%, rgba(0, 0, 0, 0.25));
+  }
+}
+
+.projects .category {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+}
+
+// ---------------------------------------------------------------------------
+// Scroll reveal
+// ---------------------------------------------------------------------------
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease-out-soft), transform 0.7s var(--ease-out-soft);
+  will-change: opacity, transform;
+
+  &.revealed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// stagger siblings slightly
+.reveal.revealed {
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{($i - 1) * 60}ms;
+    }
+  }
+}
+
+// no-JS safety net: if JS never runs, keep content visible
+html:not(.js) .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+// ---------------------------------------------------------------------------
+// Publications: subtle row highlight
+// ---------------------------------------------------------------------------
+
+.publications ol.bibliography li {
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--global-theme-color) 6%, transparent);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Hidden terminal easter egg
+// ---------------------------------------------------------------------------
+
+#hpc-terminal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 10, 18, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  &.open {
+    display: flex;
+  }
+
+  .terminal-window {
+    width: min(720px, 92vw);
+    max-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace;
+    font-size: 0.85rem;
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: term-pop 0.35s var(--ease-out-soft);
+  }
+
+  .terminal-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #161b22;
+    user-select: none;
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red {
+      background: #ff5f57;
+      cursor: pointer;
+    }
+    .dot-yellow {
+      background: #febc2e;
+    }
+    .dot-green {
+      background: #28c840;
+    }
+
+    .terminal-title {
+      margin-left: 8px;
+      color: #8b949e;
+      font-size: 0.75rem;
+    }
+  }
+
+  .terminal-body {
+    padding: 14px 16px;
+    overflow-y: auto;
+    flex: 1;
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: transparent;
+      border: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    .term-prompt {
+      color: #7ee787;
+    }
+    .term-accent {
+      color: #79c0ff;
+    }
+    .term-dim {
+      color: #8b949e;
+    }
+  }
+
+  .terminal-input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px 14px;
+
+    .term-prompt {
+      color: #7ee787;
+      white-space: nowrap;
+    }
+
+    input {
+      flex: 1;
+      background: transparent;
+      border: 0;
+      outline: none;
+      color: #c9d1d9;
+      font-family: inherit;
+      font-size: inherit;
+      caret-color: #7ee787;
+    }
+  }
+}
+
+@keyframes term-pop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

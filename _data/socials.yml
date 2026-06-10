@@ -9,13 +9,13 @@
 # arxiv_id: # your arXiv author ID
 # blogger_url: # your blogger URL
 # bluesky_url: # your bluesky URL
-# cv_pdf: /assets/pdf/CV_JieLi.pdf # path to your CV PDF file
+cv_pdf: /assets/pdf/CV_JieLi.pdf # path to your CV PDF file
 # discord_id: # your discord id (18-digit unique numerical identifier)
 email: jie.li@ttu.edu # your email address
 dblp_url: https://dblp.org/pid/17/2703-57.html # your DBLP profile url
 # facebook_id: # your facebook id
 # flickr_id: # your flickr id
-# github_username: # your GitHub user name
+github_username: Artlands # your GitHub user name
 # gitlab_username: # your GitLab user name
 # hal_id: # your HAL id (https://hal.science/)
 # ieee_id: # your ieeexplore.ieee.org/author/id

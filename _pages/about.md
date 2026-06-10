@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>Postdoctoral Researcher</a>
+subtitle: <span id="typed-subtitle"></span><span class="sr-only">Postdoctoral Researcher · HPC · Systems Security · AI Infrastructure</span>
 
 profile:
   align: right
@@ -15,7 +15,7 @@ scholar:
   sort_by: year
   order: descending
 
-social: false # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items

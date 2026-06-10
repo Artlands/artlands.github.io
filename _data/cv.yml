@@ -2,96 +2,131 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Jie Li
+    - name: Position
+      value: Post-doctoral Researcher, Department of Computer Science, Texas Tech University
+    - name: Email
+      value: jie.li@ttu.edu
+    - name: Homepage
+      value: https://lijie.me
+    - name: Research Interests
+      value: High-Performance Computing (HPC), Systems Security, AI Infrastructure
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D., Computer Science
+      institution: Texas Tech University, Lubbock, Texas
+      year: 2024
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - "Dissertation: Optimizing High-Performance Computing Systems: Insights from System Monitoring, Workload Management, and Scheduling Strategies"
+        - "GPA: 4.0/4.0 | Advisor: Prof. Yong Chen"
+    - title: M.S., Computer Science
+      institution: Texas Tech University, Lubbock, Texas
+      year: 2019
       description:
-        - Description 1.
-        - Description 2.
+        - "Thesis: PIMS: A Lightweight Processing-in-Memory Accelerator for Stencil Computations"
+        - "GPA: 4.0/4.0 | Advisor: Prof. Yong Chen"
+    - title: B.A., Architecture
+      institution: Huaqiao University, Xiamen, China
+      year: 2012
+      description:
+        - Introduced to programming through computational design and parametric modeling coursework.
 
-- title: Experience
+- title: Research & Professional Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Post-doctoral Researcher
+      institution: Texas Tech University
+      year: 2024 - now
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Lead research in HPC, focusing on distributed architectures, operational integrity (security), energy-aware resource management, data management, and AI applications.
+        - Technical lead of the Data-Intensive Scalable Computing Laboratory (DISCL) and the NSF Cloud and Autonomic Computing Center (CAC IUCRC).
+        - Co-PI on competitive research proposals, including the "SHIELD" NSF proposal for layered defense mechanisms in open-science cyberinfrastructure.
+        - Co-designed and built the NSF REPACSS cluster (total award $12.25M) from the ground up; continue contributing to its operation and performance optimization.
+        - Supervise graduate and undergraduate researchers in systems design, experimentation, and publication.
+    - title: Research Assistant
+      institution: Texas Tech University
+      year: 2019 - 2024
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Conducted original research in HPC, parallel and distributed systems, and computer architecture.
+        - Published 15 peer-reviewed papers in premium international venues including ICPP, MemSys, BigData, CLUSTER, ISC, and CLOUD.
+        - Mentored eight graduate and undergraduate students, including supervising a master's thesis that resulted in a CLOUD'23 publication.
+        - Developed and maintained research software such as the MonSTer HPC monitoring framework (adopted by Dell's Omnia project), the Disaggregation-Aware Scheduler, and xBGAS simulation tools.
+    - title: Graduate Student Intern
+      institution: Lawrence Berkeley National Laboratory
+      year: 2021 - 2023
       description:
+        - Summers 2021, 2022, 2023, mentored by Brandon Cook and Georgios Michelogiannakis in John Shalf's group.
+        - Designed data pipelines to integrate and analyze HPC telemetry (LDMS, DCGM, Slurm) from NERSC supercomputers.
+        - Applied deep learning methods to classify and predict HPC job behavior from time-series data.
+        - Led development of the open-source Disaggregation-Aware Scheduler for job scheduling in memory-disaggregated systems.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Grants & Funding
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: "Category II: REPACSS - Renewable Energy Powered Advanced Computing Systems and Services"
+      institution: National Science Foundation - Funded, $12,250,000
+      year: 2023
+      description:
+        - Contributor to proposal development (with PI Dr. Yong Chen and Co-PI Dr. Alan Sill); wrote sections on data center monitoring and remote control.
+    - title: "CICI:UCSS:SHIELD - Strengthening High-Performance Infrastructure with Enhanced Layered Defense"
+      institution: National Science Foundation - Co-PI, $600,000 requested
+      year: 2025
+      description:
+        - Co-Principal Investigator (with PI Dr. Yong Chen); contributed project vision and technical approach for HPC cybersecurity.
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
+- title: Open-Source Software
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: MonSTer
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - An out-of-the-box monitoring tool for HPC platforms. Presented at CLUSTER'20 and adopted by Dell's Omnia project.
+    - title: Disaggregation-Aware Scheduler
       items:
-        - Description 1.
-        - Description 2.
+        - Simulator for exploring job scheduling strategies in HPC systems with disaggregated memory. Used in CLUSTER'24 and IPDPSW'24 publications.
+    - title: xBGAS REV-CPU & Runtime
+      items:
+        - Cycle-accurate simulation extension and runtime for the xBGAS RISC-V architecture, developed with Tactical Computing Laboratories. Presented at ICNC'24.
 
-- title: Other Interests
-  type: list
+- title: Mentoring & Teaching
+  type: time_table
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - title: Guest Lecturer, Parallel Processing (CS5379)
+      institution: Texas Tech University
+      year: 2025
+      description:
+        - Delivered four invited lectures and designed programming projects (27 students) on job scheduling, compilation and job submission, and OpenMP.
+    - title: Graduate & Undergraduate Mentoring
+      institution: Texas Tech University
+      year: 2020 - now
+      description:
+        - Currently supervising two Ph.D. students on HPC anomaly/intrusion detection and HPC-quantum integration.
+        - Mentored eight students on research projects, including a master's thesis leading to a CLOUD'23 publication.
+
+- title: Awards & Honors
+  type: time_table
+  contents:
+    - year: 2022
+      items:
+        - Best Poster Award, NSF Cloud and Autonomic Computing Industry Advisory Board Conference
+    - year: 2019
+      items:
+        - Summer Thesis/Dissertation Research Award, Texas Tech University
+
+- title: Professional Service
+  type: nested_list
+  contents:
+    - title: Program Committee
+      items:
+        - AAAI Conference on Artificial Intelligence (AAAI), 2026
+    - title: Journal Reviewer
+      items:
+        - IEEE Computer Architecture Letters (CAL), 2025
+        - The Journal of Supercomputing, 2023
+    - title: Conference Reviewer
+      items:
+        - IEEE ISCAS 2026; IEEE BigData 2022, 2023, 2025; IEEE/ACM CCGrid 2024
+    - title: Sub-reviewer & Volunteer
+      items:
+        - Sub-reviewer for IPDPS, ICDCS, SC, PDSW, SMDS; student volunteer at SC'19 and SC'21.
