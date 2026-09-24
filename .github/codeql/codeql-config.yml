@@ -1,0 +1,6 @@
+name: "CodeQL config"
+
+# Vendored third-party bundles are not our code; alerts in them can't be
+# fixed here and would reappear on every upstream update.
+paths-ignore:
+  - assets/js/distillpub
