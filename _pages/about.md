@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <span id="typed-subtitle"></span><span class="sr-only">Postdoctoral Researcher · HPC · Systems Security · AI Infrastructure</span>
+subtitle: <span id="typed-subtitle"></span><span class="sr-only">Research Assistant Professor · HPC · Systems Security · AI Infrastructure</span>
 
 profile:
   align: right
