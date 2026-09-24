@@ -10,6 +10,8 @@ description:
 #   sidebar: left
 ---
 
+<p><a href="{{ site.baseurl }}/assets/pdf/CV_JieLi.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Download CV (PDF)</a></p>
+
 <!-- PDF Embed Code -->
 <div class="row">
     <div class="col-sm-12 mt-3 mt-md-0">
