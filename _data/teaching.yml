@@ -1,0 +1,46 @@
+# Entries for the Teaching page (_pages/teaching.md), rendered by _includes/cv_entries.liquid.
+# Each entry: date, title, optional subtitle, detail, and badges ({label, url}).
+# title, subtitle and detail accept Markdown.
+
+experience:
+  - date: Fall 2025
+    title: Invited Lecturer and Programming Project Designer
+    subtitle: _Parallel Processing_ (graduate), Texas Tech University
+    detail: Delivered four invited lectures and designed programming projects for 27 students; topics included job scheduling, compilation and job submission, and OpenMP.
+
+graduate_students:
+  - date: Ongoing
+    title: Jaechang Kim
+    subtitle: M.S. student
+    detail: AI agents for REPACSS cluster operation and management, automating Warewulf, Ansible, Spack, and Slurm workflows.
+  - date: Fall 2025 – present
+    title: Rupak Kadel
+    subtitle: Ph.D. student
+    detail: Improving HPC monitoring for anomaly and intrusion detection.
+  - date: Fall 2022
+    title: Cristiano Caon
+    subtitle: M.S.
+    detail: Data volume reduction and query optimization in time-series databases; independent study (CS 7000) and master's thesis.
+    badges:
+      - label: CLOUD'23 paper
+        url: https://doi.org/10.1109/CLOUD60044.2023.00055
+  - date: Spring 2021
+    title: Aniruddh Sanjaysinh Chavda and Huyen Nguyen
+    subtitle: M.S. and Ph.D.
+    detail: Usage behavior analysis by clustering job accounting data; Advanced Operating Systems course project.
+  - date: Spring 2021
+    title: Ruonan Wu
+    subtitle: M.S.
+    detail: Job accounting data analysis for the Quanah cluster; Advanced Operating Systems course project.
+  - date: Spring 2020
+    title: Ashhrita Puradamane Balachandra
+    subtitle: M.S.
+    detail: Improving InfluxDB query performance; Advanced Operating Systems course project.
+
+undergraduate_students:
+  - date: Spring 2022
+    title: Yusheng Han and Zachary Kay
+    detail: Running HPC applications and analyzing performance on the RedRaider cluster; independent study (CS 4000).
+  - date: Spring 2021
+    title: Casey Root
+    detail: Monitoring queue status through the Slurm REST API; independent study (CS 4000).
