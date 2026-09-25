@@ -2,6 +2,11 @@
 # Each entry: date, title, optional subtitle, detail, and badges ({label, url}).
 # title, subtitle and detail accept Markdown.
 
+interests: >-
+  Operating systems, parallel and high-performance computing, computer architecture, distributed and cloud
+  computing, and systems for machine learning at the undergraduate and graduate levels. I am also interested in
+  developing new graduate seminars on **AI infrastructure** and on **AI agents for computing systems**.
+
 experience:
   - date: Fall 2025
     title: Invited Lecturer and Programming Project Designer

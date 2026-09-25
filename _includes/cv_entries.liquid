@@ -1,11 +1,15 @@
 {% comment %}
-  Two-column entry list (date | details) used on the Teaching and Service pages.
+  Two-column entry list (date | details) used on the Teaching, Service and CV pages.
+  Entry fields: date, title, subtitle, detail, bullets, badges; entries without a
+  date span the full width.
   Usage: {% include cv_entries.liquid entries=site.data.teaching.experience %}
 {% endcomment %}
 <div class="cv-entries">
   {% for entry in include.entries %}
-    <div class="cv-entry">
-      <div class="cv-date">{{ entry.date }}</div>
+    <div class="cv-entry{% unless entry.date %} cv-entry-nodate{% endunless %}">
+      {% if entry.date %}
+        <div class="cv-date">{{ entry.date }}</div>
+      {% endif %}
       <div class="cv-body">
         <div class="cv-title">
           <span class="cv-name">{{ entry.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
@@ -15,6 +19,13 @@
         </div>
         {% if entry.detail %}
           <div class="cv-detail">{{ entry.detail | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
+        {% endif %}
+        {% if entry.bullets %}
+          <ul class="cv-bullets">
+            {% for bullet in entry.bullets %}
+              <li>{{ bullet | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+            {% endfor %}
+          </ul>
         {% endif %}
         {% if entry.badges %}
           <div class="cv-badges">
