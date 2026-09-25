@@ -1,0 +1,30 @@
+# Content for the Service page (_pages/service.md).
+# leadership and awards are rendered by _includes/cv_entries.liquid;
+# professional_service is a list of label/items rows. Text accepts Markdown.
+
+leadership:
+  - date: Jan 2026 – present
+    title: Assistant Director
+    subtitle: NSF Cloud and Autonomic Computing Center ([CAC IUCRC](https://nsfcac.org/)), Texas Tech site
+    detail: Coordinate faculty, student teams, and industry members in developing and reviewing research projects; help organize the semiannual Industry Advisory Board meetings.
+
+professional_service:
+  - label: Program committees
+    items: [NeurIPS 2026, AAAI 2026]
+  - label: Conference reviewer
+    items: [IEEE ISCAS 2026, "IEEE BigData 2022, 2023, 2025", IEEE/ACM CCGrid 2024]
+  - label: Journal reviewer
+    items: [IEEE Computer Architecture Letters (2025), The Journal of Supercomputing (2023)]
+  - label: Sub-reviewer
+    items:
+      [IEEE IPDPS 2023, IEEE ICDCS 2022, ACM/IEEE SC 2022, International Parallel Data Systems Workshop (PDSW) 2022, IEEE Smart Data Services 2020]
+  - label: Student volunteer
+    items: ["ACM/IEEE SC'21, St. Louis, MO", "ACM/IEEE SC'19, Denver, CO"]
+
+awards:
+  - date: "2022"
+    title: Best Poster Award
+    detail: NSF Cloud and Autonomic Computing Center Industry Advisory Board Conference
+  - date: Summer 2019
+    title: Summer Thesis/Dissertation Research Award ($2,300)
+    detail: Texas Tech University Graduate School

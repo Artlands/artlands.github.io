@@ -420,6 +420,94 @@ ul.task-list input[type="checkbox"] {
   -webkit-box-decoration-break: clone;
 }
 
+// Teaching and Service pages: compact section headings and a
+// two-column (date | details) entry layout like the News table.
+.cv-page {
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    color: var(--global-text-color-light);
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  column-gap: 1.25rem;
+  padding: 0.5rem 0;
+}
+
+.cv-date {
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+  padding-top: 0.1rem;
+}
+
+.cv-name {
+  font-weight: 600;
+}
+
+.cv-detail {
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
+
+.cv-badges {
+  margin-top: 0.25rem;
+}
+
+.cv-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+  border-radius: 3px;
+  background-color: var(--global-theme-color);
+  color: var(--global-card-bg-color) !important;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.85;
+  }
+}
+
+.cv-rows {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0.6rem;
+  margin: 0.5rem 0 0;
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .cv-entry,
+  .cv-rows {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-rows dd {
+    margin-bottom: 0.4rem;
+  }
+}
+
 // Social (bottom)
 
 .social {
