@@ -15,7 +15,7 @@ scholar:
   sort_by: year
   order: descending
 
-social: true # includes social icons at the bottom of the page
+social: false # social icons are already shown in the navbar
 
 announcements:
   enabled: true # includes a list of news items
