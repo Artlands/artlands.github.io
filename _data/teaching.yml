@@ -9,7 +9,7 @@ experience:
     detail: Delivered four invited lectures and designed programming projects for 27 students; topics included job scheduling, compilation and job submission, and OpenMP.
 
 graduate_students:
-  - date: Ongoing
+  - date: Summer 2026 – present
     title: Jaechang Kim
     subtitle: M.S. student
     detail: AI agents for REPACSS cluster operation and management, automating Warewulf, Ansible, Spack, and Slurm workflows.
