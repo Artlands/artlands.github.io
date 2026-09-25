@@ -838,10 +838,20 @@ footer.sticky-bottom {
         }
       }
 
-      .links,
+      // Buttons on the left, citation badges on the right of the same row.
+      .links {
+        float: left;
+      }
+
       .badges {
-        display: inline-block;
-        vertical-align: middle;
+        float: right;
+        margin-top: 0.15rem;
+      }
+
+      .award.hidden,
+      .abstract.hidden,
+      .bibtex.hidden {
+        clear: both;
       }
 
       .badges {
