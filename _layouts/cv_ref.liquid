@@ -1,0 +1,12 @@
+<div class="csl-entry">
+  <div class="csl-left-margin">[{{ index }}]</div>
+  <div class="csl-right-inline">
+    {{-
+      reference
+      | replace: 'J. Li,', '<strong>J. Li</strong>,'
+      | replace: 'J. Li ', '<strong>J. Li</strong> '
+      | replace: 'J. Li.', '<strong>J. Li</strong>.'
+    -}}
+    {%- if entry.note %} {{ entry.note }}{% endif -%}
+  </div>
+</div>
