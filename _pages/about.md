@@ -34,3 +34,5 @@ My research focuses on `High-Performance Computing (HPC)` and `AI Infrastructure
 
 I co-designed and built the [NSF REPACSS cluster (a $12.25M award project)](https://repacss.org/), which now serves as a production testbed for my work on AI agents that operate and manage HPC systems. I also developed the `MonSTer` HPC monitoring framework, which has been adopted by [Dell’s Omnia project](https://github.com/dell/omnia).
 Previously, I spent three summers (2021–2023) as a Graduate Student Intern at Lawrence Berkeley National Laboratory (LBNL), where I built telemetry pipelines for NERSC’s Cori and Perlmutter supercomputers and led development of the Disaggregation-Aware Scheduler for memory-disaggregated systems.
+
+I am on the **2026–27 academic job market**, seeking tenure-track Assistant Professor positions in Computer Science. Feel free to [reach out](mailto:jie.li@ttu.edu).
