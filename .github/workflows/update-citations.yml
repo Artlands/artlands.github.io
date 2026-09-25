@@ -7,6 +7,10 @@ on:
     - cron: "0 0 * * 5" # Friday
   workflow_dispatch:
 
+permissions:
+  contents: write # commit the updated _data/citations.yml
+  actions: write # start the deploy workflow when no PAT is configured
+
 jobs:
   update-citations:
     runs-on: ubuntu-latest
@@ -14,12 +18,13 @@ jobs:
     steps:
       - name: Citation
         uses: actions/checkout@v4
-        # See CUSTOMIZE.md for details on how to set up PAT for triggering subsequent workflows
+        # A PAT (see CUSTOMIZE.md) lets the push below trigger the deploy workflow.
+        # Without one, fall back to the built-in token and start the deploy explicitly.
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT || github.token }}
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
@@ -92,10 +97,28 @@ jobs:
           echo "🔧 Git configured."
 
       - name: Commit and push if changed
+        id: push
         run: |
           git add _data/citations.yml
-          git diff --staged --quiet || (
+          if git diff --staged --quiet; then
+            echo "pushed=false" >> $GITHUB_OUTPUT
+          else
             echo "📤 Committing and pushing changes..."
             git commit -m "Update Google Scholar citations"
             git push
-          )
+            echo "pushed=true" >> $GITHUB_OUTPUT
+          fi
+
+      # Pushes made with the built-in GITHUB_TOKEN don't trigger other workflows,
+      # so start the site deploy explicitly when no PAT is configured.
+      - name: Trigger deploy
+        if: steps.push.outputs.pushed == 'true'
+        env:
+          HAS_PAT: ${{ secrets.PAT != '' }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$HAS_PAT" = "true" ]; then
+            echo "PAT configured; the push already triggers the deploy workflow."
+          else
+            gh workflow run deploy.yml --ref "${{ github.ref_name }}"
+          fi
