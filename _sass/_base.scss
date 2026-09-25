@@ -574,7 +574,21 @@ ul.task-list input[type="checkbox"] {
   body {
     background: #fff !important;
     color: #000 !important;
-    font-size: 10.5pt;
+    font-size: 11pt;
+  }
+
+  // Bootstrap's print styles force a 992px minimum width, which makes the
+  // browser shrink the whole page (~70%) to fit Letter paper. Use the page width.
+  body,
+  .container {
+    min-width: 0 !important;
+  }
+
+  .container {
+    max-width: none !important;
+    width: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .post-header,
@@ -609,6 +623,12 @@ ul.task-list input[type="checkbox"] {
     text-decoration: none !important;
   }
 
+  // One text size for the whole printed CV: body, descriptions, dates,
+  // bullets, service rows and citations are all 11pt; headings stay larger.
+  .cv-page *:not(h1):not(h2):not(h3) {
+    font-size: 11pt !important;
+  }
+
   .cv-page {
     h2:not(.bibliography) {
       break-after: avoid;
@@ -623,12 +643,32 @@ ul.task-list input[type="checkbox"] {
   .cv-entry,
   .publications ol.bibliography > li,
   .cv-rows dt,
-  .cv-rows dd {
+  .cv-rows dd,
+  .cv-bullets > li {
     break-inside: avoid;
+  }
+
+  // Long entries (appointments with bullet lists) may split across pages
+  // instead of leaving a large gap at the bottom of the previous page.
+  .cv-entry:has(.cv-bullets) {
+    break-inside: auto;
   }
 
   .publications ol.bibliography > li {
     margin-bottom: 0.6rem;
+  }
+
+  // Venue is already in each citation; drop the colored venue badges and let
+  // the citation use the full width.
+  .publications ol.bibliography > li {
+    .abbr {
+      display: none !important;
+    }
+
+    .row > [class*="col-sm-"] {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
 }
 
