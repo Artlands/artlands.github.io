@@ -623,6 +623,12 @@ ul.task-list input[type="checkbox"] {
     text-decoration: none !important;
   }
 
+  // One text size for the whole printed CV: body, descriptions, dates,
+  // bullets, service rows and citations are all 11pt; headings stay larger.
+  .cv-page *:not(h1):not(h2):not(h3) {
+    font-size: 11pt !important;
+  }
+
   .cv-page {
     h2:not(.bibliography) {
       break-after: avoid;
