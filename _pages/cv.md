@@ -23,7 +23,7 @@ nav_order: 4
 
 <span class="info">Email: [jie.li@ttu.edu](mailto:jie.li@ttu.edu) · Homepage: [lijie.me](https://lijie.me)</span>
 
-<span class="info cv-download">[Download PDF]({{ '/assets/pdf/CV_JieLi.pdf' | relative_url }})</span>
+<span class="info cv-download"><a href="{{ '/assets/pdf/CV_JieLi.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download PDF</a></span>
 
 ## RESEARCH INTERESTS
 
