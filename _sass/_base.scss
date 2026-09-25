@@ -436,15 +436,6 @@ ul.task-list input[type="checkbox"] {
     font-weight: 600;
   }
 
-  // Publications stay grouped by year (newest first) but without year headers.
-  .publications {
-    margin-top: 0;
-
-    h2.bibliography {
-      display: none;
-    }
-  }
-
   h3 {
     font-size: 1.1rem;
     color: var(--global-text-color-light);
@@ -490,35 +481,6 @@ ul.task-list input[type="checkbox"] {
   font-size: 0.95rem;
 }
 
-.cv-summary-list {
-  padding-left: 1.1rem;
-
-  li {
-    margin-bottom: 0.25rem;
-  }
-}
-
-// Name heading shown only in the printed/PDF CV (replaces the "CV" page title).
-.cv-print-name {
-  display: none;
-}
-
-.cv-download {
-  margin: 0.5rem 0 1rem;
-
-  .btn {
-    margin: 0.5rem 0 0;
-    padding: 0.3rem 0.9rem;
-    color: var(--global-text-color);
-    border: 1px solid var(--global-text-color);
-
-    &:hover {
-      color: var(--global-theme-color);
-      border-color: var(--global-theme-color);
-    }
-  }
-}
-
 .cv-badge {
   display: inline-block;
   font-size: 0.75rem;
@@ -562,6 +524,121 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// CV page (_pages/cv.md), styled after markdown-cv's "resume" style
+// (https://github.com/Artlands/markdown-cv): serif text, centered name and
+// contact lines, blue underlined section headings, italic locations and
+// right-aligned dates, and a numbered IEEE publication list.
+$cv-accent: #537596;
+
+.post:has(.cv-md) .post-header {
+  display: none;
+}
+
+.cv-md {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+
+  .name {
+    display: block;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    line-height: 150%;
+    margin-top: 0.5rem;
+  }
+
+  .info {
+    display: block;
+    text-align: center;
+  }
+
+  .cv-download {
+    margin-top: 0.25rem;
+  }
+
+  .cv-update {
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    padding-top: 2.5rem;
+  }
+
+  h2 {
+    font-family: inherit;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $cv-accent;
+    border-bottom: 1px solid var(--global-text-color);
+    margin: 1.25rem 0 0.35rem;
+    padding: 0 0 2px;
+  }
+
+  h3 {
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0.4rem 0 0;
+  }
+
+  p,
+  ul {
+    margin: 0;
+  }
+
+  ul {
+    padding: 0 0 0 1.5rem;
+  }
+
+  a {
+    color: $cv-accent;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  time {
+    float: right;
+    font-weight: normal;
+    padding-left: 1rem;
+  }
+
+  location {
+    font-style: italic;
+    font-weight: normal;
+  }
+
+  field {
+    font-weight: normal;
+  }
+
+  // Publications: jekyll-scholar list rendered through _layouts/cv_ref.liquid,
+  // numbered oldest-first and shown newest-first like markdown-cv.
+  .cv-refs ol.bibliography {
+    display: flex;
+    flex-direction: column-reverse;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .csl-entry {
+    display: flex;
+    padding: 0 0 0.5rem;
+  }
+
+  .csl-left-margin {
+    flex: 0 0 2.4em;
+  }
+}
+
+html[data-theme="dark"] .cv-md {
+  h2,
+  a {
+    color: #8fb0cf;
+  }
+}
+
 // Printing the CV (bin/cv_pdf.js prints /cv/ to PDF at deploy time; the same
 // rules apply when a visitor prints the page).
 @media print {
@@ -574,7 +651,6 @@ ul.task-list input[type="checkbox"] {
   body {
     background: #fff !important;
     color: #000 !important;
-    font-size: 11pt;
   }
 
   // Bootstrap's print styles force a 992px minimum width, which makes the
@@ -596,20 +672,12 @@ ul.task-list input[type="checkbox"] {
   footer,
   #back-to-top,
   .progress,
-  .cv-download .btn,
-  .publications .links,
-  .publications .badges {
+  .cv-download {
     display: none !important;
   }
 
   body {
     padding-top: 0 !important;
-  }
-
-  .cv-print-name {
-    display: block;
-    font-size: 2rem;
-    margin: 0 0 0.25rem;
   }
 
   // Scroll-reveal animations never trigger on a printed page.
@@ -618,47 +686,36 @@ ul.task-list input[type="checkbox"] {
     transform: none !important;
   }
 
-  a {
-    color: inherit !important;
-    text-decoration: none !important;
-  }
+  .cv-md {
+    font-size: 11pt;
+    color: #000;
 
-  // One text size for the whole printed CV: body, descriptions, dates,
-  // bullets, service rows and citations are all 11pt; headings stay larger.
-  .cv-page *:not(h1):not(h2):not(h3) {
-    font-size: 11pt !important;
-  }
+    .name {
+      margin-top: 0;
+    }
 
-  .cv-page {
-    h2:not(.bibliography) {
+    h2 {
+      color: $cv-accent !important;
+      border-bottom-color: #000;
       break-after: avoid;
-      margin-top: 1.25rem;
     }
 
     h3 {
       break-after: avoid;
     }
+
+    a {
+      color: $cv-accent !important;
+      text-decoration: none;
+    }
+
+    li,
+    .csl-entry {
+      break-inside: avoid;
+    }
   }
 
-  .cv-entry,
-  .publications ol.bibliography > li,
-  .cv-rows dt,
-  .cv-rows dd,
-  .cv-bullets > li {
-    break-inside: avoid;
-  }
-
-  // Long entries (appointments with bullet lists) may split across pages
-  // instead of leaving a large gap at the bottom of the previous page.
-  .cv-entry:has(.cv-bullets) {
-    break-inside: auto;
-  }
-
-  .publications ol.bibliography > li {
-    margin-bottom: 0.6rem;
-  }
-
-  // Mentoring-outcome badges print as plain text instead of colored blocks.
+  // Mentoring-outcome badges on the Teaching page print as plain text.
   .cv-badge {
     background: none !important;
     color: inherit !important;
@@ -667,19 +724,6 @@ ul.task-list input[type="checkbox"] {
 
     &::before {
       content: "Outcome: ";
-    }
-  }
-
-  // Venue is already in each citation; drop the colored venue badges and let
-  // the citation use the full width.
-  .publications ol.bibliography > li {
-    .abbr {
-      display: none !important;
-    }
-
-    .row > [class*="col-sm-"] {
-      flex: 0 0 100%;
-      max-width: 100%;
     }
   }
 }

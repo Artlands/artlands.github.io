@@ -56,8 +56,8 @@ const server = http.createServer((req, res) => {
     await page.emulateMedia({ media: "print", colorScheme: "light" });
     await page.goto(url, { waitUntil: "networkidle", timeout: 60000 });
     await page.evaluate(() => document.fonts.ready);
-    const entries = await page.locator(".cv-entry").count();
-    if (entries === 0) throw new Error(`No CV entries found at ${url}`);
+    const entries = await page.locator(".cv-md h2").count();
+    if (entries === 0) throw new Error(`No CV sections found at ${url}`);
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
     await page.pdf({
       path: outPath,
@@ -70,7 +70,7 @@ const server = http.createServer((req, res) => {
         '<div style="width:100%;font-size:8px;color:#666;padding:0 0.65in;display:flex;justify-content:space-between;">' +
         '<span>Jie Li — Curriculum Vitae</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>',
     });
-    console.log(`Wrote ${path.relative(process.cwd(), outPath)} (${entries} CV entries)`);
+    console.log(`Wrote ${path.relative(process.cwd(), outPath)} (${entries} CV sections)`);
   } finally {
     await browser.close();
     server.close();
