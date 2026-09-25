@@ -16,6 +16,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-teaching",
+          title: "Teaching",
+          description: "Teaching interests, teaching experience, and research mentoring.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "nav-service",
+          title: "Service",
+          description: "Professional service and awards.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/service/";
+          },
         },{id: "nav-cv",
           title: "CV",
           description: "",
@@ -32,8 +46,8 @@ ninja.data = [{
           section: "News",},{id: "news-i-started-as-a-research-assistant-professor-in-the-department-of-computer-science-at-texas-tech-university",
           title: 'I started as a Research Assistant Professor in the Department of Computer Science...',
           description: "",
-          section: "News",},{id: "news-our-paper-ocean-open-source-cxl-emulation-for-hyperscale-architecture-and-networking-will-appear-at-sc-26",
-          title: 'Our paper OCEAN: Open-Source CXL Emulation for Hyperscale Architecture and Networking will appear...',
+          section: "News",},{id: "news-our-paper-ocean-open-source-cxl-emulation-for-hyperscale-architecture-and-networking-has-been-accepted-to-sc-26",
+          title: 'Our paper OCEAN: Open-Source CXL Emulation for Hyperscale Architecture and Networking has been...',
           description: "",
           section: "News",},{id: "projects-disaggregation-aware-scheduler",
           title: 'Disaggregation-Aware Scheduler',
