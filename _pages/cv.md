@@ -8,6 +8,8 @@ nav_order: 4
 
 <div class="cv-page" markdown="1">
 
+<h1 class="cv-print-name">Jie Li</h1>
+
 <p class="cv-download">
   Research Assistant Professor, Department of Computer Science, Texas Tech University ·
   <a href="mailto:jie.li@ttu.edu">jie.li@ttu.edu</a>
