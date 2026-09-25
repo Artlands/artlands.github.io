@@ -10,7 +10,7 @@ nav_order: 2
 
 ## Teaching Interests
 
-Operating systems, parallel and high-performance computing, computer architecture, distributed and cloud computing, and systems for machine learning at the undergraduate and graduate levels. I am also interested in developing new graduate seminars on **AI infrastructure** and on **AI agents for computing systems**.
+{{ site.data.teaching.interests }}
 
 ## Teaching Experience
 

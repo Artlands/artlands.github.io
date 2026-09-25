@@ -423,12 +423,28 @@ ul.task-list input[type="checkbox"] {
 // Teaching and Service pages: compact section headings and a
 // two-column (date | details) entry layout like the News table.
 .cv-page {
-  h2 {
+  // Section headings; year headers of embedded bibliographies keep their own style.
+  h2:not(.bibliography) {
     font-size: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
     padding-bottom: 0.35rem;
     border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  // The section heading already draws a divider; drop the first year rule.
+  .publications {
+    margin-top: 0;
+
+    h2.bibliography:first-child {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
   }
 
   h3 {
@@ -463,6 +479,41 @@ ul.task-list input[type="checkbox"] {
 
 .cv-badges {
   margin-top: 0.25rem;
+}
+
+.cv-entry-nodate {
+  grid-template-columns: 1fr;
+}
+
+.cv-bullets {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
+
+.cv-summary-list {
+  padding-left: 1.1rem;
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.cv-download {
+  margin: 0.5rem 0 1rem;
+
+  .btn {
+    margin: 0.5rem 0 0;
+    padding: 0.3rem 0.9rem;
+    color: var(--global-text-color);
+    border: 1px solid var(--global-text-color);
+
+    &:hover {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+    }
+  }
 }
 
 .cv-badge {
