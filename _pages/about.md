@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <span id="typed-subtitle"></span><span class="sr-only">Research Assistant Professor · HPC · Systems Security · AI Infrastructure</span>
+subtitle: <span id="typed-subtitle"></span><span class="sr-only">Research Assistant Professor · HPC · AI Infrastructure · AI Agents for HPC</span>
 
 profile:
   align: right
@@ -28,9 +28,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am currently a Research Assistant Professor in the Department of Computer Science at Texas Tech University, where I also serve as the technical lead for the [Data-Intensive Scalable Computing Laboratory (DISCL)](https://discl.cs.ttu.edu/) and the [NSF Cloud and Autonomic Computing Center (CAC IUCRC)](https://nsfcac.org/).
+I am a Research Assistant Professor in the Department of Computer Science at Texas Tech University and the Assistant Director of the Texas Tech site of the [NSF Cloud and Autonomic Computing Center (CAC IUCRC)](https://nsfcac.org/). I earned my Ph.D. in Computer Science from Texas Tech University in May 2024, advised by [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/), and then served as a postdoctoral researcher and technical lead of the [Data-Intensive Scalable Computing Laboratory (DISCL)](https://discl.cs.ttu.edu/).
 
-I earned my Ph.D. in Computer Science from Texas Tech University in May 2024, advised by [Dr. Yong Chen](https://www.myweb.ttu.edu/yonchen/). My research lies at the intersection of `High-Performance Computing (HPC)`, `Systems Security`, and `AI Infrastructure`. I am passionate about addressing critical inefficiencies and security vulnerabilities in modern computing environments through AI-driven system monitoring, proactive cyber-defense, and hardware-software co-design.
+My research focuses on `High-Performance Computing (HPC)` and `AI Infrastructure`, with an emphasis on observability, resource management, and energy efficiency. Building on this systems foundation, my research agenda extends to `AI agents for HPC operations`, the security of agents acting within HPC environments, and the integration of HPC with quantum computing.
 
-My work aims to build secure, autonomous, and energy-efficient architectures to support heterogeneous paradigms, including Generative AI and hybrid quantum-classical workflows. I co-designed and built the [NSF REPACSS cluster (a $12.25M award project)](https://repacss.org/) and developed the `MonSTer` HPC monitoring framework, which has been adopted by [Dell’s Omnia project](https://github.com/dell/omnia).
-Previously, I spent three summers as a Graduate Student Intern at Lawrence Berkeley National Laboratory (LBNL), where I worked on data pipelines for telemetry analysis and job scheduling for memory-disaggregated systems.
+I co-designed and built the [NSF REPACSS cluster (a $12.25M award project)](https://repacss.org/), which now serves as a production testbed for my work on AI agents that operate and manage HPC systems. I also developed the `MonSTer` HPC monitoring framework, which has been adopted by [Dell’s Omnia project](https://github.com/dell/omnia).
+Previously, I spent three summers (2021–2023) as a Graduate Student Intern at Lawrence Berkeley National Laboratory (LBNL), where I built telemetry pipelines for NERSC’s Cori and Perlmutter supercomputers and led development of the Disaggregation-Aware Scheduler for memory-disaggregated systems.

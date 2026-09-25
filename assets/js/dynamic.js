@@ -17,10 +17,10 @@
     var phrases = [
       "Research Assistant Professor @ Texas Tech University",
       "High-Performance Computing",
-      "Computer Architecture",
-      "Distributed Systems",
-      "Systems Security",
       "AI Infrastructure",
+      "AI Agents for HPC Operations",
+      "Energy-Efficient Computing",
+      "HPC & Quantum Computing",
     ];
 
     if (prefersReducedMotion) {
