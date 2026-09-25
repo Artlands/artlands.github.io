@@ -60,7 +60,7 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 
 ### Assistant Director <time>January 2026 – Present</time>
 
-<location>NSF Cloud and Autonomic Computing Center ([CAC IUCRC](https://nsfcac.org/)), Texas Tech Site</location>
+<location markdown="span">NSF Cloud and Autonomic Computing Center ([CAC IUCRC](https://nsfcac.org/)), Texas Tech Site</location>
 
 - Coordinate faculty, student teams, industry members, and external collaborators in developing and reviewing research projects for this NSF Industry–University Cooperative Research Center.
 - Help organize semiannual Industry Advisory Board meetings, including project planning, presentation preparation, and follow-up with industry participants.
