@@ -23,8 +23,17 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "news-i-am-seeking-tenure-track-assistant-professor-positions-in-computer-science-if-you-are-aware-of-any-open-positions-or-would-like-to-connect-please-feel-free-to-reach-out-to-me",
+        },{id: "news-i-became-the-assistant-director-of-the-texas-tech-site-of-the-nsf-cloud-and-autonomic-computing-center-cac-iucrc",
+          title: 'I became the Assistant Director of the Texas Tech site of the NSF...',
+          description: "",
+          section: "News",},{id: "news-i-am-seeking-tenure-track-assistant-professor-positions-in-computer-science-if-you-are-aware-of-any-open-positions-or-would-like-to-connect-please-feel-free-to-reach-out-to-me",
           title: '📢 I am seeking tenure-track Assistant Professor positions in Computer Science. If you...',
+          description: "",
+          section: "News",},{id: "news-i-started-as-a-research-assistant-professor-in-the-department-of-computer-science-at-texas-tech-university",
+          title: 'I started as a Research Assistant Professor in the Department of Computer Science...',
+          description: "",
+          section: "News",},{id: "news-our-paper-ocean-open-source-cxl-emulation-for-hyperscale-architecture-and-networking-will-appear-at-sc-26",
+          title: 'Our paper OCEAN: Open-Source CXL Emulation for Hyperscale Architecture and Networking will appear...',
           description: "",
           section: "News",},{id: "projects-disaggregation-aware-scheduler",
           title: 'Disaggregation-Aware Scheduler',
