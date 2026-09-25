@@ -436,14 +436,12 @@ ul.task-list input[type="checkbox"] {
     font-weight: 600;
   }
 
-  // The section heading already draws a divider; drop the first year rule.
+  // Publications stay grouped by year (newest first) but without year headers.
   .publications {
     margin-top: 0;
 
-    h2.bibliography:first-child {
-      border-top: 0;
-      margin-top: 0;
-      padding-top: 0;
+    h2.bibliography {
+      display: none;
     }
   }
 
@@ -498,6 +496,11 @@ ul.task-list input[type="checkbox"] {
   li {
     margin-bottom: 0.25rem;
   }
+}
+
+// Name heading shown only in the printed/PDF CV (replaces the "CV" page title).
+.cv-print-name {
+  display: none;
 }
 
 .cv-download {
@@ -556,6 +559,76 @@ ul.task-list input[type="checkbox"] {
 
   .cv-rows dd {
     margin-bottom: 0.4rem;
+  }
+}
+
+// Printing the CV (bin/cv_pdf.js prints /cv/ to PDF at deploy time; the same
+// rules apply when a visitor prints the page).
+@media print {
+  @page {
+    size: letter;
+    margin: 0.6in 0.65in 0.7in;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+  }
+
+  .post-header,
+  .navbar,
+  footer,
+  #back-to-top,
+  .progress,
+  .cv-download .btn,
+  .publications .links,
+  .publications .badges {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
+
+  .cv-print-name {
+    display: block;
+    font-size: 2rem;
+    margin: 0 0 0.25rem;
+  }
+
+  // Scroll-reveal animations never trigger on a printed page.
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .cv-page {
+    h2:not(.bibliography) {
+      break-after: avoid;
+      margin-top: 1.25rem;
+    }
+
+    h3 {
+      break-after: avoid;
+    }
+  }
+
+  .cv-entry,
+  .publications ol.bibliography > li,
+  .cv-rows dt,
+  .cv-rows dd {
+    break-inside: avoid;
+  }
+
+  .publications ol.bibliography > li {
+    margin-bottom: 0.6rem;
   }
 }
 
