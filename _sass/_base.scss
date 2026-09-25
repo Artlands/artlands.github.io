@@ -409,6 +409,17 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Highlighted research areas in the about-page bio: same tint as inline
+// code, but in the body font so long phrases wrap like normal text.
+.research-area {
+  color: var(--global-theme-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 3px;
+  padding: 0 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 // Social (bottom)
 
 .social {
@@ -827,6 +838,12 @@ footer.sticky-bottom {
         }
       }
 
+      .links,
+      .badges {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
       .badges {
         padding-bottom: 0.5rem;
         span {
@@ -1111,6 +1128,12 @@ nav[data-toggle="toc"] {
 
 /* small screens */
 @media (max-width: 576px) {
+  /* fewer profile icons in the navbar; all remain on larger screens */
+  .navbar-brand.social a[title="DBLP"],
+  .navbar-brand.social a[title="Scopus"] {
+    display: none;
+  }
+
   /* override stickyness so that the navigation does not follow scrolling */
   nav[data-toggle="toc"] {
     visibility: hidden;
