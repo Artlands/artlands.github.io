@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-09-24'
+  last_updated: '2026-09-27'
 papers:
   G7oDoOcAAAAJ:4DMP91E08xMC:
     citations: 2
@@ -14,7 +14,7 @@ papers:
     title: 'Radarviewer: Visualizing the dynamics of multivariate data'
     year: '2020'
   G7oDoOcAAAAJ:KlAtU1dfN6UC:
-    citations: 44
+    citations: 45
     title: 'Tokenpowerbench: Benchmarking the power consumption of llm inference'
     year: '2026'
   G7oDoOcAAAAJ:M3ejUd6NZC8C:
@@ -46,7 +46,7 @@ papers:
     title: Effective Management of Time Series Data
     year: '2023'
   G7oDoOcAAAAJ:aqlVkmm33-oC:
-    citations: 0
+    citations: 1
     title: 'From Tensor Buffer to Distributed Memory Hierarchy: A Survey of KV Cache Management for LLM Serving'
     year: '2026'
   G7oDoOcAAAAJ:d1gkVwhDpl0C:
