@@ -104,7 +104,7 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 
 - Role: Co-PI (PI: Yong Chen). Contributed project vision and technical approach for HPC cybersecurity.
 
-### DA Vinci: An Integrated Data Collection, Automation, and Visualization Framework for HPC Systems <time>2020</time>
+### DAVinci: An Integrated Data Collection, Automation, and Visualization Framework for HPC Systems <time>2020</time>
 
 <location>NSF Frameworks · Not funded · Requested: $1,000,000</location>
 
