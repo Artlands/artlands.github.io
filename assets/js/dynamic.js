@@ -357,6 +357,11 @@
     }
   });
 
+  /* trigger 3: the footer hint (the only way in on touch devices) */
+  document.addEventListener("click", function (e) {
+    if (e.target.closest("[data-hpc-terminal]")) openTerminal();
+  });
+
   /* ------------------------------------------------------------------ */
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

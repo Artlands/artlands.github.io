@@ -195,6 +195,19 @@ html:not(.js) .reveal {
 // Hidden terminal easter egg
 // ---------------------------------------------------------------------------
 
+.hpc-hint {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.6;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
 #hpc-terminal {
   position: fixed;
   inset: 0;

@@ -3,6 +3,9 @@
   {{ site.first_name }}
   {{ site.middle_name }}
   {{ site.last_name }}. {{ site.footer_text }}
+  <button type="button" class="hpc-hint" data-hpc-terminal title="Or just type hpc anywhere on the page">
+    <code>&gt;_ hpc</code>
+  </button>
   {% if site.impressum_path %}
     <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
   {% endif %}
