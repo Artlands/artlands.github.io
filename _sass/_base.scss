@@ -715,6 +715,30 @@ html[data-theme="dark"] .cv-md {
     }
   }
 
+  // Research statement: print-only title, keep the roadmap and references whole.
+  .cv-page {
+    font-size: 10.5pt;
+  }
+
+  .research-print-title {
+    margin-bottom: 1rem;
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  .roadmap,
+  .cv-refs .csl-entry {
+    break-inside: avoid;
+  }
+
+  .cv-page h2,
+  .cv-page h3 {
+    break-after: avoid;
+  }
+
   // Mentoring-outcome badges on the Teaching page print as plain text.
   .cv-badge {
     background: none !important;
@@ -1844,7 +1868,7 @@ mjx-container[jax="CHTML"][display="true"] {
   margin: 1.5rem 0 0.5rem;
 
   .roadmap-vision {
-    background: var(--accent-gradient);
+    background: var(--global-theme-color);
     color: #fff;
     border-radius: 0.75rem;
     padding: 0.9rem 1rem;
@@ -1914,10 +1938,7 @@ mjx-container[jax="CHTML"][display="true"] {
     border-color: color-mix(in srgb, var(--global-theme-color) 45%, var(--global-divider-color));
 
     strong {
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--global-theme-color);
     }
   }
 
@@ -1926,6 +1947,30 @@ mjx-container[jax="CHTML"][display="true"] {
     font-size: 0.85rem;
     color: var(--global-text-color-light);
     margin-top: 0.75rem;
+  }
+}
+
+// Research page subsection headings: bold, in the body text color.
+.cv-page.research-page h3 {
+  color: var(--global-text-color);
+  font-weight: 600;
+}
+
+// Numbered reference list on the research page, in citation order.
+.cv-page .cv-refs {
+  ol.bibliography {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .csl-entry {
+    display: flex;
+    padding: 0 0 0.5rem;
+  }
+
+  .csl-left-margin {
+    flex: 0 0 2.4em;
   }
 }
 

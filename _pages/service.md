@@ -3,7 +3,7 @@ layout: page
 permalink: /service/
 title: Service
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 <div class="cv-page" markdown="1">
