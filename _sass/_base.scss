@@ -1950,7 +1950,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
   .roadmap-vision {
     background: var(--global-theme-color);
-    color: #fff;
+    color: var(--global-bg-color);
     border-radius: 0.75rem;
     padding: 0.9rem 1rem;
     text-align: center;
@@ -2056,16 +2056,30 @@ mjx-container[jax="CHTML"][display="true"] {
   margin-right: 0.45em;
   border-radius: 50%;
   background: var(--global-theme-color);
-  color: #fff !important;
+  color: var(--global-bg-color) !important;
   font-size: 0.8em;
   font-weight: 700;
   vertical-align: 0.1em;
 }
 
-// Research page subsection headings: bold, in the body text color.
-.cv-page.research-page h3 {
-  color: var(--global-text-color);
-  font-weight: 600;
+// Research page uses the CV's slate-blue accent (lighter in dark mode) for
+// its section headings, links, roadmap, and badges.
+.cv-page.research-page {
+  --global-theme-color: #{$cv-accent};
+
+  h2 {
+    color: var(--global-theme-color);
+  }
+
+  // subsection headings: bold, in the body text color
+  h3 {
+    color: var(--global-text-color);
+    font-weight: 600;
+  }
+}
+
+html[data-theme="dark"] .cv-page.research-page {
+  --global-theme-color: #8fb0cf;
 }
 
 // Numbered reference list on the research page, in citation order.
