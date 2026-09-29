@@ -2,7 +2,7 @@
 layout: page
 permalink: /research/
 title: Research
-description: Research statement, September 2026.
+description: Research statement.
 nav: true
 nav_order: 2
 ---
@@ -13,7 +13,7 @@ nav_order: 2
 
 <div class="d-none d-print-block text-center research-print-title">
   <h1>Research Statement</h1>
-  <p>Jie Li, Ph.D. | September 2026</p>
+  <p>Jie Li, Ph.D.</p>
 </div>
 
 <p class="text-right cv-download"><a class="btncv" href="{{ '/assets/pdf/ResearchStatement_JieLi.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download PDF</a></p>
