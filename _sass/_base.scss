@@ -1837,3 +1837,107 @@ figure.cover {
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;
 }
+
+// Research statement roadmap (/research/): vision banner over three
+// challenge → work → future columns; columns stack on narrow screens.
+.roadmap {
+  margin: 1.5rem 0 0.5rem;
+
+  .roadmap-vision {
+    background: var(--accent-gradient);
+    color: #fff;
+    border-radius: 0.75rem;
+    padding: 0.9rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .roadmap-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem 1rem;
+    margin-top: 1rem;
+  }
+
+  // subgrid keeps each stage aligned across the three columns
+  .roadmap-col {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+  }
+
+  .roadmap-step {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.6rem;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.9rem;
+    background: var(--global-card-bg-color);
+
+    // connector arrow to the next stage
+    & + .roadmap-step {
+      position: relative;
+
+      &::before {
+        content: "↓";
+        position: absolute;
+        top: -1.35rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--global-theme-color);
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .roadmap-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    margin-bottom: 0.2rem;
+  }
+
+  .roadmap-challenge {
+    background: color-mix(in srgb, var(--global-theme-color) 8%, var(--global-card-bg-color));
+
+    strong {
+      display: block;
+      color: var(--global-theme-color);
+      font-size: 1rem;
+    }
+  }
+
+  .roadmap-future {
+    border-color: color-mix(in srgb, var(--global-theme-color) 45%, var(--global-divider-color));
+
+    strong {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .roadmap .roadmap-cols {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .roadmap .roadmap-col {
+    grid-row: auto;
+    grid-template-rows: none;
+    row-gap: 1.4rem;
+  }
+}
