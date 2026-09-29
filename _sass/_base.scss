@@ -750,6 +750,13 @@ html[data-theme="dark"] .cv-md {
       text-decoration: none;
     }
 
+    // Justify body text so the right edge lines up with the left margin.
+    p,
+    .csl-right-inline {
+      text-align: justify;
+      hyphens: auto;
+    }
+
     // Small figure labels stay sans-serif for legibility.
     .roadmap {
       font-family: "Roboto", sans-serif;
