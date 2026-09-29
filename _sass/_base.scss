@@ -751,7 +751,8 @@ html[data-theme="dark"] .cv-md {
     }
 
     // Justify body text so the right edge lines up with the left margin.
-    p,
+    // Direct-child paragraphs only, so the centered title block is untouched.
+    > p,
     .csl-right-inline {
       text-align: justify;
       hyphens: auto;
