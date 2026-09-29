@@ -720,11 +720,48 @@ html[data-theme="dark"] .cv-md {
     font-size: 10.5pt;
   }
 
+  // Match the CV PDF: Times text, slate-blue ruled section headings and links.
+  // Overriding the theme color recolors the roadmap and badges too.
+  .cv-page.research-page {
+    --global-theme-color: #{$cv-accent};
+    font-family: "Times New Roman", Times, serif;
+    font-size: 11pt;
+
+    h1,
+    h2,
+    h3 {
+      font-family: inherit;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: $cv-accent;
+      border-bottom: 1px solid #000;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    // Small figure labels stay sans-serif for legibility.
+    .roadmap {
+      font-family: "Roboto", sans-serif;
+    }
+  }
+
   .research-print-title {
     margin-bottom: 1rem;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 150%;
+      font-weight: bold;
       margin-bottom: 0.2rem;
     }
   }
