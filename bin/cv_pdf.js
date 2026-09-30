@@ -66,6 +66,9 @@ const server = http.createServer((req, res) => {
       await page.evaluate(() => document.fonts.ready);
       const sections = await page.locator(p.selector).count();
       if (sections === 0) throw new Error(`No sections found at ${url}`);
+      // "Last updated" is hidden in print and shown in the footer instead,
+      // so it never spills onto a page of its own.
+      const updated = (await page.locator(".cv-update").first().textContent({ timeout: 1000 }).catch(() => "")).trim();
       fs.mkdirSync(path.dirname(outPath), { recursive: true });
       await page.pdf({
         path: outPath,
@@ -76,7 +79,7 @@ const server = http.createServer((req, res) => {
         headerTemplate: "<span></span>",
         footerTemplate:
           '<div style="width:100%;font-size:8px;color:#666;padding:0 0.65in;display:flex;justify-content:space-between;">' +
-          `<span>Jie Li — ${p.footer}</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`,
+          `<span>Jie Li — ${p.footer}</span><span>${updated}</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`,
       });
       console.log(`Wrote ${path.relative(process.cwd(), outPath)} (${sections} sections)`);
       await page.close();
