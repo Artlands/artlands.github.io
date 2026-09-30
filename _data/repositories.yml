@@ -7,3 +7,8 @@ github_repos:
   - nsfcac/MonSTer
   - Artlands/rev-xbgas
   - Artlands/rev-xbgas-runtime
+
+github_tools:
+  - Artlands/Gitleaf
+  - Artlands/InplaceAI
+  - Artlands/sibdocks
