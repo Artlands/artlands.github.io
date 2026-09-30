@@ -93,7 +93,7 @@ For hybrid classical-quantum workflows, I will first focus on tractable software
 
 ## Closing perspective
 
-The through line of my research is a progression from **observing** complex systems to **allocating** resources intelligently and then **acting** safely. My experience building REPACSS, collaborating with national laboratories and industry, serving as assistant director of the Texas Tech site of the NSF Cloud and Autonomic Computing Center, and mentoring students gives me a practical setting for this agenda. I aim to develop open methods that make scientific and AI infrastructure more efficient, dependable, and secure, while training students to work across architecture, systems software, and real operations.
+The through line of my research is a progression from **observing** complex systems to **allocating** resources intelligently and then **acting** safely. My experience building REPACSS, collaborating with national laboratories and industry, serving as assistant director of the Texas Tech site of the NSF Cloud and Autonomic Computing Center, and mentoring students gives me a practical setting for this agenda. I am also Co-PI on a submitted NSF REU Site proposal, ASPIRE, which would bring undergraduates into HPC and AI research. I aim to develop open methods that make scientific and AI infrastructure more efficient, dependable, and secure, while training students to work across architecture, systems software, and real operations.
 
 ## Selected references
 

@@ -57,6 +57,7 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 - Initiated a research direction on AI agents for autonomous HPC operation and management, using REPACSS as a production testbed.
 - Contribute to the operation, optimization, and research use of the NSF REPACSS cluster ($12.25M), including system software integration, performance analysis, and user support.
 - Supervise graduate and undergraduate researchers and develop proposals on secure, autonomous, and energy-efficient computing infrastructure.
+- Co-PI on the NSF REU Site proposal ASPIRE (2026, submitted), which proposes undergraduate research projects in HPC and AI.
 
 ### Assistant Director <time>January 2026 – Present</time>
 
@@ -97,6 +98,12 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 <location>National Science Foundation, Category II · Funded · Total award: $12,250,000</location>
 
 - Role: Contributor to proposal development and infrastructure implementation (PI: Yong Chen; Co-PI: Alan Sill). Contributed proposal sections on data center monitoring and remote control.
+
+### ASPIRE: Advancing Scientific Discovery through High-Performance Computing and AI Research <time>2026</time>
+
+<location>NSF REU Site · Submitted · Requested: $430,000</location>
+
+- Role: Co-PI (PI: Yong Chen; Co-PI: Maaz Amjad). Designed the undergraduate research projects in HPC and AI and led the proposal's overall presentation, including its tables and figures.
 
 ### SHIELD: Strengthening High-Performance Infrastructure with Enhanced Layered Defense <time>2025</time>
 
