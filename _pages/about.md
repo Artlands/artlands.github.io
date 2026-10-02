@@ -36,3 +36,5 @@ I co-designed and built the [NSF REPACSS cluster (a $12.25M award project)](http
 Previously, I spent three summers (2021–2023) as a Graduate Student Intern at Lawrence Berkeley National Laboratory (LBNL), where I built telemetry pipelines for NERSC’s Cori and Perlmutter supercomputers and led development of the Disaggregation-Aware Scheduler for memory-disaggregated systems.
 
 I am on the <span class="research-area">2026–27 academic job market</span>, seeking tenure-track Assistant Professor positions in Computer Science. Feel free to [reach out](mailto:jie.li@ttu.edu).
+
+<video src="{{ '/assets/video/jieli-intro.mp4' | relative_url }}" poster="{{ '/assets/img/jieli-intro-poster.jpg' | relative_url }}" controls muted playsinline preload="none" class="img-fluid rounded z-depth-1 mt-3" aria-label="35-second video overview of my research"></video>
