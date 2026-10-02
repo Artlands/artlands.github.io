@@ -160,6 +160,9 @@
   &.revealed {
     opacity: 1;
     transform: none;
+    // drop the layer once shown; a lingering one paints the paragraph box
+    // over the floated profile column and swallows clicks on the video
+    will-change: auto;
   }
 }
 
