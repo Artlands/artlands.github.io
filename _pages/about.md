@@ -9,6 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <video src="/assets/video/jieli-intro.mp4" poster="/assets/img/jieli-intro-poster.jpg" controls muted playsinline preload="none" class="w-100 rounded z-depth-1" aria-label="35-second video overview of my research"></video>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 scholar:
@@ -36,15 +37,3 @@ I co-designed and built the [NSF REPACSS cluster (a $12.25M award project)](http
 Previously, I spent three summers (2021–2023) as a Graduate Student Intern at Lawrence Berkeley National Laboratory (LBNL), where I built telemetry pipelines for NERSC’s Cori and Perlmutter supercomputers and led development of the Disaggregation-Aware Scheduler for memory-disaggregated systems.
 
 I am on the <span class="research-area">2026–27 academic job market</span>, seeking tenure-track Assistant Professor positions in Computer Science. Feel free to [reach out](mailto:jie.li@ttu.edu).
-
-<video id="intro-video" src="{{ '/assets/video/jieli-intro.mp4' | relative_url }}" poster="{{ '/assets/img/jieli-intro-poster.jpg' | relative_url }}" controls muted playsinline preload="none" class="img-fluid rounded z-depth-1 mt-3" aria-label="35-second video overview of my research"></video>
-
-<script>
-  (function () {
-    var v = document.getElementById("intro-video");
-    if (!v || !("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    new IntersectionObserver(function (entries) {
-      entries[0].isIntersecting ? v.play().catch(function () {}) : v.pause();
-    }, { threshold: 0.6 }).observe(v);
-  })();
-</script>
