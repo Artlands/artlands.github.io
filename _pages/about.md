@@ -37,4 +37,14 @@ Previously, I spent three summers (2021–2023) as a Graduate Student Intern at 
 
 I am on the <span class="research-area">2026–27 academic job market</span>, seeking tenure-track Assistant Professor positions in Computer Science. Feel free to [reach out](mailto:jie.li@ttu.edu).
 
-<video src="{{ '/assets/video/jieli-intro.mp4' | relative_url }}" poster="{{ '/assets/img/jieli-intro-poster.jpg' | relative_url }}" controls muted playsinline preload="none" class="img-fluid rounded z-depth-1 mt-3" aria-label="35-second video overview of my research"></video>
+<video id="intro-video" src="{{ '/assets/video/jieli-intro.mp4' | relative_url }}" poster="{{ '/assets/img/jieli-intro-poster.jpg' | relative_url }}" controls muted playsinline preload="none" class="img-fluid rounded z-depth-1 mt-3" aria-label="35-second video overview of my research"></video>
+
+<script>
+  (function () {
+    var v = document.getElementById("intro-video");
+    if (!v || !("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    new IntersectionObserver(function (entries) {
+      entries[0].isIntersecting ? v.play().catch(function () {}) : v.pause();
+    }, { threshold: 0.6 }).observe(v);
+  })();
+</script>
