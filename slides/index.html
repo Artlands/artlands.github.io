@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lecture Slides · Jie Li</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#0E1822;--panel:#13202E;--line:#24364A;--text:#E8ECF1;--muted:#9AA8B8;--acc:#F0A35E;--focus:#6FA8DC}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',Arial,sans-serif;overflow:hidden}
+button,input{font:inherit;color:inherit}
+button{background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--muted)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+[hidden]{display:none!important}
+/* lock + library */
+.page{height:100%;overflow:auto;padding:48px 16px}
+.card{max-width:440px;margin:12vh auto 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px}
+.card h1{font-size:24px;font-weight:600;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px;line-height:1.5;margin-bottom:20px}
+.card input[type=password]{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);margin-bottom:12px}
+.row{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.check{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:14px}
+.primary{background:var(--acc);border-color:var(--acc);color:#13202E;font-weight:600;padding:8px 20px}
+.err{color:#F08A7E;font-size:14px;min-height:20px;margin-top:12px}
+.lib{max-width:880px;margin:0 auto}
+.lib header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:32px}
+.lib h1{font-size:28px;font-weight:600}
+.lib h2{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--acc);margin:32px 0 12px}
+.lib ol{list-style:none;padding:0;display:grid;gap:8px}
+.lib a{display:flex;gap:16px;align-items:baseline;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);text-decoration:none}
+.lib a:hover{border-color:var(--muted)}
+.lib .wk{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:14px;flex:none;width:64px}
+.lib .t{flex:1}
+.lib .n{color:var(--muted);font-size:14px;flex:none}
+/* deck */
+#deck{height:100%;display:flex;flex-direction:column}
+.bar{flex:none;display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--line);background:var(--panel);min-width:0}
+.bar .title{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:15px}
+.bar .count{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);white-space:nowrap}
+.bar button[aria-pressed=true]{background:var(--line)}
+.main{flex:1;display:flex;min-height:0}
+.stage{flex:1;position:relative;min-width:0;min-height:0}
+.frame{position:absolute;width:1920px;height:1080px;transform-origin:0 0;box-shadow:0 8px 40px rgba(0,0,0,.45);transition:opacity .18s}
+.frame.fading{opacity:0}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:64px;border-radius:10px;background:rgba(19,32,46,.6);font-size:22px}
+.nav.prev{left:8px}.nav.next{right:8px}
+.notes{flex:none;width:min(420px,38vw);border-left:1px solid var(--line);background:var(--panel);overflow:auto;padding:20px;font-size:16px;line-height:1.6;color:#D6DDE5;white-space:pre-wrap}
+.notes .lab{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--acc);margin-bottom:10px;white-space:normal}
+.progress{flex:none;height:3px;background:var(--line)}.progress i{display:block;height:100%;background:var(--acc);transition:width .2s}
+.grid{position:absolute;inset:0;overflow:auto;padding:24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;background:var(--bg);align-content:start}
+.thumb{position:relative;height:0;padding-top:56.25%;border:2px solid transparent;border-radius:6px;overflow:hidden;background:#000;cursor:pointer;text-align:left}
+.thumb:hover{border-color:var(--muted)}
+.thumb.cur{border-color:var(--acc)}
+.thumb .holder{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;pointer-events:none}
+.thumb span{position:absolute;right:6px;bottom:4px;font:12px 'JetBrains Mono',monospace;background:rgba(0,0,0,.6);padding:1px 6px;border-radius:4px}
+@media (max-width:720px){.notes{position:absolute;inset:auto 0 0 0;width:auto;height:45%;border-left:none;border-top:1px solid var(--line)}.main{position:relative}.hide-sm{display:none}}
+/* ---- slide subset (matches the Slides artifact's HTML subset) ---- */
+.sl section{position:relative;width:1920px;height:1080px;overflow:hidden;display:flex;flex-direction:column}
+.sl h1{font-size:96px;font-weight:600;line-height:1.1}.sl h2{font-size:64px;font-weight:600;line-height:1.15}
+.sl h3{font-size:44px;font-weight:600;line-height:1.2}.sl p{font-size:32px;line-height:1.4}
+.sl ul,.sl ol{padding-left:1.2em}
+.sl table{border-collapse:collapse}.sl th,.sl td{padding:.35em .6em;text-align:left;border-bottom:1px solid rgba(19,32,46,.18);vertical-align:middle}
+.sl th{font-weight:600}
+.sl x-shape{display:block}
+.sl x-shape[kind=arrow-right]{clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)}
+.sl x-shape[kind=arrow-left]{clip-path:polygon(100% 30%,40% 30%,40% 0,0 50%,40% 100%,40% 70%,100% 70%)}
+.sl x-shape[kind=arrow-down]{clip-path:polygon(30% 0,70% 0,70% 60%,100% 60%,50% 100%,0 60%,30% 60%)}
+.sl x-shape[kind=arrow-up]{clip-path:polygon(30% 100%,70% 100%,70% 40%,100% 40%,50% 0,0 40%,30% 40%)}
+.sl x-shape[kind=ellipse]{border-radius:50%}.sl x-shape[kind=diamond]{clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.sl x-shape[kind=rounded]{border-radius:16px}
+.sl x-icon{display:none} /* ponytail: no deck uses icons yet; add an icon set when one does */
+.sl x-connector{display:none}
+</style>
+</head>
+<body>
+<main id="lock" class="page" hidden>
+  <form class="card" id="lockform">
+    <h1>Lecture slides</h1>
+    <p>Course slides by Jie Li, Texas Tech University. Enter the passcode from the course page or syllabus.</p>
+    <label for="pw" class="check" style="margin-bottom:6px">Passcode</label>
+    <input id="pw" type="password" autocomplete="current-password" required>
+    <div class="row">
+      <label class="check"><input type="checkbox" id="remember"> Remember on this device</label>
+      <button class="primary" id="unlock" type="submit">Unlock</button>
+    </div>
+    <div class="err" id="err" role="alert"></div>
+  </form>
+</main>
+
+<main id="library" class="page" hidden>
+  <div class="lib">
+    <header><h1>Lecture slides</h1><button id="lockbtn" type="button">Lock</button></header>
+    <div id="courses"></div>
+  </div>
+</main>
+
+<div id="deck" hidden>
+  <div class="bar">
+    <button id="back" type="button" title="All decks (Esc)">← Decks</button>
+    <div class="title" id="dtitle"></div>
+    <span class="count" id="count"></span>
+    <button id="gridbtn" type="button" aria-pressed="false" title="Overview (G)">Overview</button>
+    <button id="notesbtn" type="button" aria-pressed="false" title="Speaker notes (N)">Notes</button>
+    <button id="fsbtn" type="button" class="hide-sm" title="Full screen (F)">Full screen</button>
+  </div>
+  <div class="progress"><i id="prog"></i></div>
+  <div class="main">
+    <div class="stage" id="stage">
+      <div class="frame sl" id="frame"></div>
+      <button class="nav prev" id="prev" type="button" aria-label="Previous slide">‹</button>
+      <button class="nav next" id="next" type="button" aria-label="Next slide">›</button>
+      <div class="grid" id="grid" hidden></div>
+    </div>
+    <aside class="notes" id="notes" hidden></aside>
+  </div>
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const dec = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+const enc = b => btoa(String.fromCharCode(...new Uint8Array(b)));
+const store = { // storage can throw (private mode); every access is guarded
+  get(k) { for (const s of [sessionStorage, localStorage]) { try { const v = s.getItem(k); if (v) return v; } catch {} } return null; },
+  set(k, v, keep) { try { (keep ? localStorage : sessionStorage).setItem(k, v); } catch {} },
+  clear(k) { for (const s of [sessionStorage, localStorage]) { try { s.removeItem(k); } catch {} } },
+};
+let key = null, manifest = null, deck = null, cur = 0;
+
+async function fetchBox(name) {
+  const r = await fetch(`data/${name}.json`, { cache: "no-cache" });
+  if (!r.ok) throw new Error(`missing ${name}`);
+  return r.json();
+}
+async function deriveKey(pw, box) {
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({ name: "PBKDF2", hash: "SHA-256", salt: dec(box.salt), iterations: box.iter },
+    base, { name: "AES-GCM", length: 256 }, true, ["decrypt"]);
+}
+async function open(box) {
+  const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: dec(box.iv) }, key, dec(box.ct));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+
+async function tryStoredKey() {
+  const raw = store.get("slides-key");
+  if (!raw) return false;
+  try {
+    key = await crypto.subtle.importKey("raw", dec(raw), "AES-GCM", false, ["decrypt"]);
+    manifest = await open(await fetchBox("manifest"));
+    return true;
+  } catch { store.clear("slides-key"); key = null; return false; }   // passcode or data changed
+}
+
+$("lockform").onsubmit = async ev => {
+  ev.preventDefault();
+  $("err").textContent = ""; $("unlock").disabled = true; $("unlock").textContent = "Unlocking…";
+  try {
+    const box = await fetchBox("manifest");
+    key = await deriveKey($("pw").value, box);
+    manifest = await open(box);
+    store.set("slides-key", enc(await crypto.subtle.exportKey("raw", key)), $("remember").checked);
+    $("pw").value = "";
+    route();
+  } catch (e) {
+    key = null;
+    $("err").textContent = e.name === "OperationError" ? "That passcode is not correct." : "Could not load the slides: " + e.message;
+  } finally { $("unlock").disabled = false; $("unlock").textContent = "Unlock"; }
+};
+$("lockbtn").onclick = () => { store.clear("slides-key"); key = manifest = deck = null; location.hash = ""; show("lock"); };
+
+function show(view) {
+  for (const v of ["lock", "library", "deck"]) $(v).hidden = v !== view;
+  if (view === "lock") $("pw").focus();
+}
+
+function renderLibrary() {
+  const root = $("courses"); root.replaceChildren();
+  for (const c of manifest) {
+    const h = document.createElement("h2"); h.textContent = c.course; root.append(h);
+    const ol = document.createElement("ol");
+    for (const d of c.decks) {
+      const li = document.createElement("li"), a = document.createElement("a");
+      a.href = `#${d.id}`;
+      a.innerHTML = `<span class="wk">Week ${d.week}</span><span class="t"></span><span class="n">${d.n} slides</span>`;
+      a.querySelector(".t").textContent = d.topic;
+      li.append(a); ol.append(li);
+    }
+    root.append(ol);
+  }
+  document.title = "Lecture Slides · Jie Li";
+  show("library");
+}
+
+/* ---------- slide rendering ---------- */
+function drawConnectors(scope) {
+  for (const c of scope.querySelectorAll("x-connector")) {
+    const host = c.parentElement, ns = "http://www.w3.org/2000/svg";
+    const n = k => parseFloat(c.getAttribute(k));
+    const [x1, y1, x2, y2] = ["x1", "y1", "x2", "y2"].map(n);
+    const route = c.getAttribute("route") || "straight", head = c.getAttribute("head") || "end";
+    const color = c.style.color || "#5B6676", w = parseFloat(c.style.borderWidth) || 2;
+    let pts = [[x1, y1], [x2, y2]];
+    if (route === "hv") pts = [[x1, y1], [x2, y1], [x2, y2]];
+    else if (route === "vh") pts = [[x1, y1], [x1, y2], [x2, y2]];
+    else if (route === "elbow") {
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+      pts = Math.abs(x2 - x1) >= Math.abs(y2 - y1) ? [[x1, y1], [mx, y1], [mx, y2], [x2, y2]] : [[x1, y1], [x1, my], [x2, my], [x2, y2]];
+    }
+    const L = Math.max(12, 4 * w), svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("style", "position:absolute;left:0;top:0;width:1px;height:1px;overflow:visible;pointer-events:none");
+    const tip = (a, b) => { // arrowhead at b pointing from a; returns the shortened end point
+      const dx = b[0] - a[0], dy = b[1] - a[1], len = Math.hypot(dx, dy) || 1, ux = dx / len, uy = dy / len;
+      const p = document.createElementNS(ns, "polygon"), bx = b[0] - ux * L, by = b[1] - uy * L, hw = L * 0.45;
+      p.setAttribute("points", `${b[0]},${b[1]} ${bx - uy * hw},${by + ux * hw} ${bx + uy * hw},${by - ux * hw}`);
+      p.setAttribute("fill", color); svg.append(p);
+      return [b[0] - ux * L * 0.8, b[1] - uy * L * 0.8];
+    };
+    const line = pts.map(p => p.slice());
+    if (head === "end" || head === "both") line[line.length - 1] = tip(pts[pts.length - 2], pts[pts.length - 1]);
+    if (head === "start" || head === "both") line[0] = tip(pts[1], pts[0]);
+    const pl = document.createElementNS(ns, "polyline");
+    pl.setAttribute("points", line.map(p => p.join(",")).join(" "));
+    pl.setAttribute("fill", "none"); pl.setAttribute("stroke", color); pl.setAttribute("stroke-width", w);
+    if (c.style.borderStyle === "dashed") pl.setAttribute("stroke-dasharray", `${3 * w} ${2 * w}`);
+    if (c.style.borderStyle === "dotted") pl.setAttribute("stroke-dasharray", `${w} ${w}`);
+    svg.prepend(pl);
+    host.append(svg);
+  }
+}
+function slideNode(i) {
+  const t = document.createElement("template");
+  t.innerHTML = deck.slides[i].html;
+  drawConnectors(t.content);
+  return t.content;
+}
+
+function fit() {
+  const st = $("stage"), pad = 16, W = st.clientWidth - 2 * pad, H = st.clientHeight - 2 * pad;
+  const s = Math.max(0.05, Math.min(W / 1920, H / 1080));
+  const f = $("frame");
+  f.style.transform = `scale(${s})`;
+  f.style.left = `${(st.clientWidth - 1920 * s) / 2}px`;
+  f.style.top = `${(st.clientHeight - 1080 * s) / 2}px`;
+}
+
+function go(i, instant) {
+  if (!deck) return;
+  i = Math.max(0, Math.min(deck.slides.length - 1, i));
+  const f = $("frame"), paint = () => {
+    cur = i;
+    f.replaceChildren(slideNode(i));
+    f.classList.remove("fading");
+    $("count").textContent = `${i + 1} / ${deck.slides.length}`;
+    $("prog").style.width = `${(100 * (i + 1)) / deck.slides.length}%`;
+    $("notes").innerHTML = `<div class="lab">SPEAKER NOTES · SLIDE ${i + 1}</div>`;
+    $("notes").append(deck.slides[i].notes || "(no notes)");
+    $("prev").disabled = i === 0; $("next").disabled = i === deck.slides.length - 1;
+    history.replaceState(null, "", `#${deck.id}/${i + 1}`);
+  };
+  if (instant || matchMedia("(prefers-reduced-motion: reduce)").matches) return paint();
+  f.classList.add("fading"); setTimeout(paint, 150);
+}
+
+function toggleGrid(on) {
+  const g = $("grid");
+  on = on ?? g.hidden;
+  $("gridbtn").setAttribute("aria-pressed", on);
+  if (!on) { g.hidden = true; return; }
+  if (!g.childElementCount) {
+    deck.slides.forEach((_, i) => {
+      const b = document.createElement("div"), h = document.createElement("div"), n = document.createElement("span");
+      b.className = "thumb"; b.tabIndex = 0; b.setAttribute("role", "button"); b.setAttribute("aria-label", `Slide ${i + 1}`);
+      b.onkeydown = e => { if (e.key === "Enter") { e.stopPropagation(); b.click(); } };
+      h.className = "holder sl"; h.append(slideNode(i)); n.textContent = i + 1;
+      b.append(h, n); b.onclick = () => { toggleGrid(false); go(i, true); };
+      g.append(b);
+    });
+  }
+  g.hidden = false;
+  const tw = g.querySelector(".thumb").clientWidth;
+  g.querySelectorAll(".holder").forEach(h => (h.style.transform = `scale(${tw / 1920})`));
+  g.querySelectorAll(".thumb").forEach((t, i) => t.classList.toggle("cur", i === cur));
+  g.children[cur].scrollIntoView({ block: "center" });
+}
+const toggleNotes = () => {
+  const n = $("notes"); n.hidden = !n.hidden;
+  $("notesbtn").setAttribute("aria-pressed", !n.hidden); fit();
+};
+
+async function openDeck(id, n) {
+  if (!deck || deck.id !== id) {
+    $("dtitle").textContent = "Loading…"; $("grid").replaceChildren(); $("grid").hidden = true;
+    show("deck");
+    deck = await open(await fetchBox(id));
+    deck.id = id;
+  }
+  $("dtitle").textContent = deck.title;
+  document.title = deck.title;
+  show("deck"); fit(); go((n || 1) - 1, true);
+}
+
+async function route() {
+  if (!key && !(await tryStoredKey())) return show("lock");
+  const [id, n] = location.hash.slice(1).split("/");
+  if (!id) { deck = null; return renderLibrary(); }
+  try { await openDeck(id, parseInt(n, 10)); }
+  catch { location.hash = ""; renderLibrary(); }
+}
+
+$("back").onclick = () => { location.hash = ""; };
+$("prev").onclick = () => go(cur - 1);
+$("next").onclick = () => go(cur + 1);
+$("gridbtn").onclick = () => toggleGrid();
+$("notesbtn").onclick = toggleNotes;
+$("fsbtn").onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.();
+addEventListener("resize", () => { fit(); if (!$("grid").hidden) toggleGrid(true); });
+addEventListener("hashchange", () => { if (!location.hash.startsWith(`#${deck?.id}/`)) route(); });
+addEventListener("keydown", e => {
+  if ($("deck").hidden || e.target.tagName === "INPUT" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key;
+  if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(k)) go(cur + (e.shiftKey && k === " " ? -1 : 1));
+  else if (["ArrowLeft", "ArrowUp", "PageUp"].includes(k)) go(cur - 1);
+  else if (k === "Home") go(0); else if (k === "End") go(deck.slides.length - 1);
+  else if (k === "g" || k === "G") toggleGrid();
+  else if (k === "n" || k === "N") toggleNotes();
+  else if (k === "f" || k === "F") $("fsbtn").click();
+  else if (k === "Escape") { if (!$("grid").hidden) toggleGrid(false); else if (!document.fullscreenElement) location.hash = ""; return; }
+  else return;
+  e.preventDefault();
+});
+let tx = null;
+$("stage").addEventListener("touchstart", e => (tx = e.touches[0].clientX), { passive: true });
+$("stage").addEventListener("touchend", e => {
+  if (tx === null) return;
+  const dx = e.changedTouches[0].clientX - tx; tx = null;
+  if (Math.abs(dx) > 50 && $("grid").hidden) go(cur + (dx < 0 ? 1 : -1));
+});
+route();
+</script>
+</body>
+</html>
