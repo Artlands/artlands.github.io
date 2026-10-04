@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-09-27'
+  last_updated: '2026-10-04'
 papers:
   G7oDoOcAAAAJ:4DMP91E08xMC:
     citations: 2
@@ -14,7 +14,7 @@ papers:
     title: 'Radarviewer: Visualizing the dynamics of multivariate data'
     year: '2020'
   G7oDoOcAAAAJ:KlAtU1dfN6UC:
-    citations: 45
+    citations: 49
     title: 'Tokenpowerbench: Benchmarking the power consumption of llm inference'
     year: '2026'
   G7oDoOcAAAAJ:M3ejUd6NZC8C:
@@ -70,7 +70,7 @@ papers:
     title: 'Mac: Memory access coalescer for 3d-stacked memory'
     year: '2019'
   G7oDoOcAAAAJ:u5HHmVD_uO8C:
-    citations: 28
+    citations: 29
     title: 'PIMS: A lightweight processing-in-memory accelerator for stencil computations'
     year: '2019'
   G7oDoOcAAAAJ:zYLM7Y9cAGgC:
