@@ -144,7 +144,7 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 
 ## TEACHING
 
-Teaching interests: operating systems, parallel and high-performance computing, computer architecture, distributed and cloud computing, and systems for machine learning at the undergraduate and graduate levels; new graduate seminars on AI infrastructure and on AI agents for computing systems.
+Teaching interests: operating systems, parallel and high-performance computing, computer architecture, distributed and cloud computing, and systems for machine learning at the undergraduate and graduate levels; new graduate courses on AI infrastructure and on AI agents for computing systems.
 
 ### Invited Lecturer and Programming Project Designer <time>Fall 2025</time>
 
