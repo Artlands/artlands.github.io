@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <video src="/assets/video/jieli-intro.mp4" poster="/assets/img/jieli-intro-poster.jpg" controls muted playsinline preload="none" class="w-100 rounded z-depth-1" aria-label="40-second video overview of my research"></video>
+    <video src="/assets/video/jieli-intro.mp4" poster="/assets/img/jieli-intro-poster.jpg" controls playsinline preload="none" class="w-100 rounded z-depth-1" aria-label="40-second video overview of my research"></video>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 scholar:
