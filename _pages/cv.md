@@ -58,6 +58,7 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 - Contribute to the operation, optimization, and research use of the NSF REPACSS cluster ($12.25M), including system software integration, performance analysis, and user support.
 - Supervise graduate and undergraduate researchers and develop proposals on secure, autonomous, and energy-efficient computing infrastructure.
 - Co-PI on the NSF REU Site proposal ASPIRE (2026, submitted), which proposes undergraduate research projects in HPC and AI.
+- PI on the NSF AIDatasets Planning proposal AWARE and Co-PI on the NSF AIDatasets: Impact proposal CACTUS (both 2026, submitted), which address AI-ready data for weather simulation and power-aware computing.
 
 ### Assistant Director <time>January 2026 – Present</time>
 
@@ -98,6 +99,18 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 <location>National Science Foundation, Category II · Funded · Total award: $12,250,000</location>
 
 - Role: Contributor to proposal development and infrastructure implementation (PI: Yong Chen; Co-PI: Alan Sill). Contributed proposal sections on data center monitoring and remote control.
+
+### CACTUS: Coupled AI-Ready Cyberinfrastructure Telemetry for Unlocking Scientific Discovery in Power-Aware Computing <time>2026</time>
+
+<location>NSF AIDatasets: Impact · Submitted · Requested: $1,706,677</location>
+
+- Role: Co-PI (PI: Yong Chen; Co-PIs: Alan Sill, Argenis Bilbao, and Tara Salman). Responsible for data integration pipelines, AI-assisted metadata mapping, and benchmark development for an AI-ready dataset linking computing workloads, facility operations, energy supply, and weather to advance power-aware computing.
+
+### AWARE: Agent-Ready Workflow and Run-Record Enhancements for Weather Simulation Data <time>2026</time>
+
+<location>NSF AIDatasets Planning · Submitted · Requested: $116,097</location>
+
+- Role: PI (Co-PIs: Yong Chen and Brian Ancell). Led proposal development for a one-year community planning effort to prepare weather simulation datasets for reliable use by AI agents, with workshops to define data requirements, provenance, governance, and an implementation roadmap.
 
 ### ASPIRE: Advancing Scientific Discovery through High-Performance Computing and AI Research <time>2026</time>
 
