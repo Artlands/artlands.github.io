@@ -603,6 +603,13 @@ $cv-accent: #537596;
     padding-left: 1rem;
   }
 
+  // A date that wraps below its text must stay in its own list item.
+  li::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
   location {
     font-style: italic;
     font-weight: normal;

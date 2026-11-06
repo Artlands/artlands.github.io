@@ -206,9 +206,9 @@ Teaching interests: operating systems, parallel and high-performance computing, 
 - Program committee: NeurIPS 2026; AAAI 2026.
 - Conference reviewer: IEEE ISCAS 2026; IEEE BigData 2022, 2023, 2025; IEEE/ACM CCGrid 2024.
 - Journal reviewer: IEEE Computer Architecture Letters (2025); The Journal of Supercomputing (2023).
-- Conference sub-reviewer: IEEE IPDPS 2023; IEEE ICDCS 2022; ACM/IEEE SC 2022; International Parallel Data Systems Workshop (PDSW) 2022; IEEE Smart Data Services 2020.
+- Conference sub-reviewer: IEEE IPDPS 2023, 2027; IEEE ICDCS 2022; ACM/IEEE SC 2022; International Parallel Data Systems Workshop (PDSW) 2022; IEEE Smart Data Services 2020.
 - Student volunteer: ACM/IEEE SC'21, St. Louis, MO; ACM/IEEE SC'19, Denver, CO.
 
-<span class="info cv-update">Last updated: September 2026</span>
+<span class="info cv-update">Last updated: November 2026</span>
 
 </div>

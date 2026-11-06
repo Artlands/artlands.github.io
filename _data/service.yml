@@ -17,7 +17,7 @@ professional_service:
     items: [IEEE Computer Architecture Letters (2025), The Journal of Supercomputing (2023)]
   - label: Sub-reviewer
     items:
-      [IEEE IPDPS 2023, IEEE ICDCS 2022, ACM/IEEE SC 2022, International Parallel Data Systems Workshop (PDSW) 2022, IEEE Smart Data Services 2020]
+      ["IEEE IPDPS 2023, 2027", IEEE ICDCS 2022, ACM/IEEE SC 2022, International Parallel Data Systems Workshop (PDSW) 2022, IEEE Smart Data Services 2020]
   - label: Student volunteer
     items: ["ACM/IEEE SC'21, St. Louis, MO", "ACM/IEEE SC'19, Denver, CO"]
 
