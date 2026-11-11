@@ -1,14 +1,26 @@
-github_users:
-  - artlands
-
-repo_description_lines_max: 2
+# Cards on /software/ are rendered from this file (no external card service).
+# fork_of: upstream repo shown as "forked from ..." on the card.
 
 github_repos:
-  - nsfcac/MonSTer
-  - Artlands/rev-xbgas
-  - Artlands/rev-xbgas-runtime
+  - repo: nsfcac/MonSTer
+    description: Monitoring tool for HPC metrics from the batch scheduler and BMC resources.
+    language: Python
+  - repo: Artlands/rev-xbgas
+    description: RISC-V SST CPU component with xBGAS extensions.
+    language: C++
+    fork_of: tactcomplabs/rev
+  - repo: Artlands/rev-xbgas-runtime
+    description: xBGAS machine-level runtime library.
+    language: C
+    fork_of: tactcomplabs/xbgas-runtime
 
 github_tools:
-  - Artlands/Gitleaf
-  - Artlands/InplaceAI
-  - Artlands/sibdocks
+  - repo: Artlands/Gitleaf
+    description: Sync Overleaf projects with GitHub repositories, no premium Overleaf subscription required.
+    language: TypeScript
+  - repo: Artlands/InplaceAI
+    description: macOS menu bar assistant that rewrites the text you have selected in any app using an LLM.
+    language: Swift
+  - repo: Artlands/sibdocks
+    description: A per-display dock for macOS multi-monitor setups.
+    language: Swift

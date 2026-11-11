@@ -1007,6 +1007,58 @@ footer.sticky-bottom {
   }
 }
 
+.repo {
+  width: 100%;
+  align-self: stretch;
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
+  background: var(--global-card-bg-color);
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--global-theme-color);
+  }
+
+  .repo-name {
+    font-weight: 600;
+    color: var(--global-theme-color);
+  }
+
+  .repo-fork {
+    font-size: 0.75rem;
+    color: var(--global-text-color-light);
+  }
+
+  .repo-desc {
+    flex: 1;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .repo-lang {
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+  }
+
+  .repo-lang-dot {
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-right: 0.35em;
+    border-radius: 50%;
+    background: var(--global-theme-color);
+  }
+}
+
 // Blog
 
 .header-bar {
