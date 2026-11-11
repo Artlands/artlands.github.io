@@ -1,0 +1,15 @@
+{%- comment -%}
+  Renumber a rendered CV reference list in descending order: [N] … [1].
+  Usage: {% capture refs %}{% bibliography ... %}{% endcapture %}
+         {% include cv_refs_desc.liquid refs=refs %}
+  Two passes ("[k]" -> "[~m]" -> "[m]") so a new number is never renumbered.
+{%- endcomment -%}
+{%- assign out = include.refs -%}
+{%- assign n = out | split: 'class="csl-left-margin"' | size | minus: 1 -%}
+{%- for i in (1..n) -%}
+  {%- assign m = n | minus: i | plus: 1 -%}
+  {%- capture from %}csl-left-margin">[{{ i }}]</div>{% endcapture -%}
+  {%- capture to %}csl-left-margin">[~{{ m }}]</div>{% endcapture -%}
+  {%- assign out = out | replace_first: from, to -%}
+{%- endfor -%}
+{{ out | replace: 'csl-left-margin">[~', 'csl-left-margin">[' }}

@@ -573,11 +573,19 @@ $cv-accent: #537596;
     padding: 0 0 2px;
   }
 
-  h3 {
+  h3,
+  h4 {
     font-family: inherit;
     font-size: 1em;
     font-weight: bold;
     margin: 0.4rem 0 0;
+  }
+
+  // Subsection label inside a section (e.g. "Submitted Proposals").
+  h3.cv-sub {
+    font-style: italic;
+    color: $cv-accent;
+    margin-top: 0.6rem;
   }
 
   p,
@@ -603,8 +611,10 @@ $cv-accent: #537596;
     padding-left: 1rem;
   }
 
-  // A date that wraps below its text must stay in its own list item.
-  li::after {
+  // A date that wraps below its text must stay in its own list item or heading.
+  li::after,
+  h3::after,
+  h4::after {
     content: "";
     display: block;
     clear: both;
@@ -619,11 +629,9 @@ $cv-accent: #537596;
     font-weight: normal;
   }
 
-  // Publications: jekyll-scholar list rendered through _layouts/cv_ref.liquid,
-  // numbered oldest-first and shown newest-first like markdown-cv.
+  // Publications: jekyll-scholar list rendered through _layouts/cv_ref.liquid.
+  // papers.bib is stored newest-first, so DOM and visual order match.
   .cv-refs ol.bibliography {
-    display: flex;
-    flex-direction: column-reverse;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -641,6 +649,7 @@ $cv-accent: #537596;
 
 html[data-theme="dark"] .cv-md {
   h2,
+  h3.cv-sub,
   a {
     color: #8fb0cf;
   }
@@ -697,6 +706,7 @@ html[data-theme="dark"] .cv-md {
   .cv-md {
     font-size: 11pt;
     color: #000;
+    line-height: 1.42;
 
     .name {
       margin-top: 0;
@@ -708,8 +718,25 @@ html[data-theme="dark"] .cv-md {
       break-after: avoid;
     }
 
-    h3 {
+    h3,
+    h4 {
       break-after: avoid;
+    }
+
+    // Keep an entry heading with its details: Chrome ignores break-after
+    // here, so reserve ~5 lines under the heading (it moves to the next
+    // page if they don't fit) without changing the layout.
+    h3:not(.cv-sub),
+    h4 {
+      break-inside: avoid;
+    }
+
+    h3:not(.cv-sub)::after,
+    h4::after {
+      content: "";
+      display: block;
+      height: 7.5em;
+      margin-bottom: -7.5em;
     }
 
     a {
@@ -720,6 +747,10 @@ html[data-theme="dark"] .cv-md {
     li,
     .csl-entry {
       break-inside: avoid;
+    }
+
+    .csl-entry {
+      padding-bottom: 0.3rem;
     }
   }
 

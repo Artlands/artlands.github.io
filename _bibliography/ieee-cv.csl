@@ -362,7 +362,6 @@
           </group>
           <text macro="collection"/>
           <group delimiter=", " suffix=".">
-            <text macro="publisher"/>
             <text macro="issued"/>
             <text macro="page"/>
             <text macro="status"/>

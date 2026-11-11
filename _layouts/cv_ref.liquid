@@ -1,12 +1,31 @@
+{%- comment -%}
+  One CV reference: bold my name, link the DOI and arXiv identifiers, and add
+  the bib `note` (e.g. "Accepted"). Entries render in papers.bib order
+  (newest first), so the visual and reading order match.
+{%- endcomment -%}
+{%- assign ref = reference
+  | replace: 'J. Li,', '<strong>J. Li</strong>,'
+  | replace: 'J. Li ', '<strong>J. Li</strong> '
+  | replace: 'J. Li.', '<strong>J. Li</strong>.'
+-%}
+{%- if entry.doi -%}
+  {%- assign doi = entry.doi | replace: '\_', '_' -%}
+  {%- capture link %}<a href="https://doi.org/{{ doi }}">{{ doi }}</a>{% endcapture -%}
+  {%- assign ref = ref | replace_first: doi, link -%}
+{%- endif -%}
+{%- if entry.arxiv -%}
+  {%- capture link %}<a href="https://arxiv.org/abs/{{ entry.arxiv }}">arXiv:{{ entry.arxiv }}</a>{% endcapture -%}
+  {%- assign arxiv_text = 'arXiv:' | append: entry.arxiv -%}
+  {%- if ref contains arxiv_text -%}
+    {%- assign ref = ref | replace_first: arxiv_text, link -%}
+  {%- else -%}
+    {%- capture ref %}{{ ref | remove: '</span>' }} {{ link }}.</span>{% endcapture -%}
+  {%- endif -%}
+{%- endif -%}
 <div class="csl-entry" id="{{ entry.key }}">
   <div class="csl-left-margin">[{{ index }}]</div>
   <div class="csl-right-inline">
-    {{-
-      reference
-      | replace: 'J. Li,', '<strong>J. Li</strong>,'
-      | replace: 'J. Li ', '<strong>J. Li</strong> '
-      | replace: 'J. Li.', '<strong>J. Li</strong>.'
-    -}}
-    {%- if entry.note %} {{ entry.note }}{% endif -%}
+    {{- ref -}}
+    {%- if entry.note %} {{ entry.note }}.{% endif -%}
   </div>
 </div>

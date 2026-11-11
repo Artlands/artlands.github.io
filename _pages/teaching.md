@@ -8,13 +8,13 @@ nav_order: 3
 
 <div class="cv-page" markdown="1">
 
-## Teaching Interests
-
-{{ site.data.teaching.interests }}
-
 ## Teaching Experience
 
 {% include cv_entries.liquid entries=site.data.teaching.experience %}
+
+## Teaching Interests
+
+{{ site.data.teaching.interests }}
 
 ## Research Mentoring
 

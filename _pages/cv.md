@@ -23,17 +23,16 @@ nav_order: 6
 
 <span class="info">Email: [jie.li@ttu.edu](mailto:jie.li@ttu.edu) · Homepage: [lijie.me](https://lijie.me)</span>
 
-<span class="info cv-download"><a href="{{ '/assets/pdf/CV_JieLi.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download PDF</a></span>
+<span class="info cv-download"><a href="{{ '/assets/pdf/CV_JieLi.pdf' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" target="_blank" rel="noopener noreferrer">Download PDF</a></span>
 
 ## RESEARCH INTERESTS
 
-My research focuses on high-performance computing (HPC) and AI infrastructure, with an emphasis on observability, resource management, and energy efficiency. Building on this systems foundation, my research agenda extends to AI agents for HPC operation and management, the security of agents acting within HPC environments, and the integration of HPC with quantum computing.
+My research focuses on high-performance computing (HPC) and AI infrastructure, with an emphasis on observability, resource management, and energy efficiency.
 
 - **High-performance computing:** system monitoring, workload characterization, scheduling, disaggregated memory, and energy-aware resource management.
 - **AI infrastructure:** LLM serving, KV cache and memory management, and performance and power characterization of AI workloads.
-- **AI agents for HPC operations:** agent-assisted cluster operation and management, including ongoing development for the NSF REPACSS system.
-- **AI agent security in HPC:** evaluating and constraining agent behavior in shared computing environments.
-- **HPC and quantum computing:** quantum arithmetic and polynomial synthesis, with broader interests in hybrid quantum-classical workflows and HPC integration.
+- **AI agents for HPC operations and security:** agent-assisted cluster operation and management, including ongoing development for the NSF REPACSS system, and evaluating and constraining agent behavior in shared computing environments.
+- **HPC and quantum computing (emerging):** quantum arithmetic and polynomial synthesis, with broader interests in hybrid quantum-classical workflows and HPC integration.
 
 ## EDUCATION
 
@@ -53,35 +52,33 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 
 <location>Department of Computer Science, Texas Tech University, Lubbock, TX</location>
 
-- Lead research in HPC and AI infrastructure, spanning observability, resource and data management, energy-aware computing, cyberinfrastructure security, and AI-driven system management.
-- Initiated a research direction on AI agents for autonomous HPC operation and management, using REPACSS as a production testbed.
-- Contribute to the operation, optimization, and research use of the NSF REPACSS cluster ($12.25M), including system software integration, performance analysis, and user support.
-- Supervise graduate and undergraduate researchers and develop proposals on secure, autonomous, and energy-efficient computing infrastructure.
-- Co-PI on the NSF REU Site proposal ASPIRE (2026, submitted), which proposes undergraduate research projects in HPC and AI.
-- PI on the NSF AIDatasets Planning proposal AWARE and Co-PI on the NSF AIDatasets: Impact proposal CACTUS (both 2026, submitted), which address AI-ready data for weather simulation and power-aware computing.
+- Lead research in HPC and AI infrastructure, spanning observability, resource and data management, and energy-aware computing.
+- Initiated a research direction on AI agents for HPC operation and management, studying how agents can assist with cluster tasks under scoped authorization and operator oversight, with REPACSS as the production testbed.
+- Contribute to the operation, optimization, and research use of the NSF REPACSS cluster, including system software integration, performance analysis, and user support.
+- Supervise graduate and undergraduate researchers.
+- PI on AWARE and Co-PI on CACTUS and ASPIRE, all submitted to NSF in 2026 (see Grants and Proposals).
 
 ### Assistant Director <time>January 2026 – Present</time>
 
 <location markdown="span">NSF Cloud and Autonomic Computing Center ([CAC IUCRC](https://nsfcac.org/)), Texas Tech Site</location>
 
 - Coordinate faculty, student teams, industry members, and external collaborators in developing and reviewing research projects for this NSF Industry–University Cooperative Research Center.
-- Help organize semiannual Industry Advisory Board meetings, including project planning, presentation preparation, and follow-up with industry participants.
-- Mentor students preparing presentations, posters, and reports for industry review; support proposal development, center reporting, and cross-institutional coordination.
+- Help organize the semiannual Industry Advisory Board meetings, including project planning and follow-up with industry participants, and support center reporting, proposal development, and cross-institutional coordination.
+- Mentor students preparing presentations, posters, and reports for industry review.
 
 ### Postdoctoral Researcher <time>June 2024 – June 2026</time>
 
 <location>Department of Computer Science, Texas Tech University, Lubbock, TX</location>
 
-- Co-designed and built the NSF REPACSS cluster ($12.25M) from the ground up, contributing to system architecture, deployment, operation, and performance optimization.
+- Co-designed and built the NSF REPACSS cluster, contributing to its system architecture, deployment, operation, and performance optimization.
 - Served as technical lead of the Data-Intensive Scalable Computing Laboratory, coordinating research activities, student projects, and collaborative system development.
-- Co-PI on the NSF CICI proposal SHIELD (2025, not funded), which proposed layered defense mechanisms for open-science cyberinfrastructure.
 
 ### Research Assistant <time>September 2019 – May 2024</time>
 
 <location>Data-Intensive Scalable Computing Laboratory, Texas Tech University, Lubbock, TX</location>
 
 - Across graduate study (2019–2024), published 15 peer-reviewed papers (7 first-author) in venues including CLUSTER, ISC, ICPP, MemSys, IEEE CLOUD, IEEE BigData, and IEEE Transactions on Computers.
-- Developed and maintained MonSTer (later adopted by Dell's Omnia project), the Disaggregation-Aware Scheduler, and xBGAS simulation tools, supporting research in HPC monitoring, workload characterization, scheduling, and memory systems.
+- Developed and maintained MonSTer, the Disaggregation-Aware Scheduler, and xBGAS simulation tools, supporting research in HPC monitoring, workload characterization, scheduling, and memory systems.
 - Mentored students on HPC monitoring, data management, and workload analysis, including a master's thesis that led to a CLOUD'23 publication.
 
 ### Graduate Student Intern <time>Summers 2021, 2022, and 2023</time>
@@ -94,59 +91,95 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 
 ## GRANTS AND PROPOSALS
 
-### REPACSS: Empowering Scientific Discovery through Renewable Energy Powered Advanced Computing Systems and Services <time>2023</time>
+### Submitted Proposals (PI or Co-PI)
+{: .cv-sub}
 
-<location>National Science Foundation, Category II · Funded · Total award: $12,250,000</location>
+#### AWARE: Agent-Ready Workflow and Run-Record Enhancements for Weather Simulation Data <time>2026</time>
 
-- Role: Contributor to proposal development and infrastructure implementation (PI: Yong Chen; Co-PI: Alan Sill). Contributed proposal sections on data center monitoring and remote control.
+<location>NSF AIDatasets Planning · Submitted · Role: PI · Requested: $116,097</location>
 
-### CACTUS: Coupled AI-Ready Cyberinfrastructure Telemetry for Unlocking Scientific Discovery in Power-Aware Computing <time>2026</time>
+- Co-PIs: Yong Chen and Brian Ancell. Led proposal development for a one-year community planning effort to prepare weather simulation datasets for reliable use by AI agents, with workshops to define data requirements, provenance, governance, and an implementation roadmap.
 
-<location>NSF AIDatasets: Impact · Submitted · Requested: $1,706,677</location>
+#### CACTUS: Coupled AI-Ready Cyberinfrastructure Telemetry for Unlocking Scientific Discovery in Power-Aware Computing <time>2026</time>
 
-- Role: Co-PI (PI: Yong Chen; Co-PIs: Alan Sill, Argenis Bilbao, and Tara Salman). Responsible for data integration pipelines, AI-assisted metadata mapping, and benchmark development for an AI-ready dataset linking computing workloads, facility operations, energy supply, and weather to advance power-aware computing.
+<location>NSF AIDatasets: Impact · Submitted · Role: Co-PI · Requested: $1,706,677</location>
 
-### AWARE: Agent-Ready Workflow and Run-Record Enhancements for Weather Simulation Data <time>2026</time>
+- PI: Yong Chen; Co-PIs: Alan Sill, Argenis Bilbao, and Tara Salman. Responsible for data integration pipelines, AI-assisted metadata mapping, and benchmark development for an AI-ready dataset linking computing workloads, facility operations, energy supply, and weather.
 
-<location>NSF AIDatasets Planning · Submitted · Requested: $116,097</location>
+#### ASPIRE: Advancing Scientific Discovery through High-Performance Computing and AI Research <time>2026</time>
 
-- Role: PI (Co-PIs: Yong Chen and Brian Ancell). Led proposal development for a one-year community planning effort to prepare weather simulation datasets for reliable use by AI agents, with workshops to define data requirements, provenance, governance, and an implementation roadmap.
+<location>NSF REU Site · Submitted · Role: Co-PI · Requested: $430,000</location>
 
-### ASPIRE: Advancing Scientific Discovery through High-Performance Computing and AI Research <time>2026</time>
+- PI: Yong Chen; Co-PI: Maaz Amjad. Designed the undergraduate research projects in HPC and AI.
 
-<location>NSF REU Site · Submitted · Requested: $430,000</location>
+### Contributions to Funded Projects
+{: .cv-sub}
 
-- Role: Co-PI (PI: Yong Chen; Co-PI: Maaz Amjad). Designed the undergraduate research projects in HPC and AI and led the proposal's overall presentation, including its tables and figures.
+#### REPACSS: Empowering Scientific Discovery through Renewable Energy Powered Advanced Computing Systems and Services <time>2023</time>
 
-### SHIELD: Strengthening High-Performance Infrastructure with Enhanced Layered Defense <time>2025</time>
+<location>NSF Category II · Funded · Role: Contributor to proposal development and infrastructure implementation · Total project award: $12,250,000</location>
 
-<location>NSF CICI: UCSS · Not funded · Requested: $600,000</location>
-
-- Role: Co-PI (PI: Yong Chen). Contributed project vision and technical approach for HPC cybersecurity.
-
-### DAVinci: An Integrated Data Collection, Automation, and Visualization Framework for HPC Systems <time>2020</time>
-
-<location>NSF Frameworks · Not funded · Requested: $1,000,000</location>
-
-- Role: Lead contributor (PI: Yong Chen; Co-PI: Alan Sill). Led core framework design and research methodology.
+- PI: Yong Chen; Co-PI: Alan Sill. Contributed proposal sections on data center monitoring and remote control; later co-designed and built the cluster as a postdoctoral researcher.
 
 ## PEER-REVIEWED PUBLICATIONS
 
 <div class="cv-refs">
-{% bibliography --style _bibliography/ieee-cv.csl --template cv_ref --group_by none --query @*[journal!~arXiv] %}
+{% capture refs %}{% bibliography --style _bibliography/ieee-cv.csl --template cv_ref --group_by none --query @*[journal!~arXiv] %}{% endcapture %}
+{% include cv_refs_desc.liquid refs=refs %}
 </div>
 
-## PREPRINTS
+## PREPRINTS AND MANUSCRIPTS
+
+### Preprints
+{: .cv-sub}
 
 <div class="cv-refs">
-{% bibliography --style _bibliography/ieee-cv.csl --template cv_ref --group_by none --query @*[journal~=arXiv] %}
+{% capture refs %}{% bibliography --style _bibliography/ieee-cv.csl --template cv_ref --group_by none --query @*[journal~=arXiv] %}{% endcapture %}
+{% include cv_refs_desc.liquid refs=refs %}
 </div>
 
-## MANUSCRIPTS UNDER SUBMISSION OR REVISION
+### Manuscripts under Submission or Revision
+{: .cv-sub}
 
 - Ziqing Guo, **Jie Li**, Ziwen Pan, and Yong Chen. "NNQA: Neural-Native Quantum Arithmetic for End-to-End Polynomial Synthesis." Submitted to AAAI-27.
 - Tongyang Wang, **Jie Li**, Chenxu Niu, and Yong Chen. "ECHO: Online Control of CPU Frequency for Energy-Efficient High-Performance Computing."
 - Batuhan Sencer, Chenxu Niu, **Jie Li**, and Yong Chen. "Slimming Models, Saving Watts: Understanding and Modeling the Impact of Knowledge Distillation on GPU Clusters."
+
+## TEACHING
+
+### Teaching Experience
+{: .cv-sub}
+
+#### Parallel Processing (graduate), <location>Texas Tech University</location> <time>Fall 2025</time>
+
+<location>Role: Invited lecturer and programming project designer</location>
+
+- Delivered four invited lectures; topics included job scheduling, compilation and job submission, and OpenMP.
+- Designed programming projects for 27 students.
+
+### Teaching Interests
+{: .cv-sub}
+
+- **Established courses** (undergraduate and graduate): operating systems, parallel and high-performance computing, computer architecture, distributed and cloud computing, and systems for machine learning.
+- **Proposed graduate electives**: _AI Infrastructure: Systems for Training and Serving Large Models_ and _AI Agents for Computing Systems_.
+
+## RESEARCH MENTORING
+
+### Graduate Students
+{: .cv-sub}
+
+- **Jaechang Kim**, M.S. student. Research mentoring. AI agents for REPACSS cluster operation and management, including agent-assisted Warewulf, Ansible, Spack, and Slurm workflows. <time>Summer 2026 – Present</time>
+- **Rupak Kadel**, Ph.D. student. Research mentoring. Improving HPC monitoring for anomaly and intrusion detection. <time>Fall 2025 – Present</time>
+- **Cristiano Caon**, M.S. Independent study (CS 7000) and master's thesis research. Data volume reduction and query optimization in time-series databases. Outcome: CLOUD'23 paper, "Effective Management of Time Series Data." <time>Fall 2022</time>
+- **Aniruddh Sanjaysinh Chavda** (M.S.) and **Huyen Nguyen** (Ph.D.). Course project, Advanced Operating Systems. Usage behavior analysis by clustering job accounting data. <time>Spring 2021</time>
+- **Ruonan Wu**, M.S. Course project, Advanced Operating Systems. Job accounting data analysis for the Quanah cluster. <time>Spring 2021</time>
+- **Ashhrita Puradamane Balachandra**, M.S. Course project, Advanced Operating Systems. Improving InfluxDB query performance. <time>Spring 2020</time>
+
+### Undergraduate Students
+{: .cv-sub}
+
+- **Yusheng Han** and **Zachary Kay**. Independent study (CS 4000). Running HPC applications and analyzing performance on the RedRaider cluster. <time>Spring 2022</time>
+- **Casey Root**. Independent study (CS 4000). Monitoring queue status through the Slurm REST API. <time>Spring 2021</time>
 
 ## OPEN-SOURCE RESEARCH SOFTWARE
 
@@ -155,46 +188,20 @@ My research focuses on high-performance computing (HPC) and AI infrastructure, w
 - [**xBGAS REV-CPU**](https://github.com/Artlands/rev-xbgas): Cycle-accurate xBGAS simulation extension based on REV-CPU. Developed with Tactical Computing Laboratories; published at ICNC'24.
 - [**xBGAS Runtime**](https://github.com/Artlands/rev-xbgas-runtime): Lightweight runtime supporting global address space extensions for RISC-V-based xBGAS simulation. Developed with Tactical Computing Laboratories.
 
-## TEACHING
-
-Teaching interests: operating systems, parallel and high-performance computing, computer architecture, distributed and cloud computing, and systems for machine learning at the undergraduate and graduate levels; new graduate courses on AI infrastructure and on AI agents for computing systems.
-
-### Invited Lecturer and Programming Project Designer <time>Fall 2025</time>
-
-<location>Parallel Processing (graduate), Texas Tech University</location>
-
-- Delivered four invited lectures and designed programming projects for 27 students; topics included job scheduling, compilation and job submission, and OpenMP.
-
-## RESEARCH MENTORING
-
-### Graduate Students
-
-- Jaechang Kim, M.S. student. AI agents for REPACSS cluster operation and management, automating Warewulf, Ansible, Spack, and Slurm workflows. <time>Summer 2026 – Present</time>
-- Rupak Kadel, Ph.D. student. Improving HPC monitoring for anomaly and intrusion detection. <time>Fall 2025 – Present</time>
-- Cristiano Caon, M.S. Data volume reduction and query optimization in time-series databases. Outcome: CLOUD'23 publication. <location>Independent Study (CS 7000) and Master's Thesis</location> <time>Fall 2022</time>
-- Aniruddh Sanjaysinh Chavda (M.S.) and Huyen Nguyen (Ph.D.). Usage behavior analysis by clustering job accounting data. <location>Advanced Operating Systems</location> <time>Spring 2021</time>
-- Ruonan Wu, M.S. Job accounting data analysis for the Quanah cluster. <location>Advanced Operating Systems</location> <time>Spring 2021</time>
-- Ashhrita Puradamane Balachandra, M.S. Improving InfluxDB query performance. <location>Advanced Operating Systems</location> <time>Spring 2020</time>
-
-### Undergraduate Students
-
-- Yusheng Han and Zachary Kay. Running HPC applications and analyzing performance on the RedRaider cluster. <location>Independent Study (CS 4000)</location> <time>Spring 2022</time>
-- Casey Root. Monitoring queue status through the Slurm REST API. <location>Independent Study (CS 4000)</location> <time>Spring 2021</time>
-
 ## PRESENTATIONS
 
-- Integrated Data Collection and Visualization Framework for Data Centers based on Telemetry Model. <location>NSF CAC Industry Advisory Board Conferences (Lubbock, TX; Denton, TX; Tucson, AZ; Lubbock, TX)</location> <time>2021 – 2024</time>
-- Towards Cycle-Accurate Simulation of xBGAS. <location>Latch-Up 2024, Cambridge, MA</location> <time>April 2024</time>
-- Workload Failure Prediction for Data Centers. <location>IEEE CLOUD'23, Chicago, IL</location> <time>July 2023</time>
-- Advanced Visualization and Data Analysis of HPC Cluster and User Application Behavior. <location>ACM/IEEE SC'21</location> <time>November 2021</time>
-- MonSTer: An Out-of-the-Box Monitoring Tool for High Performance Computing Systems. <location>IEEE CLUSTER'20</location> <time>2020</time>
-- PIMS: A Lightweight Processing-in-Memory Accelerator for Stencil Computations. <location>MemSys'19</location> <time>October 2019</time>
+- Integrated Data Collection and Visualization Framework for Data Centers based on Telemetry Model. <location>NSF CAC Industry Advisory Board Conferences (Lubbock, TX; Denton, TX; Tucson, AZ; Lubbock, TX), 2021–2024</location>
+- Towards Cycle-Accurate Simulation of xBGAS. <location>Latch-Up 2024, Cambridge, MA</location>
+- Workload Failure Prediction for Data Centers. <location>IEEE CLOUD'23, Chicago, IL</location>
+- Advanced Visualization and Data Analysis of HPC Cluster and User Application Behavior. <location>ACM/IEEE SC'21</location>
+- MonSTer: An Out-of-the-Box Monitoring Tool for High Performance Computing Systems. <location>IEEE CLUSTER'20</location>
+- PIMS: A Lightweight Processing-in-Memory Accelerator for Stencil Computations. <location>MemSys'19</location>
 
 ## REFEREED POSTERS
 
-- **J. Li**, B. Cook, G. Michelogiannakis, and Y. Chen. A Holistic View of Memory Utilization on Perlmutter. <location>SC'22</location> <time>2022</time>
-- **J. Li**, B. Cook, and Y. Chen. Detecting and Identifying Applications by Job Signatures. <location>SC'21</location> <time>2021</time>
-- X. Wang, **J. Li**, A. Tumeo, J. D. Leidel, and Y. Chen. Memory Hotspot Optimizations for 3D-Stacked Memory. <location>PACT'19</location> <time>2019</time>
+- **J. Li**, B. Cook, G. Michelogiannakis, and Y. Chen. A Holistic View of Memory Utilization on Perlmutter. <location>SC'22</location>
+- **J. Li**, B. Cook, and Y. Chen. Detecting and Identifying Applications by Job Signatures. <location>SC'21</location>
+- X. Wang, **J. Li**, A. Tumeo, J. D. Leidel, and Y. Chen. Memory Hotspot Optimizations for 3D-Stacked Memory. <location>PACT'19</location>
 
 ## AWARDS AND HONORS
 

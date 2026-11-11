@@ -3,19 +3,22 @@
 # professional_service is a list of label/items rows. Text accepts Markdown.
 
 leadership:
-  - date: Jan 2026 – present
+  - date: January 2026 – Present
     title: Assistant Director
-    subtitle: NSF Cloud and Autonomic Computing Center ([CAC IUCRC](https://nsfcac.org/)), Texas Tech site
-    detail: Coordinate faculty, student teams, and industry members in developing and reviewing research projects; help organize the semiannual Industry Advisory Board meetings.
+    subtitle: NSF Cloud and Autonomic Computing Center ([CAC IUCRC](https://nsfcac.org/)), Texas Tech Site
+    bullets:
+      - Coordinate faculty, student teams, industry members, and external collaborators in developing and reviewing research projects for this NSF Industry–University Cooperative Research Center.
+      - Help organize the semiannual Industry Advisory Board meetings, including project planning and follow-up with industry participants, and support center reporting, proposal development, and cross-institutional coordination.
+      - Mentor students preparing presentations, posters, and reports for industry review.
 
 professional_service:
-  - label: Program committees
+  - label: Program committee
     items: [NeurIPS 2026, AAAI 2026]
   - label: Conference reviewer
     items: [IEEE ISCAS 2026, "IEEE BigData 2022, 2023, 2025", IEEE/ACM CCGrid 2024]
   - label: Journal reviewer
     items: [IEEE Computer Architecture Letters (2025), The Journal of Supercomputing (2023)]
-  - label: Sub-reviewer
+  - label: Conference sub-reviewer
     items:
       ["IEEE IPDPS 2023, 2027", IEEE ICDCS 2022, ACM/IEEE SC 2022, International Parallel Data Systems Workshop (PDSW) 2022, IEEE Smart Data Services 2020]
   - label: Student volunteer
