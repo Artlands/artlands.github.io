@@ -791,6 +791,8 @@ html[data-theme="dark"] .cv-md {
   // .cv-page to outrank the screen rules, which come later in this file.
   .cv-page .roadmap {
     margin: 0.8rem 0 0;
+    // inset so the right column's border isn't clipped at the page edge
+    padding: 0 2px;
 
     .roadmap-vision {
       padding: 0.35rem 0.8rem;
@@ -810,6 +812,9 @@ html[data-theme="dark"] .cv-md {
       line-height: 1.3;
       border-radius: 0.4rem;
 
+      // opaque borders: semi-transparent ones render as broken edges in PDF
+      border-color: #d3d9e0;
+
       & + .roadmap-step::before {
         top: -1.1rem;
         font-size: 8pt;
@@ -822,6 +827,11 @@ html[data-theme="dark"] .cv-md {
 
     .roadmap-challenge strong {
       font-size: 9pt;
+      border-bottom-color: #c9d3dd;
+    }
+
+    .roadmap-future {
+      border-color: #a5b5c6;
     }
 
     figcaption {
