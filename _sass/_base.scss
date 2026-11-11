@@ -800,7 +800,7 @@ html[data-theme="dark"] .cv-md {
 
     .roadmap-cols {
       grid-template-columns: 5.5rem repeat(3, 1fr);
-      gap: 0.9rem 0.6rem;
+      gap: 1.2rem 0.6rem;
       margin-top: 0.5rem;
     }
 
@@ -811,7 +811,7 @@ html[data-theme="dark"] .cv-md {
       border-radius: 0.4rem;
 
       & + .roadmap-step::before {
-        top: -0.95rem;
+        top: -1.1rem;
         font-size: 8pt;
       }
     }
@@ -1988,11 +1988,16 @@ mjx-container[jax="CHTML"][display="true"] {
     grid-template-rows: subgrid;
   }
 
+  // flex column so content centers vertically in the subgrid-stretched box
   .roadmap-step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid var(--global-divider-color);
     border-radius: 0.6rem;
     padding: 0.7rem 0.85rem;
     font-size: 0.9rem;
+    line-height: 1.4;
     background: var(--global-card-bg-color);
 
     // connector arrow to the next stage
@@ -2036,17 +2041,39 @@ mjx-container[jax="CHTML"][display="true"] {
     margin-right: 0.2em;
   }
 
+  // title pinned on one centered line; description centered in the rest
   .roadmap-challenge {
+    justify-content: flex-start;
+    text-align: center;
     background: color-mix(in srgb, var(--global-theme-color) 8%, var(--global-card-bg-color));
 
     strong {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
       color: var(--global-theme-color);
       font-size: 1rem;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.4rem;
+      border-bottom: 1px solid color-mix(in srgb, var(--global-theme-color) 25%, transparent);
+    }
+
+    .thrust-badge {
+      flex: none;
+      vertical-align: 0;
     }
   }
 
+  .roadmap-desc {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .roadmap-future {
+    text-align: center;
     border-color: color-mix(in srgb, var(--global-theme-color) 45%, var(--global-divider-color));
 
     strong {

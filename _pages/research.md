@@ -31,18 +31,18 @@ My work connects systems research to operational practice. As a Research Assista
       <div>Future direction</div>
     </div>
     <div class="roadmap-col">
-      <div class="roadmap-step roadmap-challenge"><span class="roadmap-label">Challenge</span><strong><span class="thrust-badge">1</span><i class="ti ti-shield-check"></i> Operational trust</strong>AI agents in shared HPC</div>
-      <div class="roadmap-step"><span class="roadmap-label">Past + current work</span>MonSTer {% cite li2020monster --style _bibliography/ieee-cv.csl %}; REPACSS power observability {% cite zhao2026power --style _bibliography/ieee-cv.csl %}; ARcode {% cite li2023arcode --style _bibliography/ieee-cv.csl %}; agent-security benchmark {% cite li2026trusted --style _bibliography/ieee-cv.csl %}</div>
+      <div class="roadmap-step roadmap-challenge"><span class="roadmap-label">Challenge</span><strong><span class="thrust-badge">1</span><i class="ti ti-shield-check"></i> Operational trust</strong><span class="roadmap-desc">AI agents in shared HPC</span></div>
+      <div class="roadmap-step"><span class="roadmap-label">Past + current work</span><span>MonSTer {% cite li2020monster --style _bibliography/ieee-cv.csl %}; REPACSS power observability {% cite zhao2026power --style _bibliography/ieee-cv.csl %}; ARcode {% cite li2023arcode --style _bibliography/ieee-cv.csl %}; agent-security benchmark {% cite li2026trusted --style _bibliography/ieee-cv.csl %}</span></div>
       <div class="roadmap-step roadmap-future"><span class="roadmap-label">Future direction</span><strong>Scoped, auditable AI agents for HPC operations</strong></div>
     </div>
     <div class="roadmap-col">
-      <div class="roadmap-step roadmap-challenge"><span class="roadmap-label">Challenge</span><strong><span class="thrust-badge">2</span><i class="ti ti-bolt"></i> Resource efficiency</strong>Power and memory constraints</div>
-      <div class="roadmap-step"><span class="roadmap-label">Past + current work</span>Perlmutter analysis {% cite li2023analyzing --style _bibliography/ieee-cv.csl %}; disaggregated scheduling {% cite li2024job --style _bibliography/ieee-cv.csl %}; TokenPowerBench {% cite chen2026token --style _bibliography/ieee-cv.csl %}; KV cache survey {% cite li2026kvcache --style _bibliography/ieee-cv.csl %}</div>
+      <div class="roadmap-step roadmap-challenge"><span class="roadmap-label">Challenge</span><strong><span class="thrust-badge">2</span><i class="ti ti-bolt"></i> Resource efficiency</strong><span class="roadmap-desc">Power and memory constraints</span></div>
+      <div class="roadmap-step"><span class="roadmap-label">Past + current work</span><span>Perlmutter analysis {% cite li2023analyzing --style _bibliography/ieee-cv.csl %}; disaggregated scheduling {% cite li2024job --style _bibliography/ieee-cv.csl %}; TokenPowerBench {% cite chen2026token --style _bibliography/ieee-cv.csl %}; KV cache survey {% cite li2026kvcache --style _bibliography/ieee-cv.csl %}</span></div>
       <div class="roadmap-step roadmap-future"><span class="roadmap-label">Future direction</span><strong>Joint scheduling, power, and memory control</strong></div>
     </div>
     <div class="roadmap-col">
-      <div class="roadmap-step roadmap-challenge"><span class="roadmap-label">Challenge</span><strong><span class="thrust-badge">3</span><i class="ti ti-cpu"></i> Heterogeneous systems</strong>Distributed memory and new devices</div>
-      <div class="roadmap-step"><span class="roadmap-label">Past + current work</span>PIMS {% cite li2019pims --style _bibliography/ieee-cv.csl %}; xBGAS {% cite li2024towards --style _bibliography/ieee-cv.csl %}; OCEAN {% cite yang2026ocean --style _bibliography/ieee-cv.csl %}; quantum synthesis (submitted)</div>
+      <div class="roadmap-step roadmap-challenge"><span class="roadmap-label">Challenge</span><strong><span class="thrust-badge">3</span><i class="ti ti-cpu"></i> Heterogeneous systems</strong><span class="roadmap-desc">Distributed memory and new devices</span></div>
+      <div class="roadmap-step"><span class="roadmap-label">Past + current work</span><span>PIMS {% cite li2019pims --style _bibliography/ieee-cv.csl %}; xBGAS {% cite li2024towards --style _bibliography/ieee-cv.csl %}; OCEAN {% cite yang2026ocean --style _bibliography/ieee-cv.csl %}; quantum synthesis (submitted)</span></div>
       <div class="roadmap-step roadmap-future"><span class="roadmap-label">Future direction</span><strong>Programmable CXL and hybrid workflows</strong></div>
     </div>
   </div>
